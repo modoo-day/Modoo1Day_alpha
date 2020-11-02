@@ -57,3 +57,8 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# lnk Files
+RUN-ANDROID 10.lnk
+RUN-ANDROID.lnk
+YARN INSTALL.lnk

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "981107116909",
+    "firebase_url": "https://modoo1daybeta.firebaseio.com",
+    "project_id": "modoo1daybeta",
+    "storage_bucket": "modoo1daybeta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981107116909:android:2cc3f31a156320b4e02864",
+        "android_client_info": {
+          "package_name": "com.modoo1day_alpha"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "981107116909-ra2odtdfapto7rcnjgof0ekof5cr0us9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.modoo1day_alpha",
+            "certificate_hash": "e5d77aaefa715f6b345fea50e15059425b4b8c32"
+          }
+        },
+        {
+          "client_id": "981107116909-rc1qb6m90iv10mcd5uci7ff7o7d6k9ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy4b1PhM2_N9FMDaWbCr1BD6hYiZb-yDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "981107116909-rc1qb6m90iv10mcd5uci7ff7o7d6k9ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
