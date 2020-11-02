@@ -20,8 +20,8 @@ export default MarketRoute = ({navigation}) => {
           style: { backgroundColor: 'white'},
           }}
         >
-          <NavigationRouter.Screen name='MarketFind' component={MarketFind} />
           <NavigationRouter.Screen name='MarketStatus' component={MarketStatus} />
+          <NavigationRouter.Screen name='MarketFind' component={MarketFind} />
         </NavigationRouter.Navigator>
       );
 }
