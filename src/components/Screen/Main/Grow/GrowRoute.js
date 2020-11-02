@@ -1,16 +1,16 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Grow from './Grow';
+import Growth from './Growth';
 
 
 
-export default GrowRoute = ({navigation}) => {
+export default GrowthRoute = ({navigation}) => {
     
     const NavigationRouter = createStackNavigator();
 
     return (
         <NavigationRouter.Navigator>
-          <NavigationRouter.Screen name='Grow' component={Grow} />
+          <NavigationRouter.Screen name='Growth' component={Growth} />
           
         </NavigationRouter.Navigator>
     

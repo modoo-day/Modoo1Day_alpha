@@ -4,6 +4,9 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { 
     NavigationContainer, 
   } from '@react-navigation/native';
+import Search from './Screen/Modal/Search/Search';
+import AccountRoute from './Screen/Modal/Account/AccountRoute';
+import MainRoute from './Screen/Main/MainRoute';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -23,13 +26,13 @@ function Root() {
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
-            component={}
+            component={MainRoute}
             options={({navigation, route}) => ({
               headerTitle: (props) => <LogoTitle {...props} />,
             })}
           />
-          <modal.Screen name="Search" component={} mode={modal} />
-          <modal.Screen name="Account" component={} mode={modal} />
+          <modal.Screen name="Search" component={Search} mode={modal} />
+          <modal.Screen name="Account" component={AccountRoute} mode={modal} />
         </Stack.Navigator>
       </NavigationContainer>
     );

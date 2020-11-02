@@ -4,12 +4,16 @@ import {Button, Text, Image, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import MarketRoute from './Market/MarketRoute';
+import GrowRoute from './Grow/GrowRoute';
+import FeedRoute from './Feed/FeedRoute';
+import HistoryRoute from './History/HistoryRoute';
 
 
 const BottomTab = createBottomTabNavigator();
 
 
-const MainTabScreen = ({navigation}) => {
+const MainRoute = ({navigation}) => {
     React.useLayoutEffect(() => {
         navigation.setOptions({
           headerRight: () => (
@@ -65,10 +69,10 @@ const MainTabScreen = ({navigation}) => {
               }
             }}
         >
-          <BottomTab.Screen name='MarketTab' component={MarketTab} />
-          <BottomTab.Screen name='GrowTab' component={GrowTab} />
-          <BottomTab.Screen name='FeedTab' component={FeedTab} />
-          <BottomTab.Screen name='HistoryTab' component={HistoryTab} />
+          <BottomTab.Screen name='MarketRoute' component={MarketRoute} />
+          <BottomTab.Screen name='GrowRoute' component={GrowRoute} />
+          <BottomTab.Screen name='FeedRoute' component={FeedRoute} />
+          <BottomTab.Screen name='HistoryRoute' component={HistoryRoute} />
         </BottomTab.Navigator>
     
         
@@ -77,4 +81,4 @@ const MainTabScreen = ({navigation}) => {
 }
 
 
-export default MainTabScreen;
+export default MainRoute;
