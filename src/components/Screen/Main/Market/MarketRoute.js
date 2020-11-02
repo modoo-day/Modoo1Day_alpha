@@ -1,17 +1,17 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Market from './Market';
+import MarketFind from './MarketFind';
 
 
 
-export default MarketRoute = ({navigation}) => {
+export default MarketFindRoute = ({navigation}) => {
     
     const NavigationRouter = createStackNavigator();
 
     return (
         <NavigationRouter.Navigator>
-          <NavigationRouter.Screen name='Market' component={Market} />
-          
+          <NavigationRouter.Screen name='MarketFind' component={MarketFind} />
+          <NavigationRouter.Screen name='MarketStatus' component={MarketStatus} />
         </NavigationRouter.Navigator>
     
         

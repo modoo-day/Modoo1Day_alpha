@@ -11,7 +11,6 @@ export default HistoryRoute = ({navigation}) => {
     return (
         <NavigationRouter.Navigator>
           <NavigationRouter.Screen name='History' component={History} />
-          
         </NavigationRouter.Navigator>
     
         
