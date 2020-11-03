@@ -27,7 +27,7 @@ const ContentsWrite = ({navigation}) =>{
 
                     <Button
                         title='인증 하기'
-                        onPress={()=>navigation.goBack()}
+                        onPress={()=>navigation.navigate('Certificate')}
                     />
                 </View>
                     

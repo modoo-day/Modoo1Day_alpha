@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
-import {Collapse,CollapseHeader, CollapseBody, AccordionList} from 'accordion-collapse-react-native';
+import {Collapse,CollapseHeader, CollapseBody} from 'accordion-collapse-react-native';
 
 
 const Report =()=>{

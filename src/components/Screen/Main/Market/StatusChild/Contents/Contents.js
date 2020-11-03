@@ -8,7 +8,6 @@ import {
     StyleSheet,
     TouchableOpacity,
     Button,
-    ImageBackground
   } from 'react-native';
 
 export default Contents = () => {
