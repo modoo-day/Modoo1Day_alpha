@@ -14,7 +14,7 @@ function renderViewLess(onPress){
     )
   }
 
-const Certificate = () =>{
+const Certificate = ({navigation}) =>{
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <Text style={styles.loadingText}>📢 모두 인증 및 피드 개시 중</Text>
@@ -34,7 +34,9 @@ const Certificate = () =>{
                         <TouchableOpacity>                            
                             <Image style={styles.bottomIcon} source={require('../../../../../../assets/icons/o.png')}/>
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={()=>navigation.navigate('Report')}
+                        >
                             <Image style={styles.bottomIcon} source={require('../../../../../../assets/icons/x.png')}/>
                         </TouchableOpacity>
 

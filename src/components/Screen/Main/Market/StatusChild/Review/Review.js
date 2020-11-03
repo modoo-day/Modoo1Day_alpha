@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, Button, Image} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Button, Image, TouchableOpacity} from 'react-native';
 import { Rating } from 'react-native-elements';
 
 
@@ -13,7 +13,10 @@ const Review = ({navigation}) =>{
                 />
             </View>
             <View style={styles.listContianer}>
-                <View style={styles.list}>
+                <TouchableOpacity 
+                    style={styles.list}
+                    onPress={()=>navigation.navigate('ReviewDetail')}
+                >
                     <View style={styles.listIconContainer}>
                         <Image style={styles.listIcon} source={require('../../../../../../assets/icons/crown.png')}/>
                     </View>
@@ -37,7 +40,7 @@ const Review = ({navigation}) =>{
                             </View>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
                 
             </View>
             

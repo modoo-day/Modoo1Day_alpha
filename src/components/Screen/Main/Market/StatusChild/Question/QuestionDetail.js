@@ -6,7 +6,7 @@ import {View,
         TouchableOpacity
         } from 'react-native';
 
-const QuestionDetail = () =>{
+const QuestionDetail = ({navigation}) =>{
     return(
         <View style={styles.container}>
             <View style={styles.first}>
@@ -20,7 +20,9 @@ const QuestionDetail = () =>{
                     <Text style={styles.firstText}>안아ㅣ럼;ㄴ이ㅏㅓㄻ니;ㅏㅇ럼닝ㅁㄴㅇsadfasdfasdfasdfasdfasdfasdfasdfasdfsadfasdfasfasdfasfasfafasf람니;라ㅓㅁ니라ㅓㅁ니ㅏ;럼니ㅏㅇ;럼ㄴㅇ리ㅏㅓㅁㄴㅇ리ㅏㅓㅁㄴㅇ리마;널러ㅏㅁㄴ이;ㅏ러</Text>
                 </View>
                 <View style={styles.firstBottom}>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={()=>navigation.navigate('Report')}
+                    >
                         <Image style={styles.report} source={require('../../../../../../assets/icons/EmailInput.png')} />
                     </TouchableOpacity>
                     <View style={styles.profile}>
