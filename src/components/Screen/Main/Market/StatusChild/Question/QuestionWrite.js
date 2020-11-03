@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, TextInput, ScrollView, Image, TouchableOpacity, 
 
 
 
-const QuestionWrite = () =>{
+const QuestionWrite = ({navigation}) =>{
     return(
         <ScrollView contentContainerStyle={{maxHeight:'200%'}}>
 
@@ -38,6 +38,7 @@ const QuestionWrite = () =>{
                 <View style={styles.bottomButtonContainer}>
                         <Button
                             title='인증 하기'
+                            onPress={()=>navigation.goBack()}
                         />
                     </View>
             </View>

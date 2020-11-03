@@ -10,6 +10,7 @@ import MainRoute from './Screen/Main/MainRoute';
 import StatusRoute from './Screen/Main/Market/StatusChild/StatusRoute';
 import ContentsWrite from './Screen/Main/Market/StatusChild/Contents/ContentsWrite';
 import ReviewWrite from './Screen/Main/Market/StatusChild/Review/ReviewWrite';
+import QuestionWrite from './Screen/Main/Market/StatusChild/Question/QuestionWrite';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -40,6 +41,8 @@ function Root() {
           <Stack.Screen name='StatusRoute' component={StatusRoute}/>
           <Stack.Screen name='ContentsWrite' component={ContentsWrite}/>
           <Stack.Screen name='ReviewWrite' component={ReviewWrite}/>
+          <Stack.Screen name='QuestionWrite' component={QuestionWrite}/>
+
         </Stack.Navigator>
       </NavigationContainer>
     );

@@ -8,6 +8,7 @@ const Question = ({navigation}) =>{
             <View style={styles.buttonContainer}>
                 <Button
                     title='문의 하기'
+                    onPress={()=>navigation.navigate('QuestionWrite')}
                 />
             </View>
             <View style={styles.listContianer}>
