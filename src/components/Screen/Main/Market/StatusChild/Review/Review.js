@@ -9,6 +9,7 @@ const Review = ({navigation}) =>{
             <View style={styles.buttonContainer}>
                 <Button
                     title='리뷰 쓰기'
+                    onPress={()=>navigation.navigate('ReviewWrite')}
                 />
             </View>
             <View style={styles.listContianer}>
