@@ -8,6 +8,7 @@ import Search from './Screen/Modal/Search/Search';
 import AccountRoute from './Screen/Modal/Account/AccountRoute';
 import MainRoute from './Screen/Main/MainRoute';
 import StatusRoute from './Screen/Main/Market/StatusChild/StatusRoute';
+import ContentsWrite from './Screen/Main/Market/StatusChild/Contents/ContentsWrite';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -34,7 +35,9 @@ function Root() {
           />
           <modal.Screen name="Search" component={Search} mode={modal} />
           <modal.Screen name="Account" component={AccountRoute} mode={modal} />
-          <Stack.Screen name='StatusRoute' component={StatusRoute} />
+          {/* StatusRoute */}
+          <Stack.Screen name='StatusRoute' component={StatusRoute}/>
+          <Stack.Screen name='ContentsWrite' component={ContentsWrite}/>
         </Stack.Navigator>
       </NavigationContainer>
     );

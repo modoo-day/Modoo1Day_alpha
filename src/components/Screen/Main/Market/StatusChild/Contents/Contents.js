@@ -6,7 +6,9 @@ import {
     Text,
     ScrollView,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
+    Button,
+    ImageBackground
   } from 'react-native';
 
 export default Contents = () => {
@@ -14,8 +16,9 @@ export default Contents = () => {
     const navigation = useNavigation();
 
     return(
-        <ScrollView contentContainerStyle={styles.container}>
+        <ScrollView >
             <View style={styles.topMargin}></View>
+            <View style={styles.container}>
             <View style={styles.first}>
               <Image style={styles.listImage} source={require('../../../../../../assets/img/night.png')}/>
               <View style={styles.listTextContainer}>
@@ -103,8 +106,13 @@ export default Contents = () => {
                     </View>
                 </View>
             </View>
-
-
+            </View>
+            <View style={styles.buttonContainer}>
+                <Button
+                    title='인증 하기'
+                    onPress={()=>navigation.navigate('ContentsWrite')}
+                />
+            </View>
         </ScrollView>
     )
 }
@@ -244,6 +252,10 @@ const styles = StyleSheet.create({
     fourthText:{
       fontSize:10,
       fontFamily:'neodgm',
+    },
+    buttonContainer:{
+        height:110,
+        //backgroundColor:'pink'
     },
     
   });
