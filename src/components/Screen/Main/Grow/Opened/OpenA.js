@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default OpenA = () => {
+const OpenA = () => {
     return(
         <View>
             <Text>OpenA</Text>
         </View>
     )
 }
+
+export default OpenA;

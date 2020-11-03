@@ -14,6 +14,7 @@ import ReviewDetail from './Screen/Main/Market/StatusChild/Review/ReviewDetail';
 import QuestionWrite from './Screen/Main/Market/StatusChild/Question/QuestionWrite';
 import QuestionDetail from './Screen/Main/Market/StatusChild/Question/QuestionDetail';
 import Report from './Screen/Modal/Report/Report';
+import OpenA from './Screen/Main/Grow/Opened/OpenA';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -48,6 +49,8 @@ function Root() {
           <Stack.Screen name='QuestionWrite' component={QuestionWrite}/>
           <Stack.Screen name='QuestionDetail' component={QuestionDetail}/>
           <Stack.Screen name='Report' component={Report}/>
+          {/* 성장 모두개설 */}
+          <Stack.Screen name='OpenA' component={OpenA}/>
 
 
         </Stack.Navigator>

@@ -8,8 +8,9 @@ import {
     TouchableOpacity,
     ScrollView
 } from 'react-native';
+import ProgressBar from 'react-native-progress/Bar';
 
-export default Growth = () => {
+export default Growth = ({navigation}) => {
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.top}>
@@ -17,43 +18,39 @@ export default Growth = () => {
                     <Image style={styles.topImg} source={require('../../../../assets/img/night.png')}/>
                 </View>
                 <View style={styles.topRight}>
-                    <Text>경험치바</Text>
+                    <View style={styles.experiencePointContainer}>
+                        <Text>레벨</Text>
+                        <ProgressBar 
+                            progress={0.3}
+                            width={140}
+                        />
+                    </View>
                     <View style={styles.buttonContainer}>
                         <Button
                             title='모do 개설'
+                            onPress={()=>navigation.navigate('OpenA')}
                         />
                     </View>
                 </View>
             </View>
             <View style={styles.bottom}>
 
-                <View style={styles.listContainer}>
+                <TouchableOpacity 
+                    style={styles.listContainer}
+                    onPress={()=>navigation.navigate('StatusRoute')}    
+                >
                     <Image style={styles.listImg} source={require('../../../../assets/img/night.png')}/>
                     <View style={styles.listTextContainer}>
                         <Text style={styles.listTitle}>매일 물 마시기</Text>
-                        <TouchableOpacity>
+                        {/* <TouchableOpacity
+                            // onPress={navigation.navigate('ContentsWrite')}
+                            //  내비게이션이 사용된 태그 안에 또 내비게이션을 사용할 수 없음.
+                        > */}
                             <Text style={styles.listButton}>인증하기</Text>
-                        </TouchableOpacity>
+                        {/* </TouchableOpacity> */}
                     </View>
-                </View>
-                <View style={styles.listContainer}>
-                    <Image style={styles.listImg} source={require('../../../../assets/img/night.png')}/>
-                    <View style={styles.listTextContainer}>
-                        <Text style={styles.listTitle}>매일 물 마시기</Text>
-                        <TouchableOpacity>
-                            <Text style={styles.listButton}>인증하기</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-                <View style={styles.listContainer}>
-                    <Image style={styles.listImg} source={require('../../../../assets/img/night.png')}/>
-                    <View style={styles.listTextContainer}>
-                        <Text style={styles.listTitle}>매일 물 마시기</Text>
-                        <TouchableOpacity>
-                            <Text style={styles.listButton}>인증하기</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                </TouchableOpacity>
+                
             </View>
         </ScrollView>
     )
@@ -83,9 +80,14 @@ const styles = StyleSheet.create({
     },
     topRight:{
         //backgroundColor:'lightyellow',
-        width:'55%',
+        width:'60%',
         justifyContent:'space-between',
-        paddingVertical:'5%'
+        paddingVertical:'5%',
+    },
+    experiencePointContainer:{
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
     },
     buttonContainer:{
         width:'100%'
