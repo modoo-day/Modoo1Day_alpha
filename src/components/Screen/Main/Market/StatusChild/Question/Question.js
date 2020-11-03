@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, Button, Image} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Button, Image, TouchableOpacity} from 'react-native';
 
 
 const Question = ({navigation}) =>{
@@ -14,7 +14,10 @@ const Question = ({navigation}) =>{
             <View style={styles.listContianer}>
 
                 {/* 답변 완료 */}
-                <View style={styles.list}>
+                <TouchableOpacity 
+                    style={styles.list}
+                    onPress={()=>navigation.navigate('QuestionDetail')}
+                >
                     <View style={styles.listIconContainer}>
                         <Image style={styles.listIcon} source={require('../../../../../../assets/icons/crown.png')}/>
                     </View>
@@ -30,7 +33,7 @@ const Question = ({navigation}) =>{
                             </View>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
                 
                 {/* 답변 준비중 */}
                 <View style={styles.list}>
