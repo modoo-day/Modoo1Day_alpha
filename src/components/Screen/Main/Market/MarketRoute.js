@@ -1,7 +1,8 @@
 import React from 'react';
 import MarketFind from './MarketFind';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import MarketStatus from './MarketStatus';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
 
 
 export default MarketRoute = ({navigation}) => {
