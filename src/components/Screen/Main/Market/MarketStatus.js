@@ -66,7 +66,7 @@ export default MarketStatus = ({navigation}) => {
       </View>
       <View style={styles.listContainer}>
         <TouchableOpacity
-          //onPress={()=>navigation.navigate('ModuInfoRoute')}
+          onPress={()=>navigation.navigate('Contents')}
         >
           <Image style={styles.listImage} source={
             //   {uri: imgUrl}
