@@ -40,7 +40,7 @@ export default MarketFind = ({navigation}) => {
     const Item = ({ title, img, tag, author, participants }) => (
         <View style={styles.listContainer}>
             <TouchableOpacity
-              onPress={()=>navigation.navigate('Contents')}
+              onPress={()=>navigation.navigate('StatusRoute')}
             >
               <Image style={styles.listImage} source={
                 //   {uri: imgUrl}

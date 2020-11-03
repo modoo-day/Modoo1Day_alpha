@@ -1,10 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-export default Review = () => {
+const Review = () => {
     return(
         <View>
             <Text>Review</Text>
         </View>
     )
 }
+
+export default Review
