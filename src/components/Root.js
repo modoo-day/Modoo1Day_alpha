@@ -8,6 +8,12 @@ import Search from './Screen/Modal/Search/Search';
 import AccountRoute from './Screen/Modal/Account/AccountRoute';
 import MainRoute from './Screen/Main/MainRoute';
 import StatusRoute from './Screen/Main/Market/StatusChild/StatusRoute';
+import ContentsWrite from './Screen/Main/Market/StatusChild/Contents/ContentsWrite';
+import ReviewWrite from './Screen/Main/Market/StatusChild/Review/ReviewWrite';
+import ReviewDetail from './Screen/Main/Market/StatusChild/Review/ReviewDetail';
+import QuestionWrite from './Screen/Main/Market/StatusChild/Question/QuestionWrite';
+import QuestionDetail from './Screen/Main/Market/StatusChild/Question/QuestionDetail';
+import Report from './Screen/Modal/Report/Report';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -34,7 +40,16 @@ function Root() {
           />
           <modal.Screen name="Search" component={Search} mode={modal} />
           <modal.Screen name="Account" component={AccountRoute} mode={modal} />
-          <Stack.Screen name='StatusRoute' component={StatusRoute} />
+          {/* StatusRoute */}
+          <Stack.Screen name='StatusRoute' component={StatusRoute}/>
+          <Stack.Screen name='ContentsWrite' component={ContentsWrite}/>
+          <Stack.Screen name='ReviewWrite' component={ReviewWrite}/>
+          <Stack.Screen name='ReviewDetail' component={ReviewDetail}/>
+          <Stack.Screen name='QuestionWrite' component={QuestionWrite}/>
+          <Stack.Screen name='QuestionDetail' component={QuestionDetail}/>
+          <Stack.Screen name='Report' component={Report}/>
+
+
         </Stack.Navigator>
       </NavigationContainer>
     );
