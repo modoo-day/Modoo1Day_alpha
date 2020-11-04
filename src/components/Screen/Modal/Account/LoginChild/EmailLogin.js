@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     View, 
     Text, 
@@ -9,8 +9,12 @@ import {
     ScrollView
     } from 'react-native';
 
-    
+
 const EmailLogin = ({navigation}) =>{
+
+    const [id, setId] = useState('');
+    const [pw, setPw] = useState('');
+ 
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.top}>
@@ -18,10 +22,14 @@ const EmailLogin = ({navigation}) =>{
                     <TextInput
                         style={styles.id}
                         placeholder='아이디'
+                        value={id}
+                        onChangeText={(username) => setId(username)}
                     />
                     <TextInput
                         style={styles.pw}
                         placeholder='비밀번호'
+                        value={pw}
+                        onChangeText={(password) => setPw(password)}
                     />
                 </View>
             </View>
@@ -29,6 +37,7 @@ const EmailLogin = ({navigation}) =>{
                 <Button
                     title='시작하기!'
                     onPress={()=>navigation.navigate('MarketRoute')}
+                    disabled={id== '' || pw=='' ? true:false}
                 />
             </View>
             <View style={styles.bottom}>
