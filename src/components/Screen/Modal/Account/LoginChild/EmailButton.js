@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   StyleSheet,
@@ -5,13 +6,16 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const KakaoButton = () =>{
+const EmailButton = () =>{
+
+    const navigation = useNavigation();
+
     return(
         <TouchableOpacity 
-            // onPress={() => googleSignIn()}
+            onPress={() => navigation.navigate('EmailLogin')}
         >
           <Image
-            source={require('../../../../../assets/icons/kakaoLogin.png')}
+            source={require('../../../../../assets/icons/emailLogin.png')}
             style={styles.button}
             resizeMode={'contain'}
           />
@@ -19,7 +23,8 @@ const KakaoButton = () =>{
     )
 }
 
-export default KakaoButton;
+export default EmailButton;
+
 
 const styles = StyleSheet.create({
     button: {
