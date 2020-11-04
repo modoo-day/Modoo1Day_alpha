@@ -1,4 +1,4 @@
-/* #region Library */
+/* #region Libraries */
 import React, {useState} from 'react';
 import {
   View,
@@ -13,7 +13,7 @@ import ImagePicker from 'react-native-image-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 /* #endregion */
 
-const LoginProfile = () => {
+const LoginProfile = ({navigation}) => {
   /* #region useState */
   const [modalVisible, setModalVisible] = useState(false);
 
