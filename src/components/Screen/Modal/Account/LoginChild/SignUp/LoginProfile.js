@@ -10,11 +10,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import ImagePicker from 'react-native-image-picker';
-
+import DateTimePicker from '@react-native-community/datetimepicker';
 /* #endregion */
 
 const LoginProfile = () => {
-/* #region useState */
+  /* #region useState */
   const [modalVisible, setModalVisible] = useState(false);
 
   const [img, setImg] = useState(
@@ -31,7 +31,8 @@ const LoginProfile = () => {
   const [genderAlert, setGenderAlert] = useState('성별을 선택하세요!');
   const [genderAlertColor, setGenderAlertColor] = useState('blue');
 
-  const [date, setDate] = useState('생년월일');
+  const [datePicker, setDatePicker] = useState(false);
+  const [date, setDate] = useState(new Date());
   const [dateColor, setDateColor] = useState('lightgray');
   const [dateAlert, setDateAlert] = useState('생년월일을 선택하세요!');
   const [dateAlertColor, setDateAlertColor] = useState('blue');
@@ -78,7 +79,12 @@ const LoginProfile = () => {
     }
   }
 
-/* #region XML */
+  const onChangeDate = (event, selectedDate) => {
+    setDate(selectedDate);
+    setDatePicker(false);
+  };
+
+  /* #region XML */
   return (
     <View style={styles.container}>
       {/* 성별 선택하는 팝업창 */}
@@ -118,6 +124,15 @@ const LoginProfile = () => {
         </View>
       </Modal>
 
+      {datePicker && (
+        <DateTimePicker
+          value={date}
+          mode={'date'}
+          display="spinner"
+          onChange={onChangeDate}
+        />
+      )}
+
       {/* 프로필 이미지 */}
       <TouchableOpacity onPress={() => loadImg()}>
         <Image source={img} style={styles.Image} />
@@ -152,8 +167,12 @@ const LoginProfile = () => {
       <Text style={{color: genderAlertColor}}>{genderAlert}</Text>
 
       {/* 생년월일 */}
-      <TouchableOpacity style={{...styles.Button, borderColor: dateColor}}>
-        <Text style={{...styles.Text, color: dateColor}}>{date}</Text>
+      <TouchableOpacity
+        onPress={() => setDatePicker(true)}
+        style={{...styles.Button, borderColor: dateColor}}>
+        <Text style={{...styles.Text, color: dateColor}}>
+          {date.toLocaleDateString()}
+        </Text>
       </TouchableOpacity>
       <Text style={{color: dateAlertColor}}>{dateAlert}</Text>
 
@@ -215,6 +234,7 @@ const styles = StyleSheet.create({
     marginTop: 55,
     width: 111,
     height: 111,
+    borderRadius: 50,
   },
   Button: {
     justifyContent: 'center',
@@ -238,3 +258,35 @@ const styles = StyleSheet.create({
 /* #endregion */
 
 export default LoginProfile;
+
+// import React, {useState} from 'react';
+// import {View, Text, Button, Platform} from 'react-native';
+// import DateTimePicker from '@react-native-community/datetimepicker';
+
+// const LoginProfile = () => {
+//   const [date, setDate] = useState(new Date(1598051730000));
+//   const [show, setShow] = useState(false);
+
+//   const onChange = (event, selectedDate) => {
+//     const currentDate = selectedDate;
+//     setDate(currentDate);
+//     console.log(currentDate);
+//   };
+
+//   return (
+//     <View>
+//       <View>
+//         <Button onPress={() => setShow(true)} title="Show date picker!" />
+//         <Text>{date.toDateString()}</Text>
+//       </View>
+//       <DateTimePicker
+//         value={date}
+//         mode={'date'}
+//         display="spinner"
+//         onChange={onChange}
+//       />
+//     </View>
+//   );
+// };
+
+// export default LoginProfile;
