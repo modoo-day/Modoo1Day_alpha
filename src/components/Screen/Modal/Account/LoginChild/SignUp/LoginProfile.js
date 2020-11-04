@@ -33,7 +33,7 @@ const LoginProfile = () => {
 
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
-  const [dateString, setDateString] = useState('');
+  const [dateString, setDateString] = useState('생년월일');
   const [dateColor, setDateColor] = useState('lightgray');
   const [dateAlert, setDateAlert] = useState('생년월일을 선택하세요!');
   const [dateAlertColor, setDateAlertColor] = useState('blue');
@@ -67,8 +67,7 @@ const LoginProfile = () => {
   }
 
   function nameCheck() {
-    const nameReg = /^[a-zA-z가-힣]{2,10}/;
-    // TODO : firestore currentUser Check
+    const nameReg = /^[가-힣]{2,4}$|^[a-zA-Z]{2,10}$/;  //  공백X, 한글 2-4자, 영문 2-10자
     if (nameReg.test(name)) {
       setNameColor('black');
       setNameAlertColor('green');
@@ -81,9 +80,10 @@ const LoginProfile = () => {
   }
 
   const onChangeDate = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
     setDatePicker(false);
-    setDate(selectedDate);
-    setDatetoString(selectedDate);
+    setDate(currentDate);
+    setDatetoString(currentDate);
     setDateColor('black');
     setDateAlert('');
   };
