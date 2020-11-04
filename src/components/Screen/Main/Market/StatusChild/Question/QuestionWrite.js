@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput, ScrollView, Image, TouchableOpacity, Button} from 'react-native';
 
 
 
 const QuestionWrite = ({navigation}) =>{
+
+    const [text, setText] = useState('');
+
     return(
         <ScrollView contentContainerStyle={{maxHeight:'200%'}}>
 
@@ -31,6 +34,8 @@ const QuestionWrite = ({navigation}) =>{
                     <TextInput
                         style={styles.input}
                         multiline={true}
+                        value={text}
+                        onChangeText={(contents) => setText(contents)}
                     ></TextInput>
                 </View>
 
@@ -39,6 +44,7 @@ const QuestionWrite = ({navigation}) =>{
                         <Button
                             title='인증 하기'
                             onPress={()=>navigation.goBack()}
+                            disabled={text== '' ? true:false}
                         />
                     </View>
             </View>
