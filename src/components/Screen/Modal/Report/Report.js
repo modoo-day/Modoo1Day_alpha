@@ -12,24 +12,28 @@ const Report =()=>{
             <View style={styles.second}>
                 <Button
                     title='스팸'
+                    onPress={()=> alert('신고 접수')}
                 />
             </View>
             <View style={styles.third}>
                 <Collapse style={{borderBottomWidth:1,borderTopWidth:1}}>
                     <CollapseHeader style={{flexDirection:'row',alignItems:'center',padding:10,backgroundColor:'#E6E6E6'}}>
                         <View>
-                            <Text>신고</Text>
+                            <Text>부적절합니다 ▼</Text>
                         </View>
                     </CollapseHeader>
                     <CollapseBody>
                         <Button
                             title='신고사유'
+                            onPress={()=> alert('신고 접수')}
                         />
                         <Button
                             title='신고사유'
+                            onPress={()=> alert('신고 접수')}
                         />
                         <Button
                             title='신고사유'
+                            onPress={()=> alert('신고 접수')}
                         />
                     </CollapseBody>
                 </Collapse> 
