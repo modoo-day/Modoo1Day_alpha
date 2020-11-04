@@ -7,6 +7,7 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
+  Button,
 } from 'react-native';
 /* #endregion */
 
@@ -16,7 +17,7 @@ const LoginProfile = () => {
     require('../../../../../../assets/icons/modoo.png'),
   );
 
-  const [name, setName] = useState('닉네임');
+  const [name, setName] = useState('');
   const [nameColor, setNameColor] = useState('lightgray');
   const [nameAlert, setNameAlert] = useState('닉네임을 입력하세요!');
   const [nameAlertColor, setNameAlertColor] = useState('blue');
@@ -34,8 +35,19 @@ const LoginProfile = () => {
   const [next, setNext] = useState('계속하기');
   /* #endregion */
 
-  // TODO: Function 추가
-  // TODO: Firestore 및 Auth 추가
+  function nameCheck() {
+    const nameReg = /^[a-zA-z가-힣]{2,10}/;
+// TODO : firestore currentUser Check
+    if (nameReg.test(name)) {
+      setNameColor('black');
+      setNameAlertColor('green');
+      setNameAlert('사용할 수 있는 닉네임 입니다.');
+    } else {
+      setNameColor('lightgray');
+      setNameAlertColor('blue');
+      setNameAlert('사용할 수 없는 닉네임 입니다.');
+    }
+  }
 
   return (
     <View style={styles.container}>
@@ -45,26 +57,36 @@ const LoginProfile = () => {
       </TouchableOpacity>
 
       {/* 닉네임 */}
-      <TouchableOpacity style={{...styles.Button, borderColor: nameColor}}>
-        <TextInput
-          style={{...styles.Text, color: nameColor}}
-          placeholder={name}
-          placeholderTextColor="lightgray"
-        />
-      </TouchableOpacity>
+      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <View style={{...styles.Button, borderColor: nameColor}}>
+          <TextInput
+            style={{...styles.Text, color: nameColor}}
+            placeholder={'닉네임'}
+            placeholderTextColor="lightgray"
+            onChangeText={(text) => setName(text)}
+            value={name}
+          />
+        </View>
+        <TouchableOpacity
+          onPress={nameCheck}
+          style={{...styles.Button, width: 70, marginLeft: 15}}>
+          <Text>중복확인!</Text>
+        </TouchableOpacity>
+      </View>
+
       <Text style={{color: nameAlertColor}}>{nameAlert}</Text>
 
       {/* 성별 */}
       <TouchableOpacity style={{...styles.Button, borderColor: genderColor}}>
-        <Text style={{...styles.Text, color: nameColor}}>{gender}</Text>
+        <Text style={{...styles.Text, color: genderColor}}>{gender}</Text>
       </TouchableOpacity>
-      <Text style={{color: nameAlertColor}}>{genderAlert}</Text>
+      <Text style={{color: genderAlertColor}}>{genderAlert}</Text>
 
       {/* 생년월일 */}
       <TouchableOpacity style={{...styles.Button, borderColor: dateColor}}>
-        <Text style={{...styles.Text, color: nameColor}}>{date}</Text>
+        <Text style={{...styles.Text, color: dateColor}}>{date}</Text>
       </TouchableOpacity>
-      <Text style={{color: nameAlertColor}}>{dateAlert}</Text>
+      <Text style={{color: dateAlertColor}}>{dateAlert}</Text>
 
       {/* 계속하기 */}
       <TouchableOpacity style={styles.NextButton}>
