@@ -5,7 +5,8 @@ import {
     StyleSheet,
     Image,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity,
+    PixelRatio
 } from 'react-native';
 
 export default Feed = () => {
@@ -24,7 +25,18 @@ export default Feed = () => {
             <TouchableOpacity style={styles.imgContainer}>
                 <Image style={styles.feedImg} source={require('../../../../assets/img/night.png')}/>
             </TouchableOpacity>
-            
+            <TouchableOpacity style={styles.imgContainer}>
+                <Image style={styles.feedImg} source={require('../../../../assets/img/night.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.imgContainer}>
+                <Image style={styles.feedImg} source={require('../../../../assets/img/night.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.imgContainer}>
+                <Image style={styles.feedImg} source={require('../../../../assets/img/night.png')}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.imgContainer}>
+                <Image style={styles.feedImg} source={require('../../../../assets/img/night.png')}/>
+            </TouchableOpacity>
         </ScrollView>
     )
 }
@@ -33,15 +45,15 @@ export default Feed = () => {
 const styles = StyleSheet.create({
     container:{
         flexDirection:'row',
-        justifyContent:'space-between',
+        justifyContent:'space-evenly',
         flexWrap:'wrap',
         marginHorizontal:'1%',
         backgroundColor:'grey'
         },
     imgContainer:{
         backgroundColor:'lightyellow',
-        width:125,
-        height:125,
+        width:PixelRatio.getPixelSizeForLayoutSize(45),
+        height:PixelRatio.getPixelSizeForLayoutSize(45),
         marginTop:'1%'
     },
     feedImg:{
