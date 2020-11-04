@@ -33,6 +33,7 @@ const LoginProfile = () => {
 
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
+  const [dateString, setDateString] = useState('');
   const [dateColor, setDateColor] = useState('lightgray');
   const [dateAlert, setDateAlert] = useState('생년월일을 선택하세요!');
   const [dateAlertColor, setDateAlertColor] = useState('blue');
@@ -80,9 +81,21 @@ const LoginProfile = () => {
   }
 
   const onChangeDate = (event, selectedDate) => {
-    setDate(selectedDate);
     setDatePicker(false);
+    setDate(selectedDate);
+    setDatetoString(selectedDate);
+    setDateColor('black');
+    setDateAlert('');
   };
+
+  function setDatetoString(selectedDate) {
+    var birthDate = selectedDate.toJSON();
+    var yy = birthDate.substring(0, 4);
+    var mm = birthDate.substring(5, 7);
+    var dd = birthDate.substring(8, 10);
+    console.log(date.toJSON());
+    setDateString(yy + '년 ' + mm + '월 ' + dd + '일');
+  }
 
   /* #region XML */
   return (
@@ -142,7 +155,7 @@ const LoginProfile = () => {
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View style={{...styles.Button, borderColor: nameColor}}>
           <TextInput
-            style={{...styles.Text, color: nameColor}}
+            style={{...styles.TextInput}}
             placeholder={'닉네임'}
             placeholderTextColor="lightgray"
             onChangeText={(text) => setName(text)}
@@ -162,7 +175,7 @@ const LoginProfile = () => {
       <TouchableOpacity
         onPress={() => setModalVisible(true)}
         style={{...styles.Button, borderColor: genderColor}}>
-        <Text style={{...styles.Text, color: genderColor}}>{gender}</Text>
+        <Text style={{color: genderColor}}>{gender}</Text>
       </TouchableOpacity>
       <Text style={{color: genderAlertColor}}>{genderAlert}</Text>
 
@@ -170,9 +183,7 @@ const LoginProfile = () => {
       <TouchableOpacity
         onPress={() => setDatePicker(true)}
         style={{...styles.Button, borderColor: dateColor}}>
-        <Text style={{...styles.Text, color: dateColor}}>
-          {date.toLocaleDateString()}
-        </Text>
+        <Text style={{color: dateColor}}>{dateString}</Text>
       </TouchableOpacity>
       <Text style={{color: dateAlertColor}}>{dateAlert}</Text>
 
@@ -245,8 +256,8 @@ const styles = StyleSheet.create({
     height: 40,
     marginTop: 15,
   },
-  Text: {
-    paddingHorizontal: 50,
+  TextInput: {
+    paddingHorizontal: 60,
   },
   NextButton: {
     marginTop: 50,
@@ -258,35 +269,3 @@ const styles = StyleSheet.create({
 /* #endregion */
 
 export default LoginProfile;
-
-// import React, {useState} from 'react';
-// import {View, Text, Button, Platform} from 'react-native';
-// import DateTimePicker from '@react-native-community/datetimepicker';
-
-// const LoginProfile = () => {
-//   const [date, setDate] = useState(new Date(1598051730000));
-//   const [show, setShow] = useState(false);
-
-//   const onChange = (event, selectedDate) => {
-//     const currentDate = selectedDate;
-//     setDate(currentDate);
-//     console.log(currentDate);
-//   };
-
-//   return (
-//     <View>
-//       <View>
-//         <Button onPress={() => setShow(true)} title="Show date picker!" />
-//         <Text>{date.toDateString()}</Text>
-//       </View>
-//       <DateTimePicker
-//         value={date}
-//         mode={'date'}
-//         display="spinner"
-//         onChange={onChange}
-//       />
-//     </View>
-//   );
-// };
-
-// export default LoginProfile;
