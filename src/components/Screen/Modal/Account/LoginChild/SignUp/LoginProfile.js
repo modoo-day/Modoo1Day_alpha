@@ -9,10 +9,12 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import ImagePicker from 'react-native-image-picker';
+
 /* #endregion */
 
 const LoginProfile = () => {
-  /* #region useState */
+/* #region useState */
   const [modalVisible, setModalVisible] = useState(false);
 
   const [img, setImg] = useState(
@@ -37,6 +39,31 @@ const LoginProfile = () => {
   const [next, setNext] = useState('계속하기');
   /* #endregion */
 
+  const photoOptions = {
+    title: 'Select Profile',
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+    mediaType: 'photo',
+    maxWidth: 3000,
+    maxHeight: 3000,
+  };
+
+  function loadImg() {
+    ImagePicker.launchImageLibrary(photoOptions, (response) => {
+      console.log('Response = ', response);
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else {
+        const source = {uri: response.uri};
+        setImg(source);
+      }
+    });
+  }
+
   function nameCheck() {
     const nameReg = /^[a-zA-z가-힣]{2,10}/;
     // TODO : firestore currentUser Check
@@ -51,6 +78,7 @@ const LoginProfile = () => {
     }
   }
 
+/* #region XML */
   return (
     <View style={styles.container}>
       {/* 성별 선택하는 팝업창 */}
@@ -91,7 +119,7 @@ const LoginProfile = () => {
       </Modal>
 
       {/* 프로필 이미지 */}
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => loadImg()}>
         <Image source={img} style={styles.Image} />
       </TouchableOpacity>
 
@@ -136,6 +164,7 @@ const LoginProfile = () => {
     </View>
   );
 };
+/* #endregion */
 
 /* #region CSS */
 const styles = StyleSheet.create({
