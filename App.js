@@ -9,11 +9,10 @@ import {
 } from 'react-native';
 import Root from './src/components/Root';
 
-
 const App: () => React$Node = () => {
   return (
     <>
-      <Root/>
+      <Root />
     </>
   );
 };
