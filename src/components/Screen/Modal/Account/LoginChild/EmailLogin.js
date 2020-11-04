@@ -28,6 +28,7 @@ const EmailLogin = ({navigation}) =>{
             <View style={styles.mid}>
                 <Button
                     title='시작하기!'
+                    onPress={()=>navigation.navigate('MarketRoute')}
                 />
             </View>
             <View style={styles.bottom}>
