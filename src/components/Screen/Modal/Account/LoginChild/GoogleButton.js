@@ -19,6 +19,8 @@ const GoogleButton = () =>{
     )
 }
 
+export default GoogleButton;
+
 
 const styles = StyleSheet.create({
     button: {

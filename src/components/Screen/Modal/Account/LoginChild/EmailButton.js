@@ -5,13 +5,13 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-const KakaoButton = () =>{
+const EmailButton = () =>{
     return(
         <TouchableOpacity 
             // onPress={() => googleSignIn()}
         >
           <Image
-            source={require('../../../../../assets/icons/kakaoLogin.png')}
+            source={require('../../../../../assets/icons/emailLogin.png')}
             style={styles.button}
             resizeMode={'contain'}
           />
@@ -19,7 +19,8 @@ const KakaoButton = () =>{
     )
 }
 
-export default KakaoButton;
+export default EmailButton;
+
 
 const styles = StyleSheet.create({
     button: {
