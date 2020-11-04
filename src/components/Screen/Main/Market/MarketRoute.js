@@ -1,7 +1,8 @@
 import React from 'react';
 import MarketFind from './MarketFind';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import MarketStatus from './MarketStatus';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
 
 
 export default MarketRoute = ({navigation}) => {
@@ -20,8 +21,8 @@ export default MarketRoute = ({navigation}) => {
           style: { backgroundColor: 'white'},
           }}
         >
-          <NavigationRouter.Screen name='MarketFind' component={MarketFind} />
           <NavigationRouter.Screen name='MarketStatus' component={MarketStatus} />
+          <NavigationRouter.Screen name='MarketFind' component={MarketFind} />
         </NavigationRouter.Navigator>
       );
 }

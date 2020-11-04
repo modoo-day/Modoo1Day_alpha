@@ -2,6 +2,11 @@
   "name": "Modoo1Day_alpha",
   "version": "0.0.1",
   "private": true,
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts/"
+    ]
+  },
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -12,18 +17,26 @@
   "dependencies": {
     "@react-native-community/datetimepicker": "3.0.4",
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-firebase/app": "^8.4.7",
+    "@react-native-firebase/auth": "^9.3.2",
+    "@react-native-firebase/firestore": "^7.9.1",
+    "@react-native-firebase/storage": "^7.4.11",
     "@react-navigation/bottom-tabs": "^5.10.2",
     "@react-navigation/material-top-tabs": "^5.3.2",
     "@react-navigation/native": "^5.8.2",
     "@react-navigation/stack": "^5.11.1",
+    "accordion-collapse-react-native": "^0.4.0",
     "react": "16.13.1",
     "react-native": "0.63.3",
+    "react-native-elements": "^3.0.0-alpha.1",
     "react-native-gesture-handler": "^1.8.0",
-    "react-native-image-picker": "2.3.4",
+    "react-native-progress": "^4.1.2",
     "react-native-reanimated": "^1.13.1",
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.12.0",
-    "react-native-tab-view": "^2.15.2"
+    "react-native-tab-view": "^2.15.2",
+    "react-native-vector-icons": "^7.1.0",
+    "react-native-view-more-text": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

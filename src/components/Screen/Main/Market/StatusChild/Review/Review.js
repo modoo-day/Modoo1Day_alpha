@@ -1,10 +1,124 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Button, Image, TouchableOpacity} from 'react-native';
+import { Rating } from 'react-native-elements';
 
-export default Review = () => {
+
+const Review = ({navigation}) =>{
     return(
-        <View>
-            <Text>Review</Text>
-        </View>
-    )
+        <ScrollView style={styles.container}>
+            <View style={styles.buttonContainer}>
+                <Button
+                    title='리뷰 쓰기'
+                    onPress={()=>navigation.navigate('ReviewWrite')}
+                />
+            </View>
+            <View style={styles.listContianer}>
+                <TouchableOpacity 
+                    style={styles.list}
+                    onPress={()=>navigation.navigate('ReviewDetail')}
+                >
+                    <View style={styles.listIconContainer}>
+                        <Image style={styles.listIcon} source={require('../../../../../../assets/icons/crown.png')}/>
+                    </View>
+                    <View style={styles.postContainer}>
+                        <View style={styles.postTitleContainer}>
+                            <Text style={styles.title}>리뷰 내용</Text>
+                        </View>
+                        <View style={styles.postBottomContainer}>
+                            <Text style={styles.bottomText}>엄에진</Text>
+                            <Text style={styles.bottomText}>2020.10.31</Text>
+                            <View style={styles.ratingContainer}>
+                                <Rating
+                                    // count={5}
+                                    // defaultRating={5}
+                                    // size={5}
+                                    showRating={false}
+                                    readonly 
+                                    startingValue={5}
+                                    imageSize={20}
+                                />
+                            </View>
+                        </View>
+                    </View>
+                </TouchableOpacity>
+                
+            </View>
+            
+            
+        </ScrollView>
+
+        
+    )    
 }
+
+export default Review
+
+
+const styles = StyleSheet.create({
+    container:{
+    //    backgroundColor:'lightblue'
+    },
+    buttonContainer:{
+        backgroundColor:'pink',
+        height:50
+    },
+    buttonLayout: {
+        backgroundColor: '#ffcd2c',
+        borderTopWidth: 2,
+        borderBottomWidth: 2,
+        height: '100%',
+        borderRadius:0
+    },
+    buttonText: {
+        fontFamily: 'neodgm',
+        fontSize: 10,
+    },
+    listContianer:{
+        
+        //backgroundColor:'lightgreen',
+        
+    },
+    list:{
+        flexDirection:'row',
+        borderBottomWidth:0.9,
+        justifyContent:'space-between',
+        paddingHorizontal:'4%'
+
+    },
+    listIconContainer:{
+        marginTop:'2.2%'
+    },
+    listIcon:{
+        width:25,
+        height:25
+    },
+    postContainer:{
+        height:85,
+        //backgroundColor:'lightyellow',
+        width:'100%'
+    },
+    postTitleContainer:{
+       // backgroundColor:'pink',
+        height:50,
+        marginTop:'2.2%',
+        marginHorizontal:'5%'
+    },
+    title:{
+        fontSize:20,
+        fontFamily:'neodgm'
+    },
+    postBottomContainer:{
+      //  backgroundColor:'grey',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'baseline',
+        marginHorizontal:'5%'
+    },
+    bottomText:{
+        fontFamily:'neodgm',
+        fontSize:15
+    },
+    ratingContainer:{
+    
+    }
+})
