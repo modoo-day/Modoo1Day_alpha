@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
   StyleSheet,
@@ -6,9 +7,12 @@ import {
 } from 'react-native';
 
 const EmailButton = () =>{
+
+    const navigation = useNavigation();
+
     return(
         <TouchableOpacity 
-            // onPress={() => googleSignIn()}
+            onPress={() => navigation.navigate('EmailLogin')}
         >
           <Image
             source={require('../../../../../assets/icons/emailLogin.png')}
