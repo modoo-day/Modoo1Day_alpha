@@ -60,7 +60,10 @@ const styles = StyleSheet.create({
     logoText:{
         fontSize:50,
         color:'#ffcd2c',
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        textShadowColor:'black',
+        textShadowOffset: {width: 1,height: 1},
+        textShadowRadius:1,
     },
     mid:{
         flex:1,
