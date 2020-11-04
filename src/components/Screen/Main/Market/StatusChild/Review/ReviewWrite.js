@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput, ScrollView, Button} from 'react-native';
 import { AirbnbRating } from 'react-native-elements';
 
 
 
 const ReviewWrite = ({navigation}) =>{
+
+    const [text, setText] = useState('');
+
     return(
         <ScrollView contentContainerStyle={{maxHeight:'200%'}}>
 
@@ -31,6 +34,8 @@ const ReviewWrite = ({navigation}) =>{
                     <TextInput
                         style={styles.input}
                         multiline={true}
+                        value={text}
+                        onChangeText={(contents) => setText(contents)}
                     ></TextInput>
                 </View>
 
@@ -39,6 +44,7 @@ const ReviewWrite = ({navigation}) =>{
                         <Button
                             title='등록하기'
                             onPress={()=>navigation.goBack()}
+                            disabled={text== '' ? true:false}
                         />
                     </View>
             </View>
