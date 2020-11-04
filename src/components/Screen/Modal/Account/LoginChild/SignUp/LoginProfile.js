@@ -4,15 +4,17 @@ import {
   View,
   Text,
   Image,
+  Modal,
   TextInput,
   StyleSheet,
   TouchableOpacity,
-  Button,
 } from 'react-native';
 /* #endregion */
 
 const LoginProfile = () => {
   /* #region useState */
+  const [modalVisible, setModalVisible] = useState(false);
+
   const [img, setImg] = useState(
     require('../../../../../../assets/icons/modoo.png'),
   );
@@ -37,7 +39,7 @@ const LoginProfile = () => {
 
   function nameCheck() {
     const nameReg = /^[a-zA-z가-힣]{2,10}/;
-// TODO : firestore currentUser Check
+    // TODO : firestore currentUser Check
     if (nameReg.test(name)) {
       setNameColor('black');
       setNameAlertColor('green');
@@ -51,6 +53,43 @@ const LoginProfile = () => {
 
   return (
     <View style={styles.container}>
+      {/* 성별 선택하는 팝업창 */}
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('이미 제출되었습니다.');
+        }}>
+        <View style={styles.modalcenterView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalTitle}>성별을 선택해주세요!</Text>
+            <View style={styles.modalButtonView}>
+              <TouchableOpacity
+                onPress={() => {
+                  setModalVisible(false);
+                  setGender('남자');
+                  setGenderColor('black');
+                  setGenderAlert('');
+                }}
+                style={styles.modalButton}>
+                <Text style={styles.modalText}>남자</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  setModalVisible(false);
+                  setGender('여자');
+                  setGenderColor('black');
+                  setGenderAlert('');
+                }}
+                style={styles.modalButton}>
+                <Text style={styles.modalText}>여자</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+
       {/* 프로필 이미지 */}
       <TouchableOpacity>
         <Image source={img} style={styles.Image} />
@@ -77,7 +116,9 @@ const LoginProfile = () => {
       <Text style={{color: nameAlertColor}}>{nameAlert}</Text>
 
       {/* 성별 */}
-      <TouchableOpacity style={{...styles.Button, borderColor: genderColor}}>
+      <TouchableOpacity
+        onPress={() => setModalVisible(true)}
+        style={{...styles.Button, borderColor: genderColor}}>
         <Text style={{...styles.Text, color: genderColor}}>{gender}</Text>
       </TouchableOpacity>
       <Text style={{color: genderAlertColor}}>{genderAlert}</Text>
@@ -101,6 +142,45 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     //    backgroundColor: 'pink',
+  },
+  modalcenterView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // 투명도 조절
+    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  modalButtonView: {
+    flexDirection: 'row',
+  },
+  modalButton: {
+    borderWidth: 1,
+    borderRadius: 20,
+    marginHorizontal: 15,
+    marginTop: 25,
+    alignItems: 'center',
+  },
+  modalTitle: {
+    fontSize: 30,
+  },
+  modalText: {
+    paddingVertical: 10,
+    paddingHorizontal: 20,
   },
   Image: {
     marginTop: 55,
