@@ -1,4 +1,3 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, Image, TouchableOpacity} from 'react-native';
 
