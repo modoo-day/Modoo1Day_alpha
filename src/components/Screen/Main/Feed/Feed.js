@@ -98,6 +98,86 @@ const DATA = [
         author:'김대기 기자',
         participants:'1000'
       },
+      {
+        id: '5ewrdfd94a0f-3da1-471f-basdfasfdsadfasdfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd94a0f-3da1-471f-basdfasdfd96-145571asdfasdfe29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd94a0f-3da1-471f-basdfasdfd96-14557ef1e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd94a0f-3da1-471f-basvadfewfddfasdfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd94a0f-3da1-471f-basdfasrujhtgefedfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd94a0f-3da1-47qwerqwerqeewwerqw1f-basdfasrujhtgefedfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd9qwe4a0f-3da1-471f-basdfasrujhtgefedfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd9qtw4a0f-3da1-471f-basdfasrujhtgefedfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd9qtw4a0f-3qewrqwerqwerqwerqwrda1-471f-basdfasrujhtgefedfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
+      {
+        id: '5ewrdfd9qtw4a0f-3da1-4qwerqwerqwerqwerqwerqwerqwer71f-basdfasrujhtgefedfd96-145571e29d72',
+        title: 'Third Item',
+        img:require('../../../../assets/img/night.png'),
+        tag:'#물',
+        author:'김대기 기자',
+        participants:'1000'
+      },
   ];
 
   
@@ -131,6 +211,9 @@ export default Feed = () => {
                 //keyExtractor={item => item.id}
                 horizontal={false}
                 numColumns={3}
+                //removeClippedSubviews={true}
+                maxToRenderPerBatch={1}
+                //initialNumToRender={1}
             />
         </View>
 
