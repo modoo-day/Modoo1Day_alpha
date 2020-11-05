@@ -152,11 +152,11 @@ const styles = StyleSheet.create({
     paddingLeft: '5%',
   },
   listTitleContainer: {
-    flex: 115,
-    justifyContent: 'center',
+    flex:2,
+    justifyContent: 'flex-start',
+    //backgroundColor:'grey'
   },
   listTitle: {
-    top: '5%',
     fontFamily: 'neodgm',
     fontSize: 18,
   },
@@ -164,6 +164,7 @@ const styles = StyleSheet.create({
     //backgroundColor:'pink',
     bottom: '10%',
     marginRight: '80%',
+    width:'100%'
   },
   listTag: {
     fontFamily: 'neodgm',
