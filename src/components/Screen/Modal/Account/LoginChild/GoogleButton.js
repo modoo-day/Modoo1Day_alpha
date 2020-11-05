@@ -6,6 +6,8 @@ import {
   statusCodes,
 } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
+
 
 GoogleSignin.configure({
   webClientId:
@@ -14,6 +16,7 @@ GoogleSignin.configure({
 });
 
 const GoogleButton = () => {
+  navigation=useNavigation();
   // 구글 전용 에러 핸들링
   const googleSignInErrorHandling = (error) => {
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -64,6 +67,7 @@ const GoogleButton = () => {
     // ..
     // ..
     console.log(auth().currentUser);
+    navigation.navigate('Home')
   };
   return (
     <TouchableOpacity onPress={() => googleSignIn()}>

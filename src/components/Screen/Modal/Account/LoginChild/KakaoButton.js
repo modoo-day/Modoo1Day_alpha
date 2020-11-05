@@ -4,8 +4,13 @@ import KakaoLogins, {KAKAO_AUTH_TYPES} from '@react-native-seoul/kakao-login';
 import {firebase} from '@react-native-firebase/auth';
 import functions from '@react-native-firebase/functions';
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
+
 
 const KakaoButton = () => {
+
+  const navigation = useNavigation();
+
   // 카카오 로그인 메소드
   const kakaoSignIn = function () {
     console.log('kakaoSignIn Function 시작');
@@ -13,7 +18,7 @@ const KakaoButton = () => {
       .login([KAKAO_AUTH_TYPES.Talk, KAKAO_AUTH_TYPES.Account])
       .then((res) => {
         token = res.accessToken;
-        console.log('카카오 로그인 성공', result);
+        console.log('카카오 로그인 성공', res);
         firebase
           .app()
           .functions('asia-northeast3')
@@ -25,6 +30,7 @@ const KakaoButton = () => {
               .then(() => {
                 console.log('카카오 로그인 완료:', auth().currentUser);
                 // 여기서부터 로그인 완료했을 때 수행하는 동작.
+                navigation.navigate('Home')
               })
               .catch((err) => {
                 console.log('Firebase Token Auth에서 에러:', err);
