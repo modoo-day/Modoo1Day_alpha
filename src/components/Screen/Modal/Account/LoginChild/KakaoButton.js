@@ -7,9 +7,10 @@ import auth from '@react-native-firebase/auth';
 
 const KakaoButton = () => {
   // 카카오 로그인 메소드
-  const kakaoLogin = function () {
-    console.log('kakaoLogin Function 시작');
-    KakaoLogins.login([KAKAO_AUTH_TYPES.Talk, KAKAO_AUTH_TYPES.Account])
+  const kakaoSignIn = function () {
+    console.log('kakaoSignIn Function 시작');
+    kakaoLogins
+      .login([KAKAO_AUTH_TYPES.Talk, KAKAO_AUTH_TYPES.Account])
       .then((res) => {
         token = res.accessToken;
         console.log('카카오 로그인 성공', result);
@@ -40,7 +41,7 @@ const KakaoButton = () => {
       });
   };
   return (
-    <TouchableOpacity onPress={kakaoLogin}>
+    <TouchableOpacity onPress={kakaoSignIn}>
       <Image
         source={require('../../../../../assets/icons/kakaoLogin.png')}
         style={styles.button}
