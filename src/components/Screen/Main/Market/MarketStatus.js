@@ -1,24 +1,65 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
-    View,
-    Image,
-    Text,
-    ScrollView,
-    StyleSheet,
-    Alert,
-    Modal,
-    TouchableOpacity,
-  } from 'react-native';
+  View,
+  Image,
+  Text,
+  ScrollView,
+  StyleSheet,
+  Alert,
+  Modal,
+  TouchableOpacity,
+} from 'react-native';
+import QuickViewChild from './Child/QuickViewChild';
+import firestore from '@react-native-firebase/firestore';
 
+const MarketStatus = ({navigation}) => {
+  const [modalVisible, setModalVisible] = useState(false);
 
+  const [hotDataA, setHotDataA] = useState({});
+  const [hotDataB, setHotDataB] = useState({});
+  const [newDataA, setNewDataA] = useState({});
+  const [newDataB, setNewDataB] = useState({});
+  const [recDataA, setRecDataA] = useState({});
+  const [recDataB, setRecDataB] = useState({});
+  const MODOOD = 1;
+  const modooDataRef = firestore().collection('MODOOS_DATA');
+  const refreshMain = () => {
+    // Data들 파베에서 불러오기.
+    // 인기 모두 불러오기 (참여자 수 내림차순)
+    console.log('REFRESHMAIN 시작');
+    modooDataRef
+      .orderBy('participateCount_num', 'desc')
+      .limit(2)
+      .get()
+      .then((snst) => {
+        console.log('HotData 받아옴');
+        setHotDataA(snst._docs[0]._data);
+        setHotDataB(snst._docs[1]._data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
+    // 최신 모두 불러오기 (타임스탬프 내림차순)
+    modooDataRef
+      .orderBy('upload_time', 'desc')
+      .limit(2)
+      .get()
+      .then((snst) => {
+        console.log('NewData 받아옴');
+        setNewDataA(snst._docs[0]._data);
+        setNewDataB(snst._docs[1]._data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    refreshMain();
+  }, []);
 
-export default MarketStatus = ({navigation}) => {
-
-    const [modalVisible, setModalVisible] = useState(false);
-
-    return(
-        <ScrollView>
+  return (
+    <ScrollView>
       {/* 광고 배너 */}
       <Modal
         animationType="fade"
@@ -49,7 +90,6 @@ export default MarketStatus = ({navigation}) => {
           </View>
         </View>
       </Modal>
-
       <TouchableOpacity
         onPress={() => {
           setModalVisible(true);
@@ -64,72 +104,29 @@ export default MarketStatus = ({navigation}) => {
       <View style={styles.category}>
         <Text style={styles.categoryText}>인기 모두 🔥</Text>
       </View>
-      <View style={styles.listContainer}>
-        <TouchableOpacity
-          onPress={()=>navigation.navigate('StatusRoute')}
-        >
-          <Image style={styles.listImage} source={
-            //   {uri: imgUrl}
-            require('../../../../assets/img/night.png')
-            } 
-          />
-        </TouchableOpacity>
-        <View style={styles.listTextContainer}>
-          <View style={styles.listTitleContainer}>
-            <Text style={styles.listTitle}>
-                {/* {info.title_str} */}
-                물 마시기
-            </Text>
-          </View>
-          <TouchableOpacity style={styles.listTagContainer}>
-            <Text style={styles.listTag}>
-              {/* {info.interestsArr.map((dt) => {
-                return '#'.concat(dt+' ');
-              })} */}
-              #물
-            </Text>
-          </TouchableOpacity>
-          <View style={styles.listBottomTextContainer}>
-            <View style={styles.profileContainer}>
-              <Image
-                style={styles.profileIcon}
-                source={require('../../../../assets/icons/profile.png')}
-              />
-              <Text style={styles.author}>
-                  {/* {usrData.name} */}
-                  엄예진
-                  </Text>
-            </View>
-            <Text style={styles.participants}>
-              {/* {info.participate_count_num} */}
-              1000명 참여
-            </Text>
-          </View>
-        </View>
-      </View>
-      {/* <QuickViewChild {...hotDataFirst} />
-      <QuickViewChild {...hotDataSecond} /> */}
+
+      <QuickViewChild {...hotDataA} />
+      <QuickViewChild {...hotDataB} />
 
       {/* 신규 콘텐츠 */}
-      {/* <View style={styles.category}>
+      <View style={styles.category}>
         <Text style={styles.categoryText}>신규 모두 ✨</Text>
       </View>
-      <QuickViewChild {...newDataFirst} />
-      <QuickViewChild {...newDataSecond} /> */}
+      <QuickViewChild {...newDataA} />
+      <QuickViewChild {...newDataB} />
 
       {/* 추천 콘텐츠 */}
-      {/* <View style={styles.category}>
+      <View style={styles.category}>
         <Text style={styles.categoryText}>추천 모두 🍳</Text>
       </View>
-      <QuickViewChild {...recDataFirst} />
-      <QuickViewChild {...recDataSecond} /> */}
+      <QuickViewChild {...recDataA} />
+      <QuickViewChild {...recDataB} />
     </ScrollView>
-    )
-}
-
-
+  );
+};
+export default MarketStatus;
 const styles = StyleSheet.create({
-    // 모달창
+  // 모달창
   modalContainer: {
     backgroundColor: 'white',
     width: '100%',
@@ -174,8 +171,8 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: 'center',
   },
-//콘텐츠 카테고리
-category: {
+  //콘텐츠 카테고리
+  category: {
     marginTop: '8%',
     marginBottom: '4%',
     marginLeft: '4%',
@@ -243,5 +240,4 @@ category: {
     fontSize: 15,
     fontFamily: 'neodgm',
   },
-
-})
+});
