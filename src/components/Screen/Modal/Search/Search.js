@@ -1,35 +1,4 @@
-// import React,{useState} from 'react';
-// import {View, Text, StyleSheet} from 'react-native';
-// import { SearchBar } from 'react-native-elements';
-
-
-// const Search = () => {
-
-//     const [search, setSearch] = useState('');
-
-//     return(
-//         <View>
-//             <SearchBar
-//                 placeholder="Type Here..."
-//                 value={search}
-//                 onChangeText={(text) => setSearch(text)}
-//             />
-//         </View>
-//     )
-// }
-
-// export default Search;
-
-
-// example 긁어옴
-
-// Searching using Search Bar Filter in React Native List View
-// https://aboutreact.com/react-native-search-bar-filter-on-listview/
-
-// import React in our code
 import React, { useState, useEffect } from 'react';
-
-// import all the components we are going to use
 import { SafeAreaView, Text, StyleSheet, View, FlatList } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
@@ -39,6 +8,7 @@ const App = () => {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
+    //해당 링크에서 json리스트를 불러옴.
     fetch('https://jsonplaceholder.typicode.com/posts')
       .then((response) => response.json())
       .then((responseJson) => {
@@ -51,11 +21,10 @@ const App = () => {
   }, []);
 
   const searchFilterFunction = (text) => {
-    // Check if searched text is not blank
+    // SearchBar에 입력된 값이 있는지 체크함.
     if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource
-      // Update FilteredDataSource
+      // 입력된 게 있으면 마스터데이터에서 필터링한 후에 뉴데이터로 옮김.
+      // 뉴 데이터를 filteredDataSource 로 옮김.
       const newData = masterDataSource.filter(function (item) {
         const itemData = item.title
           ? item.title.toUpperCase()
@@ -66,8 +35,8 @@ const App = () => {
       setFilteredDataSource(newData);
       setSearch(text);
     } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
+      // 아무것도 입력된 게 없으면 데이터전부 (마스터데이터) 보이게 함.
+      // 마스터데이터 그대로 filteredDataSource로 옮김.
       setFilteredDataSource(masterDataSource);
       setSearch(text);
     }
@@ -75,7 +44,7 @@ const App = () => {
 
   const ItemView = ({ item }) => {
     return (
-      // Flat List Item
+      // flatlist 아이템이 보여지는 레이아웃
       <Text style={styles.itemStyle} onPress={() => getItem(item)}>
         {item.id}
         {'.'}
@@ -84,9 +53,10 @@ const App = () => {
     );
   };
 
+  
   const ItemSeparatorView = () => {
     return (
-      // Flat List Item Separator
+    //flatlist item 사이를 나누는 줄
       <View
         style={{
           height: 0.5,
@@ -97,8 +67,8 @@ const App = () => {
     );
   };
 
+  //flatlist item을 클릭하면 뜨는 창.
   const getItem = (item) => {
-    // Function for click on an item
     alert('Id : ' + item.id + ' Title : ' + item.title);
   };
 
@@ -115,6 +85,7 @@ const App = () => {
         />
         <FlatList
           data={filteredDataSource}
+          //fiteredDataSource만 보이게 함.
           keyExtractor={(item, index) => index.toString()}
           ItemSeparatorComponent={ItemSeparatorView}
           renderItem={ItemView}
