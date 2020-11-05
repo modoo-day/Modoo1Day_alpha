@@ -11,7 +11,6 @@ import auth from '@react-native-firebase/auth';
 
 function PasswordCheck({navigation, route}) {
   // const {email, otherParam} = route.params;
-
   const passwordReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*])[A-Za-z\d~!@#$%^&*]{8,}$/;
 
   const [password, setPassword] = useState('');
@@ -73,24 +72,28 @@ function PasswordCheck({navigation, route}) {
   }
 
   return (
-    <View sytle={styles.container}>
-      <TextInput
-        style={styles.textinput}
-        placeholder="비밀번호"
-        //   secureTextEntry={true} // 비밀번호 **** 표시로 가려주는 Props
-        maxLength={15} // 최대 15자
-        onChangeText={(text) => checkPassword(text)}
-        value={password}
-      />
-      <TextInput
-        style={styles.textinput}
-        placeholder="비밀번호 확인"
-        //  secureTextEntry={true} // 비밀번호 **** 표시로 가려주는 Props
-        maxLength={15} // 최대 15자
-        onChangeText={(text) => checkPasswordValid(text)}
-        value={passwordValid}
-      />
-      <Text>{wrong}</Text>
+    <View style={styles.container}>
+      <View>
+        <TextInput
+          style={styles.textinput}
+          placeholder="비밀번호"
+          //   secureTextEntry={true} // 비밀번호 **** 표시로 가려주는 Props
+          maxLength={15} // 최대 15자
+          onChangeText={(text) => checkPassword(text)}
+          value={password}
+        />
+        <TextInput
+          style={styles.textinput}
+          placeholder="비밀번호 확인"
+          //  secureTextEntry={true} // 비밀번호 **** 표시로 가려주는 Props
+          maxLength={15} // 최대 15자
+          onChangeText={(text) => checkPasswordValid(text)}
+          value={passwordValid}
+        />
+      </View>
+
+      <Text style={styles.wrong}>{wrong}</Text>
+
       <TouchableOpacity
         style={styles.nextButton}
         onPress={() => {
@@ -111,11 +114,13 @@ const styles = StyleSheet.create({
   },
   textinput: {
     marginTop: 15,
-    alignSelf: 'center',
     width: 250,
     borderWidth: 1,
     borderRadius: 50,
-    backgroundColor: 'ivory',
+    textAlign: 'center',
+  },
+  wrong: {
+    marginTop: 20,
   },
   nextButton: {
     marginTop: 20,
