@@ -54,6 +54,8 @@ const MarketStatus = ({navigation}) => {
         console.log(err);
       });
   };
+
+  // Refresh 한번만 실행.
   useEffect(() => {
     refreshMain();
   }, []);
