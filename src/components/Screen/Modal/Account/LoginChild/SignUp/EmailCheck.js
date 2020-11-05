@@ -6,8 +6,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  Button,
 } from 'react-native';
-import Button from 'apsl-react-native-button';
 import firestore from '@react-native-firebase/firestore';
 // import auth from '@react-native-firebase/auth';
 // import AsyncStorage from '@react-native-community/async-storage';
@@ -137,11 +137,11 @@ function EmailCheck({navigation}) {
           value={email}
         />
         <Button
+          title={'이메일인증'}
           onPress={reqEmailVerify}
           style={styles.button}
           isDisabled={!isEmail}>
           {/* TODO : 버튼 스타일 적용 */}
-          <Text>이메일인증</Text>
         </Button>
       </View>
       <Text style={styles.wrong}>{wrong}</Text>
