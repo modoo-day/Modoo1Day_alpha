@@ -1,12 +1,9 @@
 import React from 'react';
 import {
     View, 
-    Text, 
     StyleSheet,
     Image,
-    ScrollView,
     TouchableOpacity,
-    PixelRatio,
     FlatList,
     RefreshControl
 } from 'react-native';
