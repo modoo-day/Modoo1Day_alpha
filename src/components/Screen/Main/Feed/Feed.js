@@ -7,7 +7,8 @@ import {
     ScrollView,
     TouchableOpacity,
     PixelRatio,
-    FlatList
+    FlatList,
+    RefreshControl
 } from 'react-native';
 
 const DATA = [
@@ -181,10 +182,24 @@ const DATA = [
   ];
 
   
-
+  const wait = (timeout) => {
+    return new Promise(resolve => {
+      setTimeout(resolve, timeout);
+    });
+  }
+  
 
 
 export default Feed = () => {
+
+    const [refreshing, setRefreshing] = React.useState(false);
+
+    const onRefresh = React.useCallback(() => {
+        setRefreshing(true);
+
+        wait(2000).then(() => setRefreshing(false));
+    }, []);
+
 
     const Item = ({img}) => (
         <View style={{flex:1, flexDirection:'column'}}>
@@ -214,6 +229,9 @@ export default Feed = () => {
                 //removeClippedSubviews={true}
                 maxToRenderPerBatch={1}
                 //initialNumToRender={1}
+                refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+                }
             />
         </View>
 
