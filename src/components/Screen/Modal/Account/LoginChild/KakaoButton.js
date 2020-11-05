@@ -9,7 +9,7 @@ const KakaoButton = () => {
   // 카카오 로그인 메소드
   const kakaoSignIn = function () {
     console.log('kakaoSignIn Function 시작');
-    kakaoLogins
+    KakaoLogins
       .login([KAKAO_AUTH_TYPES.Talk, KAKAO_AUTH_TYPES.Account])
       .then((res) => {
         token = res.accessToken;
