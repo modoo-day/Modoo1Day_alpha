@@ -188,7 +188,10 @@ export const LoginProfile = ({navigation}) => {
       <Text style={{color: dateAlertColor}}>{dateAlert}</Text>
 
       {/* 계속하기 */}
-      <TouchableOpacity style={styles.NextButton}>
+      <TouchableOpacity 
+        style={styles.NextButton}
+        onPress={()=>navigation.navigate('LoginTaste')}  
+      >
         <Text style={styles.NextText}>{next}</Text>
       </TouchableOpacity>
     </View>

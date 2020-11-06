@@ -100,7 +100,7 @@ export function PasswordCheck({navigation, route}) {
           console.log(isPassword, isPasswordValid);
           CreateEmailAuth();
           /* delay 2.5sec */
-          navigation.popToTop();
+          navigation.navigate('LoginProfile');
         }}>
         <Text style={styles.nextText}>{next}</Text>
       </TouchableOpacity>

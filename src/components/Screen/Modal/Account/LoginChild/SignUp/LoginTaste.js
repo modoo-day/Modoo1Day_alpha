@@ -4,7 +4,7 @@ import {View, Text, TouchableOpacity, Image, StyleSheet} from 'react-native';
 import Button from 'apsl-react-native-button';
 import LoginTasteBtn from './LoginTasteBtn';
 
-const LoginTaste = () => {
+const LoginTaste = ({navigation}) => {
   // 각 버튼 텍스트 리소스 선언
   var dta = {
     family: {
@@ -126,7 +126,11 @@ const LoginTaste = () => {
       <View style={styles.downView}>
         <View style={{flex: 0.2}}></View>
         <View style={{flex: 1}}>
-          <Button style={styles.intBtn} isDisabled={!(ckdBtns === 3)}>
+          <Button 
+            style={styles.intBtn} 
+            isDisabled={!(ckdBtns === 3)}
+            onPress={()=>navigation.navigate('Home')}  
+          >
             선택 완료!
           </Button>
         </View>
