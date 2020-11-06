@@ -4,13 +4,13 @@ import {
     Text, 
     StyleSheet,
     TextInput,
-    Button,
     TouchableOpacity,
     ScrollView,
     } from 'react-native';
 import auth from "@react-native-firebase/auth";
 import { useNavigation } from '@react-navigation/native';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
+import Button from 'apsl-react-native-button';
 
 
 
@@ -61,9 +61,8 @@ const EmailLogin = () =>{
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <Button
-                title='로그아웃'
                 onPress={logout}
-            />
+            > 로그아웃 </Button>
             <View style={styles.top}>
                 <View style={styles.inputContainer}>
                     <TextInput
@@ -82,12 +81,23 @@ const EmailLogin = () =>{
                 </View>
             </View>
             <View style={styles.mid}>
-                <Button
+                {/* <Button
                     title='시작하기!'
                     // onPress={()=>navigation.navigate('MarketRoute')}
                     onPress = {()=> login(email, password)}
                     disabled={email== '' || password=='' ? true:false}
-                />
+                /> */}
+                <Button 
+                    style={styles.button} 
+                    textStyle={styles.buttonText}
+                    //activeOpacity={1}
+                    disabledStyle={{backgroundColor:'white'}}
+                    isDisabled={email== '' || password=='' ? true:false}
+                    isLoading={false}
+                    onPress={()=>login(email, password)}
+                    >
+                    시작하기!
+                </Button>
             </View>
             <View style={styles.bottom}>
                 <TouchableOpacity
@@ -129,9 +139,21 @@ const styles = StyleSheet.create({
         borderRadius:30
     },
     mid:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         justifyContent:'center',
         height:100
+    },
+    button: {
+        width: '80%',
+        backgroundColor: '#ffcd2c',
+        borderWidth: 2,
+        height: '50%',
+        borderRadius:50,
+        alignSelf:'center'
+      },
+    buttonText: {
+        fontFamily: 'neodgm',
+        fontSize: 10,
     },
     bottom:{
         //backgroundColor:'lightblue',
@@ -145,4 +167,5 @@ const styles = StyleSheet.create({
         marginTop:'7%',
         fontFamily:'neodgm'
     },
+    
 })
