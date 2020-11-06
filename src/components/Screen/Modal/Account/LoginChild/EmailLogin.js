@@ -90,7 +90,9 @@ const EmailLogin = () =>{
                 />
             </View>
             <View style={styles.bottom}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={()=>navigation.navigate('LoginProfile')}
+                >
                     <Text style={styles.register}>회원가입</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>
