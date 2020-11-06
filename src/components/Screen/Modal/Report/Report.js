@@ -1,9 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, Alert} from 'react-native';
+import Button from 'apsl-react-native-button';
 import {Collapse,CollapseHeader, CollapseBody} from 'accordion-collapse-react-native';
 
 
-const Report =()=>{
+const ReportPage =()=>{
     return(
         <View style={styles.container}>
             <View style={styles.first}>
@@ -11,30 +12,54 @@ const Report =()=>{
             </View>
             <View style={styles.second}>
                 <Button
-                    title='스팸'
-                    onPress={()=> alert('신고 접수')}
-                />
+                    style={styles.buttonLayout} 
+                    textStyle={styles.buttonText}
+                    disabledStyle={{backgroundColor:'white'}}
+                    isDisabled={false}
+                    isLoading={false}
+                    onPress={()=>alert('신고접수')}
+                >
+                스팸
+                </Button>
             </View>
             <View style={styles.third}>
                 <Collapse style={{borderBottomWidth:1,borderTopWidth:1}}>
                     <CollapseHeader style={{flexDirection:'row',alignItems:'center',padding:10,backgroundColor:'#E6E6E6'}}>
                         <View>
-                            <Text>부적절합니다 ▼</Text>
+                            <Text>신고</Text>
                         </View>
                     </CollapseHeader>
                     <CollapseBody>
                         <Button
-                            title='신고사유'
-                            onPress={()=> alert('신고 접수')}
-                        />
+                            style={styles.buttonLayout1} 
+                            textStyle={styles.buttonText}
+                            disabledStyle={{backgroundColor:'white'}}
+                            isDisabled={false}
+                            isLoading={false}
+                            onPress={()=>alert('신고접수')}  
+                        >
+                        신고 사유 1
+                        </Button>
                         <Button
-                            title='신고사유'
-                            onPress={()=> alert('신고 접수')}
-                        />
+                            style={styles.buttonLayout2} 
+                            textStyle={styles.buttonText}
+                            disabledStyle={{backgroundColor:'white'}}
+                            isDisabled={false}
+                            isLoading={false}
+                            onPress={()=>alert('신고접수')}  
+                        >
+                        신고 사유 2
+                        </Button>
                         <Button
-                            title='신고사유'
-                            onPress={()=> alert('신고 접수')}
-                        />
+                            style={styles.buttonLayout2} 
+                            textStyle={styles.buttonText}
+                            disabledStyle={{backgroundColor:'white'}}
+                            isDisabled={false}
+                            isLoading={false}
+                            onPress={()=>alert('신고접수')}  
+                        >
+                        신고 사유 3
+                        </Button>
                     </CollapseBody>
                 </Collapse> 
             </View>
@@ -42,7 +67,7 @@ const Report =()=>{
     )
 }
 
-export default Report;
+export default ReportPage;
 
 const styles = StyleSheet.create({
     first:{
