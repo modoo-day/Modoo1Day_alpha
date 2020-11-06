@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, ScrollView, Image, TouchableOpacity, Button} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView, Image, TouchableOpacity} from 'react-native';
+import Button from 'apsl-react-native-button';
 
 
 
@@ -31,11 +32,23 @@ const ContentsWrite = ({navigation}) =>{
 
                 <View style={styles.bottomButtonContainer}>
 
-                    <Button
+                    {/* <Button
                         title='인증 하기'
                         onPress={()=>navigation.navigate('Certificate')}
                         disabled={text== '' ? true:false}
-                    />
+                    /> */}
+
+                    <Button 
+                        style={styles.button} 
+                        textStyle={styles.buttonText}
+                        //activeOpacity={1}
+                        disabledStyle={{backgroundColor:'white'}}
+                        isDisabled={text==''?true:false}
+                        isLoading={false}
+                        onPress={()=>navigation.navigate('Certificate')}
+                        >
+                        인증 하기
+                    </Button>
                 </View>
                     
             </View>
@@ -96,7 +109,15 @@ const styles = StyleSheet.create({
         height: '100%',
         borderRadius:10
     },
-    bottomButtonText: {
+    button: {
+        width: '105%',
+        backgroundColor: '#ffcd2c',
+        borderWidth: 2,
+        height: '100%',
+        borderRadius:10,
+        alignSelf:'center'
+      },
+    buttonText: {
         fontFamily: 'neodgm',
         fontSize: 10,
     },
