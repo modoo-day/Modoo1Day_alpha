@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
   Button,
+  Alert
 } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 // import auth from '@react-native-firebase/auth';
@@ -106,6 +107,7 @@ function EmailCheck({navigation}) {
           // 검증된 이메일 주소인지 확인.
           if (data.resPost == 'yes') {
             Alert.alert('통과됨.');
+            navigation.navigate('PasswordCheck')
           } else {
             Alert.alert('통과안됨.');
           }
@@ -148,10 +150,12 @@ function EmailCheck({navigation}) {
       {/* TODO : Functions with Firebase 작동하는지 확인 */}
       <TouchableOpacity
         Button
-        onPress={checkMailVerified}
-        // onPress={() =>
-        //   navigation.navigate('PasswordCheck', {email: email})
-        //
+        // onPress={
+        //   checkMailVerified
+        // }
+        onPress={() =>
+          navigation.navigate('PasswordCheck', {email: email})}
+        
       >
         <Text style={styles.next}>{next}</Text>
       </TouchableOpacity>

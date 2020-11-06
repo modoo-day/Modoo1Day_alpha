@@ -15,6 +15,8 @@ import Report from './Screen/Modal/Report/Report';
 import OpenA from './Screen/Main/Grow/Opened/OpenA';
 import EmailLogin from './Screen/Modal/Account/LoginChild/EmailLogin';
 import LoginProfile from './Screen/Modal/Account/LoginChild/SignUp/LoginProfile';
+import EmailCheck from './Screen/Modal/Account/LoginChild/SignUp/EmailCheck';
+import PasswordCheck from './Screen/Modal/Account/LoginChild/SignUp/PasswordCheck';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -54,6 +56,8 @@ function Root() {
 
           {/* 로그인 */}
           <Stack.Screen name='EmailLogin' component={EmailLogin}/>
+          <Stack.Screen name='EmailCheck' component={EmailCheck}/>
+          <Stack.Screen name='PasswordCheck' component={PasswordCheck}/>
           <Stack.Screen name='LoginProfile' component={LoginProfile}/>
 
 

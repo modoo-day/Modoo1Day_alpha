@@ -9,7 +9,7 @@ import {
 import {Button} from 'react-native-elements';
 import auth from '@react-native-firebase/auth';
 
-function PasswordCheck({navigation, route}) {
+export function PasswordCheck({navigation, route}) {
   // const {email, otherParam} = route.params;
   const passwordReg = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[~!@#$%^&*])[A-Za-z\d~!@#$%^&*]{8,}$/;
 
