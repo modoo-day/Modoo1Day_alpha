@@ -4,11 +4,12 @@ import {
     Text, 
     StyleSheet,
     Image,
-    Button,
     TouchableOpacity,
     ScrollView
 } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
+import Button from 'apsl-react-native-button';
+
 
 export default Growth = ({navigation}) => {
     return(
@@ -26,10 +27,20 @@ export default Growth = ({navigation}) => {
                         />
                     </View>
                     <View style={styles.buttonContainer}>
-                        <Button
+                        {/* <Button
                             title='모do 개설'
                             onPress={()=>navigation.navigate('OpenA')}
-                        />
+                        /> */}
+                        <Button 
+                            style={styles.button} 
+                            textStyle={styles.buttonText}
+                            //activeOpacity={1}
+                            disabledStyle={{backgroundColor:'white'}}
+                            isLoading={false}
+                            onPress={()=>navigation.navigate('OpenA')}
+                        >
+                        모do 개설
+                        </Button>
                     </View>
                 </View>
             </View>
@@ -90,7 +101,21 @@ const styles = StyleSheet.create({
         justifyContent:'space-between'
     },
     buttonContainer:{
-        width:'100%'
+        //backgroundColor:'grey',
+        width:'100%',
+        justifyContent:'flex-end'
+    },
+    button: {
+        width: '90%',
+        backgroundColor: '#ffcd2c',
+        borderWidth: 2,
+        height: '55%',
+        borderRadius:50,
+        alignSelf:'center'
+      },
+    buttonText: {
+        fontFamily: 'neodgm',
+        fontSize: 10,
     },
     bottom:{
         //backgroundColor:'lightblue',
