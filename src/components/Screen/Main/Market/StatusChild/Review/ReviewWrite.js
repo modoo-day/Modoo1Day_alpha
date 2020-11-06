@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, ScrollView, Button} from 'react-native';
+import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import { AirbnbRating } from 'react-native-elements';
+import Button from 'apsl-react-native-button';
 
 
 
@@ -41,12 +42,23 @@ const ReviewWrite = ({navigation}) =>{
 
 
                 <View style={styles.bottomButtonContainer}>
-                        <Button
+                        {/* <Button
                             title='등록하기'
                             onPress={()=>navigation.goBack()}
                             disabled={text== '' ? true:false}
-                        />
-                    </View>
+                        /> */}
+                    <Button 
+                        style={styles.button} 
+                        textStyle={styles.buttonText}
+                        //activeOpacity={1}
+                        disabledStyle={{backgroundColor:'white'}}
+                        isDisabled={text==''?true:false}
+                        isLoading={false}
+                        onPress={()=>navigation.goBack()}
+                        >
+                        등록하기
+                    </Button>
+                </View>
             </View>
         </ScrollView>
     )
@@ -116,8 +128,16 @@ const styles = StyleSheet.create({
         height: '100%',
         borderRadius:10
     },
-    bottomButtonText: {
+    button: {
+        width: '105%',
+        backgroundColor: '#ffcd2c',
+        borderWidth: 2,
+        height: '100%',
+        borderRadius:10,
+        alignSelf:'center'
+      },
+    buttonText: {
         fontFamily: 'neodgm',
-        fontSize: 1,
+        fontSize: 10,
     },
 })
