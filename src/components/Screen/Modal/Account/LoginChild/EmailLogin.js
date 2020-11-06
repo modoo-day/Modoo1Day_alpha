@@ -91,7 +91,7 @@ const EmailLogin = () =>{
             </View>
             <View style={styles.bottom}>
                 <TouchableOpacity
-                    onPress={()=>navigation.navigate('LoginProfile')}
+                    onPress={()=>navigation.navigate('EmailCheck')}
                 >
                     <Text style={styles.register}>회원가입</Text>
                 </TouchableOpacity>
