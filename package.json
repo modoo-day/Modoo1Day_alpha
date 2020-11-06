@@ -30,6 +30,7 @@
     "@react-navigation/native": "^5.8.2",
     "@react-navigation/stack": "^5.11.1",
     "accordion-collapse-react-native": "^0.4.0",
+    "apsl-react-native-button": "3.1.1",
     "react": "16.13.1",
     "react-native": "0.63.3",
     "react-native-elements": "^3.0.0-alpha.1",
