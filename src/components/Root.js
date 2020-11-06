@@ -14,6 +14,7 @@ import QuestionDetail from './Screen/Main/Market/StatusChild/Question/QuestionDe
 import Report from './Screen/Modal/Report/Report';
 import OpenA from './Screen/Main/Grow/Opened/OpenA';
 import EmailLogin from './Screen/Modal/Account/LoginChild/EmailLogin';
+import LoginProfile from './Screen/Modal/Account/LoginChild/SignUp/LoginProfile';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -53,6 +54,7 @@ function Root() {
 
           {/* 로그인 */}
           <Stack.Screen name='EmailLogin' component={EmailLogin}/>
+          <Stack.Screen name='LoginProfile' component={LoginProfile}/>
 
 
 

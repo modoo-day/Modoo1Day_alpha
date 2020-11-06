@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useReducer, useState} from 'react';
 import {
     View, 
     Text, 
@@ -6,42 +6,93 @@ import {
     TextInput,
     Button,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
     } from 'react-native';
+import auth from "@react-native-firebase/auth";
+import { useNavigation } from '@react-navigation/native';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
-const EmailLogin = ({navigation}) =>{
 
-    const [id, setId] = useState('');
-    const [pw, setPw] = useState('');
- 
+
+const EmailLogin = () =>{
+
+    navigation = useNavigation();
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    // const [userData, setUserData] = useState({});
+
+
+   
+
+    const handleEmail = (text) =>{
+        setEmail({text})
+    }
+
+    const handlePassword = (text) =>{
+        setPassword({text})
+    }
+
+    const login = (email, pass) => {
+        auth()
+        // 관리자에 의해 익명 로그인 막힘.
+        .signInAnonymously()
+        .then(() => {
+            console.log('User signed in anonymously');
+            navigation.navigate('Home')
+        })
+        .catch(error => {
+            if (error.code === 'auth/operation-not-allowed') {
+              console.log('Enable anonymous in your firebase console.');
+            }        
+
+            console.error(error);
+            navigation.navigate('Home')
+        })
+    }
+
+    const logout = () =>{
+        auth()
+        .signOut()
+        .then(() => console.log('User signed Out!'));
+    }
+    
     return(
         <ScrollView contentContainerStyle={styles.container}>
+            <Button
+                title='로그아웃'
+                onPress={logout}
+            />
             <View style={styles.top}>
                 <View style={styles.inputContainer}>
                     <TextInput
                         style={styles.id}
                         placeholder='아이디'
-                        value={id}
-                        onChangeText={(username) => setId(username)}
+                        onChangeText={handleEmail}
+                        autoCapitalize='none'
                     />
                     <TextInput
                         style={styles.pw}
                         placeholder='비밀번호'
-                        value={pw}
-                        onChangeText={(password) => setPw(password)}
+                        onChangeText={handlePassword}
+                        autoCapitalize='none'
+                        secureTextEntry={true}
                     />
                 </View>
             </View>
             <View style={styles.mid}>
                 <Button
                     title='시작하기!'
-                    onPress={()=>navigation.navigate('MarketRoute')}
-                    disabled={id== '' || pw=='' ? true:false}
+                    // onPress={()=>navigation.navigate('MarketRoute')}
+                    onPress = {()=> login(email, password)}
+                    disabled={email== '' || password=='' ? true:false}
                 />
             </View>
             <View style={styles.bottom}>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={()=>navigation.navigate('LoginProfile')}
+                >
                     <Text style={styles.register}>회원가입</Text>
                 </TouchableOpacity>
                 <TouchableOpacity>

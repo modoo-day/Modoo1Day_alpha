@@ -13,7 +13,7 @@ import ImagePicker from 'react-native-image-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 /* #endregion */
 
-const LoginProfile = ({navigation}) => {
+export const LoginProfile = ({navigation}) => {
   /* #region useState */
   const [modalVisible, setModalVisible] = useState(false);
 
