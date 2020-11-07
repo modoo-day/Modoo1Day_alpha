@@ -40,7 +40,7 @@ const QuickViewChild = (info) => {
   }
   // 로딩 완료면
   else {
-    console.log(info.title_str);
+    // console.log(info.title_str);
     return (
       <View style={styles.listContainer}>
         <TouchableOpacity onPress={() => navigation.navigate('StatusRoute')}>
