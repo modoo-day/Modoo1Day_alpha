@@ -46,7 +46,7 @@ const MarketStatus = ({navigation}) => {
       .limit(2)
       .get()
       .then((snst) => {
-        console.log('NewData 받아옴');
+        console.log('NewData 받아오기 성공');
         setNewDataA(snst._docs[0]._data);
         setNewDataB(snst._docs[1]._data);
       })
