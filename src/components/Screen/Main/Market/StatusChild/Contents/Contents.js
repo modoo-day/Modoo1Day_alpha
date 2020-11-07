@@ -7,8 +7,9 @@ import {
     ScrollView,
     StyleSheet,
     TouchableOpacity,
-    Button,
   } from 'react-native';
+import Button from 'apsl-react-native-button';
+
 
 export default Contents = () => {
     
@@ -107,10 +108,18 @@ export default Contents = () => {
             </View>
             </View>
             <View style={styles.buttonContainer}>
-                <Button
-                    title='인증 하기'
-                    onPress={()=>navigation.navigate('ContentsWrite')}
-                />
+
+              <Button 
+                style={styles.button} 
+                textStyle={styles.buttonText}
+                //activeOpacity={1}
+                disabledStyle={{backgroundColor:'white'}}
+                isDisabled={false}
+                isLoading={false}
+                onPress={()=>navigation.navigate('ContentsWrite')}
+                >
+                  인증 하기
+              </Button>
             </View>
         </ScrollView>
     )
@@ -256,6 +265,18 @@ const styles = StyleSheet.create({
         height:110,
         //backgroundColor:'pink'
     },
-    
+    button: {
+      width: '105%',
+      backgroundColor: '#ffcd2c',
+      borderWidth: 2,
+      //height: '35%',
+      //marginTop: '4%',
+      borderRadius:0,
+      alignSelf:'center'
+    },
+    buttonText: {
+      fontFamily: 'neodgm',
+      fontSize: 10,
+    },
   });
   

@@ -13,7 +13,7 @@ import ImagePicker from 'react-native-image-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 /* #endregion */
 
-const LoginProfile = ({navigation}) => {
+export const LoginProfile = ({navigation}) => {
   /* #region useState */
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -188,7 +188,10 @@ const LoginProfile = ({navigation}) => {
       <Text style={{color: dateAlertColor}}>{dateAlert}</Text>
 
       {/* 계속하기 */}
-      <TouchableOpacity style={styles.NextButton}>
+      <TouchableOpacity 
+        style={styles.NextButton}
+        onPress={()=>navigation.navigate('LoginTaste')}  
+      >
         <Text style={styles.NextText}>{next}</Text>
       </TouchableOpacity>
     </View>

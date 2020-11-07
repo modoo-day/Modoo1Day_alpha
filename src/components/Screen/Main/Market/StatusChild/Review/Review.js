@@ -1,16 +1,27 @@
 import React from 'react';
-import {View, Text, StyleSheet, ScrollView, Button, Image, TouchableOpacity} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Image, TouchableOpacity} from 'react-native';
 import { Rating } from 'react-native-elements';
+import Button from 'apsl-react-native-button';
 
 
 const Review = ({navigation}) =>{
     return(
         <ScrollView style={styles.container}>
             <View style={styles.buttonContainer}>
-                <Button
+                {/* <Button
                     title='리뷰 쓰기'
                     onPress={()=>navigation.navigate('ReviewWrite')}
-                />
+                /> */}
+                <Button 
+                    style={styles.button} 
+                    textStyle={styles.buttonText}
+                    //activeOpacity={1}
+                    disabledStyle={{backgroundColor:'white'}}
+                    isLoading={false}
+                    onPress={()=>navigation.navigate('ReviewWrite')}
+                    >
+                    리뷰 쓰기
+                </Button>
             </View>
             <View style={styles.listContianer}>
                 <TouchableOpacity 
@@ -120,5 +131,18 @@ const styles = StyleSheet.create({
     },
     ratingContainer:{
     
-    }
+    },
+    button: {
+        width: '105%',
+        backgroundColor: '#ffcd2c',
+        borderWidth: 2,
+        height: '100%',
+        //marginTop: '4%',
+        borderRadius:0,
+        alignSelf:'center'
+    },
+    buttonText: {
+        fontFamily: 'neodgm',
+        fontSize: 10,
+    },
 })

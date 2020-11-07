@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
 import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+
 const QuickViewChild = (info) => {
+
+  const navigation = useNavigation();
+
   // 아직 로딩중이면.
   if (info.title_str == undefined) {
     return (
