@@ -9,11 +9,10 @@ const KakaoButton = () => {
   // 카카오 로그인 메소드
   const kakaoSignIn = function () {
     console.log('kakaoSignIn Function 시작');
-    kakaoLogins
-      .login([KAKAO_AUTH_TYPES.Talk, KAKAO_AUTH_TYPES.Account])
+    KakaoLogins.login([KAKAO_AUTH_TYPES.Talk, KAKAO_AUTH_TYPES.Account])
       .then((res) => {
         token = res.accessToken;
-        console.log('카카오 로그인 성공', result);
+        console.log('카카오 로그인 성공', res);
         firebase
           .app()
           .functions('asia-northeast3')

@@ -21,7 +21,7 @@ const MarketStatus = ({navigation}) => {
   const [newDataB, setNewDataB] = useState({});
   const [recDataA, setRecDataA] = useState({});
   const [recDataB, setRecDataB] = useState({});
-  const MODOOD = 1;
+  
   const modooDataRef = firestore().collection('MODOOS_DATA');
   const refreshMain = () => {
     // Data들 파베에서 불러오기.
