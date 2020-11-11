@@ -9,50 +9,6 @@ import {
 import Button from 'apsl-react-native-button';
 
 
-// const handleButton = () =>{
-//     if (btn == '1일모두') {
-//         return(
-//             <View style={styles.midFirst}>
-//                 <Button
-//                     style={styles.button}
-//                     textStyle={styles.buttonText}
-//                 >
-//                     2명~100명
-//                 </Button>
-//             </View>
-//         )
-//     }
-//     else if (btn == '5일모두' || btn == '7일모두') {
-//         return(
-//             <>
-//                 <View style={styles.midFirst}>
-//                     <Button
-//                         style={styles.button}
-//                         textStyle={styles.buttonText}
-//                     >
-//                         2명~100명
-//                     </Button>
-//                 </View>
-//                 <View style={styles.midSecond}>
-//                     <Button
-//                         style={styles.button}
-//                         textStyle={styles.buttonText}
-//                     >
-//                         101명~500명
-//                     </Button>
-//                 </View>
-//                 <View style={styles.midThird}>
-//                     <Button
-//                         style={styles.button}
-//                         textStyle={styles.buttonText}
-//                     >
-//                         501명~5000명
-//                     </Button>
-//                 </View>
-//             </>
-//         )
-//     }
-// }
 const OpenB = ({navigation}) =>{
 
     const [btn, setBtn] = useState('');
