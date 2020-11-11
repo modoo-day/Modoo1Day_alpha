@@ -1,70 +1,45 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Button from 'apsl-react-native-button';
 import firestore from '@react-native-firebase/firestore';
-import InquiryChild from './Child/InquiryChild';
 
-const Question = ({navigation}) => {
-  const inquiryDataRef = firestore().collection('INQUIRY_BRD');
-
-  const [inquiryA, setInquiryA] = useState({});
-  const [inquiryB, setInquiryB] = useState({});
-  const [inquiryC, setInquiryC] = useState({});
-  const [inquiryD, setInquiryD] = useState({});
-  const [inquiryE, setInquiryE] = useState({});
-
-  const getInquiryList = () => {
-    console.log('문의 기록 불러오기 시작');
-    inquiryDataRef
-      .orderBy('upload_time', 'desc')
-      .limit(5)
-      .get()
-      .then((snst) => {
-        console.log(snst._docs);
-        console.log('Inquiry List 불러옴');
-        setInquiryA(snst._docs[0]._data);
-        setInquiryB(snst._docs[1]._data);
-        setInquiryC(snst._docs[2]._data);
-        setInquiryD(snst._docs[3]._data);
-        setInquiryE(snst._docs[4]._data);
-      });
-  };
-
-  // Refresh 한번만 실행.
-  useEffect(() => {
-    getInquiryList();
-  }, []);
-
+const InquiryChild = (props) => {
   return (
-    <ScrollView style={styles.container}>
-      <InquiryChild {...inquiryA} {...navigation} />
-      <InquiryChild {...inquiryB} {...navigation} />
-      <InquiryChild {...inquiryC} {...navigation} />
-      <InquiryChild {...inquiryD} {...navigation} />
-      <InquiryChild {...inquiryE} {...navigation} />
-
-      <View style={styles.buttonContainer}>
-        <Button
-          style={styles.button}
-          textStyle={styles.buttonText}
-          disabledStyle={{backgroundColor: 'white'}}
-          isLoading={false}
-          onPress={() => navigation.navigate('QuestionWrite')}>
-          문의 하기
-        </Button>
-      </View>
-    </ScrollView>
+    <View style={styles.listContianer}>
+      {/* 답변완료 */}
+      <TouchableOpacity
+        style={styles.list}
+        onPress={() => props.navigate('QuestionDetail')}>
+        <View style={styles.listIconContainer}>
+          <Image
+            style={styles.listIcon}
+            source={require('../../../../../../../assets/icons/crown.png')}
+          />
+        </View>
+        <View style={styles.postContainer}>
+          <View style={styles.postTitleContainer}>
+            <Text style={styles.title}>{props.title_str}</Text>
+          </View>
+          <View style={styles.postBottomContainer}>
+            <Text style={styles.bottomText}>엄에진</Text>
+            <Text style={styles.bottomText}>{props.upload_time}</Text>
+            {/* 삼항 연산자로 답변 테마 결정 */}
+            {props.isCommented == true ? (
+              <View style={styles.answerContainer}>
+                <Text style={styles.answer}>답변완료</Text>
+              </View>
+            ) : (
+              <View style={styles.answerWaitContainer}>
+                <Text style={styles.answerWait}>답변준비중</Text>
+              </View>
+            )}
+          </View>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
-
-export default Question;
+export default InquiryChild;
 
 const styles = StyleSheet.create({
   container: {

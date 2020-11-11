@@ -62,3 +62,4 @@ buck-out/
 RUN-ANDROID 10.lnk
 RUN-ANDROID.lnk
 YARN INSTALL.lnk
+RUN ANDROID 10.lnk
