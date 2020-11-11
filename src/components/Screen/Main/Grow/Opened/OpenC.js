@@ -119,7 +119,7 @@ const OpenB = ({navigation}) =>{
                         // disabledStyle={{backgroundColor: 'white'}}
                         // isDisabled={email == '' || password == '' ? true : false}
                         // isLoading={false}
-                        // onPress={() => navigation.navigate('OpenC') }
+                        onPress={() => navigation.navigate('OpenD') }
                     >계속</Button>
                 </View>
             </View>
