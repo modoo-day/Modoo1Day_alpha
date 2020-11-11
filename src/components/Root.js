@@ -16,6 +16,7 @@ import OpenA from './Screen/Main/Grow/Opened/OpenA';
 import OpenB from './Screen/Main/Grow/Opened/OpenB';
 import OpenC from './Screen/Main/Grow/Opened/OpenC';
 import OpenD from './Screen/Main/Grow/Opened/OpenD';
+import OpenE from './Screen/Main/Grow/Opened/OpenE';
 
 
 import EmailLogin from './Screen/Modal/Account/LoginChild/EmailLogin';
@@ -62,8 +63,7 @@ function Root() {
           <Stack.Screen name='OpenB' component={OpenB}/>
           <Stack.Screen name='OpenC' component={OpenC}/>
           <Stack.Screen name='OpenD' component={OpenD}/>
-
-
+          <Stack.Screen name='OpenE' component={OpenE}/>
           {/* 로그인 */}
           <Stack.Screen name='EmailLogin' component={EmailLogin}/>
           <Stack.Screen name='EmailCheck' component={EmailCheck}/>

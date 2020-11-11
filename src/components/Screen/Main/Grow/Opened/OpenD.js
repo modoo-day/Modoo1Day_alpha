@@ -109,10 +109,16 @@ const OpenD = ({navigation}) => {
                 <View style={styles.bottom}>
                     <Text style={styles.bottomText}>인증 방법 및 예시</Text>
                     <View style={styles.bottomImageContainer}>
-                        <TouchableOpacity style={styles.imageTouch}>
+                        <TouchableOpacity 
+                            style={styles.imageTouch}
+                            onPress={()=>navigation.navigate('OpenE')}    
+                        >
                             <Image source={require('../../../../../assets/img/night.png')} style={styles.img}/>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.imageTouch}>
+                        <TouchableOpacity 
+                            style={styles.imageTouch}
+                            onPress={()=>navigation.navigate('OpenE')}    
+                        >
                             <Image source={require('../../../../../assets/img/night.png')} style={styles.img}/>
                         </TouchableOpacity>
                     </View>
