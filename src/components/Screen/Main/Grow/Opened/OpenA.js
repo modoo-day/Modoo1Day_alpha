@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     View, 
     Text, 
@@ -7,10 +7,16 @@ import {
     ScrollView,
     } from 'react-native';
 import Button from 'apsl-react-native-button';
+import {Picker} from '@react-native-picker/picker';
 
 
-const OpenA = () => {
-  return (
+
+
+const OpenA = ({navigation}) => {
+  
+    const [pick, setPick] = useState('')
+
+    return (
     <ScrollView>
         <View style={styles.container}>   
             <View style={styles.top}>
@@ -25,7 +31,17 @@ const OpenA = () => {
             </View>
             <View style={styles.mid}>
                 <Text style={styles.category}>모두의 카테고리</Text>
-                <TextInput />
+                <Picker
+                    selectedValue={pick}
+                    style={styles.picker}
+                    onValueChange={(itemValue, itemIndex) =>
+                        setPick(itemValue)
+                        //this.setState({language: itemValue})
+                }>
+                    <Picker.Item enabled={false} label="카테고리를 선택해주세요."/>
+                    <Picker.Item label="가족" value="가족" />
+                    <Picker.Item label="건강/운동" value="건강/운돟" />
+                </Picker>
             </View>
             <View style={styles.bottom}>
                 <Text style={styles.tag}>모두의 태그</Text>
@@ -53,8 +69,7 @@ const OpenA = () => {
                 // disabledStyle={{backgroundColor: 'white'}}
                 // isDisabled={email == '' || password == '' ? true : false}
                 // isLoading={false}
-                // onPress={() => {
-                //   login();
+                onPress={() => navigation.goBack() }
             >취소</Button>
             <Button
                 style={styles.button}
@@ -63,8 +78,7 @@ const OpenA = () => {
                 // disabledStyle={{backgroundColor: 'white'}}
                 // isDisabled={email == '' || password == '' ? true : false}
                 // isLoading={false}
-                // onPress={() => {
-                //   login();
+                onPress={() => navigation.navigate('OpenB') }
             >계속</Button>
           </View>
       </View>
@@ -109,6 +123,14 @@ const styles = StyleSheet.create({
   category: {
     fontFamily:'neodgm'
   },
+  picker:{
+    borderWidth:1,
+    borderRadius:50,
+    height:30,
+    //fontSize:13,
+    //paddingLeft:10,
+    //paddingBottom:5.5,
+  },
   bottom: {
     backgroundColor: 'lightblue',
     height:250
@@ -138,7 +160,8 @@ const styles = StyleSheet.create({
   },
   button:{
     width: '50%',
-    backgroundColor: '#ffcd2c',
+    backgroundColor: 'white', 
+    //'#ffcd2c',
     borderWidth: 2,
     height: '100%',
     borderRadius: 0,
