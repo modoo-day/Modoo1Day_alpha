@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     View,
     Text,
@@ -9,7 +9,85 @@ import {
 import Button from 'apsl-react-native-button';
 
 
+// const handleButton = () =>{
+//     if (btn == '1일모두') {
+//         return(
+//             <View style={styles.midFirst}>
+//                 <Button
+//                     style={styles.button}
+//                     textStyle={styles.buttonText}
+//                 >
+//                     2명~100명
+//                 </Button>
+//             </View>
+//         )
+//     }
+//     else if (btn == '5일모두' || btn == '7일모두') {
+//         return(
+//             <>
+//                 <View style={styles.midFirst}>
+//                     <Button
+//                         style={styles.button}
+//                         textStyle={styles.buttonText}
+//                     >
+//                         2명~100명
+//                     </Button>
+//                 </View>
+//                 <View style={styles.midSecond}>
+//                     <Button
+//                         style={styles.button}
+//                         textStyle={styles.buttonText}
+//                     >
+//                         101명~500명
+//                     </Button>
+//                 </View>
+//                 <View style={styles.midThird}>
+//                     <Button
+//                         style={styles.button}
+//                         textStyle={styles.buttonText}
+//                     >
+//                         501명~5000명
+//                     </Button>
+//                 </View>
+//             </>
+//         )
+//     }
+// }
 const OpenB = ({navigation}) =>{
+
+    const [btn, setBtn] = useState('');
+    let button1;
+    let button2;
+    let button3;
+    
+    if (btn == '1일모두') {
+        button1 =  <Button
+                        style={styles.button}
+                        textStyle={styles.buttonText}
+                    >
+                        100명~5000명
+                    </Button>
+    } else if (btn == '5일모두'||btn == '7일모두') {
+        button1 =  <Button
+                        style={styles.button}
+                        textStyle={styles.buttonText}
+                    >
+                        2명~100명
+                    </Button> ;
+        button2 = <Button
+                        style={styles.button}
+                        textStyle={styles.buttonText}
+                    >
+                        101명~500명
+                    </Button>;
+        button3 = <Button
+                        style={styles.button}
+                        textStyle={styles.buttonText}
+                    >
+                        501명~5000명
+                    </Button>;
+    }
+
     return(
         <ScrollView>
             <View style={styles.container}>
@@ -18,24 +96,27 @@ const OpenB = ({navigation}) =>{
                 </View>
                 <View style={styles.topFirst}>
                     <Button
-                        style={styles.button}
+                        style={btn=='1일모두' ?styles.activeButton : styles.button}
                         textStyle={styles.buttonText}
+                        onPress={()=>setBtn('1일모두')}
                     >
                         1일 모두
                     </Button>
                 </View>
                 <View style={styles.topSecond}>
                     <Button
-                        style={styles.button}
+                        style={btn=='5일모두' ?styles.activeButton : styles.button}
                         textStyle={styles.buttonText}
+                        onPress={()=>setBtn('5일모두')}
                     >
                         5일(평일) 모두
                     </Button>
                 </View>
                 <View style={styles.topThird}>
                     <Button
-                        style={styles.button}
+                        style={btn=='7일모두' ?styles.activeButton : styles.button}
                         textStyle={styles.buttonText}
+                        onPress={()=>setBtn('7일모두')}
                     >
                         7일(평일*주말) 모두
                     </Button>
@@ -47,34 +128,21 @@ const OpenB = ({navigation}) =>{
                 <View style={styles.infoTextContainer}>
                     <Text style={styles.infoText}>최소 인원이 모여야 진행 가능합니다.</Text>
                 </View>
+
                 <View style={styles.midFirst}>
-                    <Button
-                        style={styles.button}
-                        textStyle={styles.buttonText}
-                    >
-                        2명~100명
-                    </Button>
+                   {button1}
                 </View>
                 <View style={styles.midSecond}>
-                    <Button
-                        style={styles.button}
-                        textStyle={styles.buttonText}
-                    >
-                        101명~500명
-                    </Button>
+                    {button2}
                 </View>
                 <View style={styles.midThird}>
-                    <Button
-                        style={styles.button}
-                        textStyle={styles.buttonText}
-                    >
-                        501명~5000명
-                    </Button>
+                    {button3}
                 </View>
-            </View>
-            <View style={styles.bottom}>
-                <Text>1인당 n경험치 n코인</Text>
-                <Text>최소 인원이 많을수록 더 많은 리워드!</Text>
+                
+                <View style={styles.bottom}>
+                    <Text>1인당 n경험치 n코인</Text>
+                    <Text>최소 인원이 많을수록 더 많은 리워드!</Text>
+                </View>
             </View>
             <View style={styles.deep}>
                 <View style={styles.buttonContainer}>
@@ -126,6 +194,12 @@ const styles = StyleSheet.create({
     
     button:{
         backgroundColor:'white',
+        width:'55%',
+        height:'80%'
+        
+    },
+    activeButton:{
+        backgroundColor:'#ffcd2c',
         width:'55%',
         height:'80%'
         
