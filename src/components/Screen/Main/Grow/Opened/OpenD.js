@@ -62,6 +62,7 @@ const OpenD = ({navigation}) => {
     }
 
     return(
+        <>
         <ScrollView>
             <View style={styles.container}>
 
@@ -126,31 +127,32 @@ const OpenD = ({navigation}) => {
 
             </View>
             
-            <View style={styles.deep}>
-                <View style={styles.buttonContainer}>
-
-                    <Button
-                        style={styles.deepButton}
-                        textStyle={styles.deepButtonText}
-                        // //activeOpacity={1}
-                        // disabledStyle={{backgroundColor: 'white'}}
-                        // isDisabled={email == '' || password == '' ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.goBack() }
-                    >취소</Button>
-                    <Button
-                        style={styles.deepButton}
-                        textStyle={styles.deepButtonText}
-                        // //activeOpacity={1}
-                        // disabledStyle={{backgroundColor: 'white'}}
-                        // isDisabled={email == '' || password == '' ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.navigate('Home') }
-                    >완료!</Button>
-                </View>
-            </View>
 
         </ScrollView>
+        <View style={styles.deep}>
+            <View style={styles.buttonContainer}>
+
+                <Button
+                    style={styles.deepButton}
+                    textStyle={styles.deepButtonText}
+                    // //activeOpacity={1}
+                    // disabledStyle={{backgroundColor: 'white'}}
+                    // isDisabled={email == '' || password == '' ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.goBack() }
+                >취소</Button>
+                <Button
+                    style={styles.deepButton}
+                    textStyle={styles.deepButtonText}
+                    // //activeOpacity={1}
+                    // disabledStyle={{backgroundColor: 'white'}}
+                    // isDisabled={email == '' || password == '' ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.navigate('Home') }
+                >완료!</Button>
+            </View>
+        </View>
+        </>
     )
 }
 
@@ -223,7 +225,7 @@ const styles = StyleSheet.create({
         backgroundColor:'grey',
         //height:200,
         justifyContent:'flex-end',
-        height:250
+        //height:250
     },
     buttonContainer:{
         flexDirection:'row',

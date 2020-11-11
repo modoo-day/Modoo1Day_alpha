@@ -25,80 +25,82 @@ const OpenA = ({navigation}) => {
 
 
     return (
-    <ScrollView>
+      <>
+      <ScrollView>
         <View style={styles.container}>   
-            <View style={styles.top}>
-                <View style={styles.topTextContainer}>
-                    <Text style={styles.title}>모두의 이름</Text>
-                    <Text style={styles.textLimit}>8/25</Text>
-                </View>
-                <TextInput 
-                    style={styles.titleInput}
-                    placeholder="이름을 만들어주세요." 
-                    value={title}
-                    onChangeText={(contents) => setTitle(contents)}
-                />
+          <View style={styles.top}>
+            <View style={styles.topTextContainer}>
+                <Text style={styles.title}>모두의 이름</Text>
+                <Text style={styles.textLimit}>8/25</Text>
             </View>
-            <View style={styles.mid}>
-                <Text style={styles.category}>모두의 카테고리</Text>
-                <Picker
-                    selectedValue={pick}
-                    style={styles.picker}
-                    onValueChange={(itemValue, itemIndex) =>
-                        setPick(itemValue)
-                        //this.setState({language: itemValue})
-                }>
-                    <Picker.Item enabled={false} label="카테고리를 선택해주세요."/>
-                    <Picker.Item label="가족" value="가족" />
-                    <Picker.Item label="건강/운동" value="건강/운돟" />
-                </Picker>
-            </View>
-            <View style={styles.bottom}>
-                <Text style={styles.tag}>모두의 태그</Text>
-                <TextInput
-                    style={styles.tagInput}
-                    placeholder='#태그1 (최대 10자)'
-                    value={tag1}
-                    onChangeText={(contents) => setTag1(contents)}
-                />
-                <TextInput 
-                    style={styles.tagInput}
-                    placeholder='#태그2 (최대 15자)'
-                    value={tag2}
-                    onChangeText={(contents) => setTag2(contents)}
-                />
-                <TextInput 
-                    style={styles.tagInput}
-                    placeholder='#태그3 (최대 15자)'
-                    value={tag3}
-                    onChangeText={(contents) => setTag3(contents)}
-                />
-            </View>
-        </View>
-      <View style={styles.deep}>
-          <View style={styles.buttonContainer}>
-
-            <Button
-                style={styles.button1}
-                textStyle={styles.buttonText1}
-                // //activeOpacity={1}
-                // disabledStyle={{backgroundColor: 'white'}}
-                //isDisabled={title==''&& pick=='' &&tag1 == '' && tag2 == '' && tag3=='' ? false : true}
-                // isLoading={false}
-                onPress={() => navigation.goBack() }
-            >취소</Button>
-            <Button
-                style={styles.button2}
-                textStyle={styles.buttonText2}
-                // //activeOpacity={1}
-                disabledStyle={{backgroundColor: 'white'}}
-                isDisabled={title==''||pick=='' ||tag1 == '' ? true : false}
-                // isLoading={false}
-                onPress={() => navigation.navigate('OpenB') }
-            >계속</Button>
+            <TextInput 
+                style={styles.titleInput}
+                placeholder="이름을 만들어주세요." 
+                value={title}
+                onChangeText={(contents) => setTitle(contents)}
+            />
           </View>
+          <View style={styles.mid}>
+            <Text style={styles.category}>모두의 카테고리</Text>
+            <Picker
+                selectedValue={pick}
+                style={styles.picker}
+                onValueChange={(itemValue, itemIndex) =>
+                    setPick(itemValue)
+                    //this.setState({language: itemValue})
+            }>
+                <Picker.Item enabled={false} label="카테고리를 선택해주세요."/>
+                <Picker.Item label="가족" value="가족" />
+                <Picker.Item label="건강/운동" value="건강/운돟" />
+            </Picker>
+          </View>
+          <View style={styles.bottom}>
+            <Text style={styles.tag}>모두의 태그</Text>
+            <TextInput
+                style={styles.tagInput}
+                placeholder='#태그1 (최대 10자)'
+                value={tag1}
+                onChangeText={(contents) => setTag1(contents)}
+            />
+            <TextInput 
+                style={styles.tagInput}
+                placeholder='#태그2 (최대 15자)'
+                value={tag2}
+                onChangeText={(contents) => setTag2(contents)}
+            />
+            <TextInput 
+                style={styles.tagInput}
+                placeholder='#태그3 (최대 15자)'
+                value={tag3}
+                onChangeText={(contents) => setTag3(contents)}
+            />
+          </View>
+        </View>
+      </ScrollView>
+      <View style={styles.deep}>
+        <View style={styles.buttonContainer}>
+
+          <Button
+              style={styles.button1}
+              textStyle={styles.buttonText1}
+              // //activeOpacity={1}
+              // disabledStyle={{backgroundColor: 'white'}}
+              //isDisabled={title==''&& pick=='' &&tag1 == '' && tag2 == '' && tag3=='' ? false : true}
+              // isLoading={false}
+              onPress={() => navigation.goBack() }
+          >취소</Button>
+          <Button
+              style={styles.button2}
+              textStyle={styles.buttonText2}
+              // //activeOpacity={1}
+              disabledStyle={{backgroundColor: 'white'}}
+              isDisabled={title==''||pick=='' ||tag1 == '' ? true : false}
+              // isLoading={false}
+              onPress={() => navigation.navigate('OpenB') }
+          >계속</Button>
+        </View>
       </View>
-    </ScrollView>
+    </>
   );
 };
 
