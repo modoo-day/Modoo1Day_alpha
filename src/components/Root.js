@@ -14,6 +14,8 @@ import QuestionDetail from './Screen/Main/Market/StatusChild/Question/QuestionDe
 import Report from './Screen/Modal/Report/Report';
 import OpenA from './Screen/Main/Grow/Opened/OpenA';
 import OpenB from './Screen/Main/Grow/Opened/OpenB';
+import OpenC from './Screen/Main/Grow/Opened/OpenC';
+
 import EmailLogin from './Screen/Modal/Account/LoginChild/EmailLogin';
 import LoginProfile from './Screen/Modal/Account/LoginChild/SignUp/LoginProfile';
 import EmailCheck from './Screen/Modal/Account/LoginChild/SignUp/EmailCheck';
@@ -56,6 +58,7 @@ function Root() {
           {/* 성장 모두개설 */}
           <Stack.Screen name='OpenA' component={OpenA}/>
           <Stack.Screen name='OpenB' component={OpenB}/>
+          <Stack.Screen name='OpenC' component={OpenC}/>
 
 
           {/* 로그인 */}

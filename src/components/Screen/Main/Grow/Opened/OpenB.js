@@ -56,7 +56,7 @@ const OpenB = ({navigation}) =>{
                         // disabledStyle={{backgroundColor: 'white'}}
                         // isDisabled={email == '' || password == '' ? true : false}
                         // isLoading={false}
-                        //onPress={() => navigation.navigate('OpenB') }
+                        onPress={() => navigation.navigate('OpenC') }
                     >계속</Button>
                 </View>
             </View>
@@ -69,34 +69,48 @@ export default OpenB;
 
 const styles = StyleSheet.create({
     container:{
-
+        width:'95%',
+        alignSelf:'center'
     },
     top:{
-        backgroundColor:'lightyellow'
+        backgroundColor:'lightyellow',
+        height:50,
+        justifyContent:'center'
     },
     topText:{
-
+        fontFamily:'neodgm'
     },
     mid:{
-        backgroundColor:'pink'
+        backgroundColor:'pink',
+        height:50
     },
     
     button:{
-
+        backgroundColor:'white',
+        width:'55%',
+        height:'80%'
+        
     },
     buttonText:{
-
+         fontFamily:'neodgm'
     },
     bottom:{
-        backgroundColor:'lightblue'
+        backgroundColor:'lightblue',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        height:50
     },
     passwordInput:{
-
+        borderRadius:10,
+        borderWidth:1,
+        width:'30%',
+        height:'80%'
     },
     deep:{
         backgroundColor:'grey',
         //height:200,
         justifyContent:'flex-end',
+        height:250
     },
     buttonContainer:{
         flexDirection:'row',
