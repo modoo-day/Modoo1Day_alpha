@@ -1,23 +1,75 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     View, 
     Text, 
     StyleSheet,
     Image,
     TouchableOpacity,
-    ScrollView
+    ScrollView,
+    Modal,
+    Alert
 } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import Button from 'apsl-react-native-button';
 
 
 const Avatar = ({navigation}) => {
+
+    const [modalVisible, setModalVisible] = useState(false);
+
     return(
         <ScrollView contentContainerStyle={styles.container}>
+
+            <Modal
+                animationType="fade"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                Alert.alert('Modal has been closed.');
+            }}>
+                <View style={styles.container}>
+                    <View style={styles.top}>
+                        <Text>캐릭터 변경</Text>
+                        <TouchableOpacity
+                            onPress={() => {
+                                setModalVisible(!modalVisible);
+                            }}
+                            style={styles.backIconTouch}
+                        >
+                            <Image
+                                style={styles.backIcon}
+                                source={require('../../../../../assets/icons/refresh.png')}
+                            />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.mid}>
+                        <View style={styles.bottomSecond}>
+                            
+                            <TouchableOpacity style={styles.bottomSecondTouch}>
+                                <View style={styles.bottomSecondImgContainer}>
+                                    <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                                </View>
+                                <View style={styles.bottomSecondTextContainer}>
+                                    <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                                </View>
+                            </TouchableOpacity>
+                            
+                        </View>
+                    </View>
+                    <View  style={styles.bottom}>
+
+                    </View>
+                </View>
+            </Modal>
+
+
+
             <View style={styles.top}>
                 <TouchableOpacity 
                     style={styles.topLeft}
-                    onPress={()=>navigation.navigate('Avatar')}
+                    onPress={() => {
+                        setModalVisible(true);
+                      }}
                 >
                     <Image style={styles.topImg} source={require('../../../../../assets/img/night.png')}/>
                 </TouchableOpacity>
