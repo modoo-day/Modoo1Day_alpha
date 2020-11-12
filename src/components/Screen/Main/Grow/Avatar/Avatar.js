@@ -11,7 +11,7 @@ import ProgressBar from 'react-native-progress/Bar';
 import Button from 'apsl-react-native-button';
 
 
-export default Growth = ({navigation}) => {
+const Avatar = ({navigation}) => {
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.top}>
@@ -19,7 +19,7 @@ export default Growth = ({navigation}) => {
                     style={styles.topLeft}
                     onPress={()=>navigation.navigate('Avatar')}
                 >
-                    <Image style={styles.topImg} source={require('../../../../assets/img/night.png')}/>
+                    <Image style={styles.topImg} source={require('../../../../../assets/img/night.png')}/>
                 </TouchableOpacity>
                 <View style={styles.topRight}>
                     <View style={styles.experiencePointContainer}>
@@ -40,36 +40,43 @@ export default Growth = ({navigation}) => {
                             //activeOpacity={1}
                             disabledStyle={{backgroundColor:'white'}}
                             isLoading={false}
-                            onPress={()=>navigation.navigate('OpenA')}
+                            //onPress={()=>navigation.navigate('OpenA')}
                         >
                         모do 개설
                         </Button>
                     </View>
                 </View>
             </View>
-            <View style={styles.bottom}>
-
-                <TouchableOpacity 
-                    style={styles.listContainer}
-                    onPress={()=>navigation.navigate('StatusRoute')}    
-                >
-                    <Image style={styles.listImg} source={require('../../../../assets/img/night.png')}/>
-                    <View style={styles.listTextContainer}>
-                        <Text style={styles.listTitle}>매일 물 마시기</Text>
-                        {/* <TouchableOpacity
-                            // onPress={navigation.navigate('ContentsWrite')}
-                            //  내비게이션이 사용된 태그 안에 또 내비게이션을 사용할 수 없음.
-                        > */}
-                            <Text style={styles.listButton}>인증하기</Text>
-                        {/* </TouchableOpacity> */}
-                    </View>
+            <View style={styles.mid}>
+                <TouchableOpacity style={styles.midImgTouch}>
+                    <Image style={styles.midImg} source={require('../../../../../assets/img/night.png')} />
                 </TouchableOpacity>
-                
             </View>
+            <View style={styles.bottom}>
+                <View style={styles.bottomFirst}>
+                    <TouchableOpacity style={styles.bottomFirstImgTouch}>
+                        <Image style={styles.bottomFirstImg} source={require('../../../../../assets/img/night.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomFirstImgTouch}>
+                        <Image style={styles.bottomFirstImg} source={require('../../../../../assets/img/night.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomFirstImgTouch}>
+                        <Image style={styles.bottomFirstImg} source={require('../../../../../assets/img/night.png')}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomFirstImgTouch}>
+                        <Image style={styles.bottomFirstImg} source={require('../../../../../assets/img/night.png')}/>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.bottomSecond}>
+
+                </View>
+            </View>
+         
         </ScrollView>
     )
 }
 
+export default Avatar;
 
 const styles = StyleSheet.create({
     container:{
@@ -120,34 +127,44 @@ const styles = StyleSheet.create({
         fontFamily: 'neodgm',
         fontSize: 10,
     },
-    bottom:{
-        //backgroundColor:'lightblue',
-        borderBottomWidth:1.5,
-        paddingBottom:5
+    mid:{
+        backgroundColor:'lightyellow',
+        height:30,
+        alignItems:'flex-end'
     },
-    listContainer:{
-        flex:1,
-        backgroundColor:'lightgrey',
-        flexDirection:'row',
-        alignItems:'center',
-        borderRadius:10,
-        marginVertical:'2.5%'
+    midImgTouch:{
+        height:25,
+        width:25
     },
-    listImg:{
-        height:60,
-        width:60,
+    midImg:{
+        width:'100%',
+        height:'100%',
         borderRadius:10
     },
-    listTextContainer:{
-        top:6,
-        width:'70%',
-        //backgroundColor:'lightblue',
-        marginLeft:'5%'
+    bottom:{
+        backgroundColor:'lightblue',
+        height:450,
     },
-    listTitle:{
+    bottomFirst:{
+        height:'16%',
+        backgroundColor:'pink',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        paddingHorizontal:'10%',
+        alignItems:'center',
+        borderBottomWidth:1
+    },
+    bottomFirstImgTouch:{
+        height:55,
+        width:55,
+    },
+    bottomFirstImg:{
+        height:'100%',
+        width:'100%',
+        borderRadius:10
+    },
+    bottomSecond:{
 
     },
-    listButton:{
-        alignSelf:'flex-end'
-    },
+
 })
