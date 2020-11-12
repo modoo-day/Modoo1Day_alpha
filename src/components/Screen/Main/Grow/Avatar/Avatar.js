@@ -34,7 +34,7 @@ const Avatar = ({navigation}) => {
                             title='모do 개설'
                             onPress={()=>navigation.navigate('OpenA')}
                         /> */}
-                        <Button 
+                        {/* <Button 
                             style={styles.button} 
                             textStyle={styles.buttonText}
                             //activeOpacity={1}
@@ -43,7 +43,7 @@ const Avatar = ({navigation}) => {
                             //onPress={()=>navigation.navigate('OpenA')}
                         >
                         모do 개설
-                        </Button>
+                        </Button> */}
                     </View>
                 </View>
             </View>
@@ -68,7 +68,54 @@ const Avatar = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.bottomSecond}>
-
+                    <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
             </View>
          
@@ -128,8 +175,8 @@ const styles = StyleSheet.create({
         fontSize: 10,
     },
     mid:{
-        backgroundColor:'lightyellow',
-        height:30,
+        //backgroundColor:'lightyellow',
+        height:42,
         alignItems:'flex-end'
     },
     midImgTouch:{
@@ -144,10 +191,11 @@ const styles = StyleSheet.create({
     bottom:{
         backgroundColor:'lightblue',
         height:450,
+        borderRadius:10
     },
     bottomFirst:{
         height:'16%',
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         flexDirection:'row',
         justifyContent:'space-between',
         paddingHorizontal:'10%',
@@ -164,7 +212,34 @@ const styles = StyleSheet.create({
         borderRadius:10
     },
     bottomSecond:{
+        flexDirection:'row',
+        flexWrap:'wrap',
+        justifyContent:'center'
+    },
+    bottomSecondTouch:{
+        backgroundColor:'lightyellow',
+        width:'33%',
+        height:160,
+        padding:'2%'
+    },
+    bottomSecondImgContainer:{
+        aspectRatio:1    
+    },
+    bottomSecondImg:{
+        width:'100%',
+        height:'100%',
+        borderRadius:10,
+    },
+    bottomSecondTextContainer:{
+        alignItems:'center',
+        justifyContent:'center',
+        width:'100%',
+        backgroundColor:'grey',
+        height:'20%',
+        borderRadius:10,
+        marginTop:'10%'
+    },
+    bottonSecondText:{
 
     },
-
 })
