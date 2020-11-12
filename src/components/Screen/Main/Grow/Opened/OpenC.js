@@ -53,6 +53,7 @@ const OpenB = ({navigation}) =>{
     }
 
     return(
+        <>
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.top}>
@@ -108,30 +109,31 @@ const OpenB = ({navigation}) =>{
                     <Text>최소 인원이 많을수록 더 많은 리워드!</Text>
                 </View>
             </View>
-            <View style={styles.deep}>
-                <View style={styles.buttonContainer}>
-
-                    <Button
-                        style={styles.deepButton1}
-                        textStyle={styles.deepButtonText1}
-                        // //activeOpacity={1}
-                        // disabledStyle={{backgroundColor: 'white'}}
-                        // isDisabled={email == '' || password == '' ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.goBack() }
-                    >취소</Button>
-                    <Button
-                        style={styles.deepButton2}
-                        textStyle={styles.deepButtonText2}
-                        // //activeOpacity={1}
-                        disabledStyle={{backgroundColor: 'white'}}
-                        isDisabled={participants==false ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.navigate('OpenD') }
-                    >계속</Button>
-                </View>
-            </View>
         </ScrollView>
+        <View style={styles.deep}>
+            <View style={styles.buttonContainer}>
+
+                <Button
+                    style={styles.deepButton1}
+                    textStyle={styles.deepButtonText1}
+                    // //activeOpacity={1}
+                    // disabledStyle={{backgroundColor: 'white'}}
+                    // isDisabled={email == '' || password == '' ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.goBack() }
+                >취소</Button>
+                <Button
+                    style={styles.deepButton2}
+                    textStyle={styles.deepButtonText2}
+                    // //activeOpacity={1}
+                    disabledStyle={{backgroundColor: 'white'}}
+                    isDisabled={participants==false ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.navigate('OpenD') }
+                >계속</Button>
+            </View>
+        </View>
+        </>
     )
 }
 
@@ -235,7 +237,6 @@ const styles = StyleSheet.create({
         backgroundColor:'grey',
         //height:200,
         justifyContent:'flex-end',
-        height:200
     },
     buttonContainer:{
         flexDirection:'row',

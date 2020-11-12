@@ -27,6 +27,7 @@ const OpenB = ({navigation}) =>{
     }
 
     return(
+        <>
         <ScrollView>
             <View style={styles.container}>
                 <View style={styles.top}>
@@ -56,30 +57,31 @@ const OpenB = ({navigation}) =>{
                     {passwordInput}
                 </View>
             </View>
-            <View style={styles.deep}>
-                <View style={styles.buttonContainer}>
-
-                    <Button
-                        style={styles.deepButton1}
-                        textStyle={styles.deepButtonText1}
-                        // //activeOpacity={1}
-                        // disabledStyle={{backgroundColor: 'white'}}
-                        // isDisabled={email == '' || password == '' ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.goBack() }
-                    >취소</Button>
-                    <Button
-                        style={styles.deepButton2}
-                        textStyle={styles.deepButtonText2}
-                        // //activeOpacity={1}
-                        disabledStyle={{backgroundColor: 'white'}}
-                        isDisabled={btn1==false && password == '' ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.navigate('OpenC') }
-                    >계속</Button>
-                </View>
-            </View>
         </ScrollView>
+        <View style={styles.deep}>
+            <View style={styles.buttonContainer}>
+
+                <Button
+                    style={styles.deepButton1}
+                    textStyle={styles.deepButtonText1}
+                    // //activeOpacity={1}
+                    // disabledStyle={{backgroundColor: 'white'}}
+                    // isDisabled={email == '' || password == '' ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.goBack() }
+                >취소</Button>
+                <Button
+                    style={styles.deepButton2}
+                    textStyle={styles.deepButtonText2}
+                    // //activeOpacity={1}
+                    disabledStyle={{backgroundColor: 'white'}}
+                    isDisabled={btn1==false && password == '' ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.navigate('OpenC') }
+                >계속</Button>
+            </View>
+        </View>
+        </>
     )
 }
 
@@ -133,7 +135,7 @@ const styles = StyleSheet.create({
         backgroundColor:'grey',
         //height:200,
         justifyContent:'flex-end',
-        height:250
+        //height:250
     },
     buttonContainer:{
         flexDirection:'row',

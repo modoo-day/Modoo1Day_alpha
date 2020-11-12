@@ -25,7 +25,7 @@ const OpenD = ({navigation}) => {
     const [timeString2, setTimeString2] = useState('00 : 00');
     const [timeColor2, setTimeColor2] = useState('lightgray');
 
-
+    const [err, setErr] = useState(false);
     
     const onChangetime = (event, selectedtime) => {
         const currenttime = selectedtime || time;
@@ -36,12 +36,20 @@ const OpenD = ({navigation}) => {
     };
     
     const onChangetime2 = (event, selectedtime) => {
-        const currenttime = selectedtime || time;
+        const currenttime2 = selectedtime || time2;
         setTimePicker2(false);
-        setTime2(currenttime);
-        setTimetoString2(currenttime);
+        setTime2(currenttime2);
+        setTimetoString2(currenttime2);
         setTimeColor2('black');
+        if(time>=time2) {
+            console.log('오류발생');
+            setErr(true);
+        } else {
+            setErr(false);
+        }
+
     };
+
 
     function setTimetoString(selectedtime) {
         var cetificateTime = selectedtime.toJSON();
@@ -62,6 +70,7 @@ const OpenD = ({navigation}) => {
     }
 
     return(
+        <>
         <ScrollView>
             <View style={styles.container}>
 
@@ -126,31 +135,32 @@ const OpenD = ({navigation}) => {
 
             </View>
             
-            <View style={styles.deep}>
-                <View style={styles.buttonContainer}>
-
-                    <Button
-                        style={styles.deepButton}
-                        textStyle={styles.deepButtonText}
-                        // //activeOpacity={1}
-                        // disabledStyle={{backgroundColor: 'white'}}
-                        // isDisabled={email == '' || password == '' ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.goBack() }
-                    >취소</Button>
-                    <Button
-                        style={styles.deepButton}
-                        textStyle={styles.deepButtonText}
-                        // //activeOpacity={1}
-                        // disabledStyle={{backgroundColor: 'white'}}
-                        // isDisabled={email == '' || password == '' ? true : false}
-                        // isLoading={false}
-                        onPress={() => navigation.navigate('Home') }
-                    >완료!</Button>
-                </View>
-            </View>
 
         </ScrollView>
+        <View style={styles.deep}>
+            <View style={styles.buttonContainer}>
+
+                <Button
+                    style={styles.deepButton1}
+                    textStyle={styles.deepButtonText1}
+                    // //activeOpacity={1}
+                    // disabledStyle={{backgroundColor: 'white'}}
+                    // isDisabled={email == '' || password == '' ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.goBack() }
+                >취소</Button>
+                <Button
+                    style={styles.deepButton2}
+                    textStyle={styles.deepButtonText2}
+                    // //activeOpacity={1}
+                    disabledStyle={{backgroundColor: 'white'}}
+                    isDisabled={err==true ? true : false}
+                    // isLoading={false}
+                    onPress={() => navigation.navigate('Home') }
+                >완료!</Button>
+            </View>
+        </View>
+        </>
     )
 }
 
@@ -223,13 +233,13 @@ const styles = StyleSheet.create({
         backgroundColor:'grey',
         //height:200,
         justifyContent:'flex-end',
-        height:250
+        //height:250
     },
     buttonContainer:{
         flexDirection:'row',
         height:50,
     },
-    deepButton:{
+    deepButton1:{
         width: '50%',
         backgroundColor: 'white', 
         //'#ffcd2c',
@@ -238,7 +248,20 @@ const styles = StyleSheet.create({
         borderRadius: 0,
         alignSelf: 'center',
     },
-    deepButtonText:{
+    deepButtonText1:{
+        fontFamily: 'neodgm',
+        fontSize: 10,
+    },
+    deepButton2:{
+        width: '50%',
+        backgroundColor: '#ffcd2c', 
+        //'#ffcd2c',
+        borderWidth: 2,
+        height: '100%',
+        borderRadius: 0,
+        alignSelf: 'center',
+    },
+    deepButtonText2:{
         fontFamily: 'neodgm',
         fontSize: 10,
     },
