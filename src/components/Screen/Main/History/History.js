@@ -62,10 +62,62 @@ const History = () => {
             </>
 
         
-    } else {
-        <View>
-            <Text>뱃지창</Text>
-        </View>
+    } else if (btn==true) {
+        renderItem =
+        <>
+            <View style={styles.badgeLine}>
+                <View style={styles.badgeContainer}>
+                    <View style={styles.badgeImgContainer}>
+                        <Image style={styles.badgeImg} source={require('../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.badgeUnderContainer}>
+
+                    </View>
+                </View>
+                <View style={styles.badgeContainer}>
+                    <View style={styles.badgeImgContainer}>
+                        <Image style={styles.badgeImg} source={require('../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.badgeUnderContainer}>
+
+                    </View>
+                </View>
+                <View style={styles.badgeContainer}>
+                    <View style={styles.badgeImgContainer}>
+                        <Image style={styles.badgeImg} source={require('../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.badgeUnderContainer}>
+
+                    </View>
+                </View>
+            </View>
+            <View style={styles.badgeLine}>
+                <View style={styles.badgeContainer}>
+                    <View style={styles.badgeImgContainer}>
+                        <Image style={styles.badgeImg} source={require('../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.badgeUnderContainer}>
+
+                    </View>
+                </View>
+                <View style={styles.badgeContainer}>
+                    <View style={styles.badgeImgContainer}>
+                        <Image style={styles.badgeImg} source={require('../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.badgeUnderContainer}>
+
+                    </View>
+                </View>
+                <View style={styles.badgeContainer}>
+                    <View style={styles.badgeImgContainer}>
+                        <Image style={styles.badgeImg} source={require('../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.badgeUnderContainer}>
+
+                    </View>
+                </View>
+            </View>
+        </>
     }
 
     return(
@@ -159,5 +211,37 @@ const styles = StyleSheet.create({
         width:'100%',
         height:'100%',
         borderRadius:10,
+    },
+    badgeLine:{
+        backgroundColor:'pink',
+        height:135,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        paddingHorizontal:'5%',
+        borderRadius:10,
+        marginTop:'7%'
+    },
+    badgeContainer:{
+        width:'30%',
+        //height:'100%'
+        //backgroundColor:'lightyellow',
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    badgeImgContainer:{
+        width:80,
+        height:80,
+    },
+    badgeImg:{
+        width:'100%',
+        height:'100%',
+        borderRadius:10
+    },
+    badgeUnderContainer:{
+        height:25,
+        width:'100%',
+        backgroundColor:'grey',
+        marginTop:'10%',
+        borderRadius:10
     },
 })
