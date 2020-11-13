@@ -27,9 +27,10 @@ const Avatar = ({navigation}) => {
                 onRequestClose={() => {
                 Alert.alert('Modal has been closed.');
             }}>
-                <View style={styles.container}>
-                    <View style={styles.top}>
-                        <Text>캐릭터 변경</Text>
+                <View style={styles.modalContainer}>
+                    <View style={styles.modalTop}>
+                        <View style={styles.modalLeftindent}></View>
+                        <Text style={styles.modalTopText}>캐릭터 변경</Text>
                         <TouchableOpacity
                             onPress={() => {
                                 setModalVisible(!modalVisible);
@@ -42,22 +43,113 @@ const Avatar = ({navigation}) => {
                             />
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.mid}>
-                        <View style={styles.bottomSecond}>
+                    <ScrollView contentContainerStyle={styles.modalMid}>
+                    
                             
-                            <TouchableOpacity style={styles.bottomSecondTouch}>
-                                <View style={styles.bottomSecondImgContainer}>
-                                    <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
-                                </View>
-                                <View style={styles.bottomSecondTextContainer}>
-                                    <Text style={styles.bottonSecondText}>이게 뭘까</Text>
-                                </View>
-                            </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                            <View style={styles.bottomSecondImgContainer}>
+                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                            </View>
+                            <View style={styles.bottomSecondTextContainer}>
+                                <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                            <View style={styles.bottomSecondImgContainer}>
+                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                            </View>
+                            <View style={styles.bottomSecondTextContainer}>
+                                <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                            <View style={styles.bottomSecondImgContainer}>
+                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                            </View>
+                            <View style={styles.bottomSecondTextContainer}>
+                                <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                            <View style={styles.bottomSecondImgContainer}>
+                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                            </View>
+                            <View style={styles.bottomSecondTextContainer}>
+                                <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                            <View style={styles.bottomSecondImgContainer}>
+                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                            </View>
+                            <View style={styles.bottomSecondTextContainer}>
+                                <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bottomSecondTouch}>
+                        <View style={styles.bottomSecondImgContainer}>
+                            <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                        </View>
+                        <View style={styles.bottomSecondTextContainer}>
+                            <Text style={styles.bottonSecondText}>이게 뭘까</Text>
+                        </View>
+                        </TouchableOpacity>
+
+                       
+                    </ScrollView>
+                    <View style={styles.modalBottom}>
+
+                        <View  style={styles.modalBottomContent}>
                             
                         </View>
-                    </View>
-                    <View  style={styles.bottom}>
-
                     </View>
                 </View>
             </Modal>
@@ -269,7 +361,7 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     bottomSecondTouch:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         width:'33%',
         height:160,
         padding:'2%'
@@ -291,7 +383,52 @@ const styles = StyleSheet.create({
         borderRadius:10,
         marginTop:'10%'
     },
-    bottonSecondText:{
+    bottomSecondText:{
 
     },
+    modalContainer:{
+        height:'90%',
+        backgroundColor:'pink',
+        width:'92%',
+        alignSelf:'center',
+        top:40,
+        borderRadius:10
+    },
+    modalTop:{
+        //backgroundColor:'grey',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'space-between'
+    },
+    modalLeftindent:{
+        width:35,
+    },
+    modalTopText:{
+        fontFamily:'neodgm'
+    },
+    backIconTouch:{
+        height:35,
+        width:35,
+    },
+    backIcon:{
+        height:'100%',
+        width:'100%'
+    },
+    modalMid:{
+        flexDirection:'row',
+        flexWrap:'wrap',
+        justifyContent:'space-evenly'
+    },
+    modalBottom:{
+        //backgroundColor:'grey',
+        height:'20%',
+        justifyContent:'center'
+    },
+    modalBottomContent:{
+        height:60,
+        marginHorizontal:'15%',
+        backgroundColor:'lightblue',
+        borderRadius:15,
+    },
+
 })
