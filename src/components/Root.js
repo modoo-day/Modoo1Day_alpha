@@ -24,6 +24,7 @@ import LoginProfile from './Screen/Modal/Account/LoginChild/SignUp/LoginProfile'
 import EmailCheck from './Screen/Modal/Account/LoginChild/SignUp/EmailCheck';
 import PasswordCheck from './Screen/Modal/Account/LoginChild/SignUp/PasswordCheck';
 import LoginTaste from './Screen/Modal/Account/LoginChild/SignUp/LoginTaste';
+import Avatar from './Screen/Main/Grow/Avatar/Avatar';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -64,6 +65,8 @@ function Root() {
           <Stack.Screen name='OpenC' component={OpenC}/>
           <Stack.Screen name='OpenD' component={OpenD}/>
           <Stack.Screen name='OpenE' component={OpenE}/>
+          {/* 성장 아바타 */}
+          <Stack.Screen name='Avatar' component={Avatar}/>
           {/* 로그인 */}
           <Stack.Screen name='EmailLogin' component={EmailLogin}/>
           <Stack.Screen name='EmailCheck' component={EmailCheck}/>

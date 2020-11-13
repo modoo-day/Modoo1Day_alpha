@@ -15,9 +15,12 @@ export default Growth = ({navigation}) => {
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.top}>
-                <View style={styles.topLeft}>
+                <TouchableOpacity 
+                    style={styles.topLeft}
+                    onPress={()=>navigation.navigate('Avatar')}
+                >
                     <Image style={styles.topImg} source={require('../../../../assets/img/night.png')}/>
-                </View>
+                </TouchableOpacity>
                 <View style={styles.topRight}>
                     <View style={styles.experiencePointContainer}>
                         <Text>레벨</Text>
