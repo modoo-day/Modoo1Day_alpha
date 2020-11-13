@@ -1,282 +1,261 @@
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import {
     View,
-    Image,
     Text,
-    ScrollView,
     StyleSheet,
+    ScrollView,
     TouchableOpacity,
-  } from 'react-native';
+    Image,
+    
+    } from 'react-native'
 import Button from 'apsl-react-native-button';
 
 
-export default Contents = () => {
-    
-    const navigation = useNavigation();
-
+const Contents = () =>{
     return(
-        <ScrollView >
-            <View style={styles.topMargin}></View>
-            <View style={styles.container}>
-            <View style={styles.first}>
-              <Image style={styles.listImage} source={require('../../../../../../assets/img/night.png')}/>
-              <View style={styles.listTextContainer}>
-                <View style={styles.listTitleContainer}>
-                  <Text style={styles.listTitle}>물 마시기</Text>
-                </View>
-                <View style={styles.listTagContainer}>
-                    <TouchableOpacity style={styles.listTagTouch}>
-                        <Text style={styles.listTag}>#물</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.listTagTouch}>
-                        <Text style={styles.listTag}>#물</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.listTagTouch}>
-                        <Text style={styles.listTag}>#물</Text>
-                    </TouchableOpacity>
-                </View>
-                <View style={styles.listBottomTextContainer}>
-                  <View style={styles.profileContainer}>
-                    <Image style={styles.profileIcon} source={require('../../../../../../assets/icons/profile.png')}/>
-                    <Text style={styles.author}>ㅂㅇㅅ</Text>
-                  </View>
-                  <Text style={styles.participants}>1000000만명 참여</Text>
-                </View>
-              </View>
+        <>
+        <ScrollView contentContainerStyle = {styles.container}>
+            <View style={styles.thumbnailContainer}>
+                <Image style={styles.thumbnail} source={require('../../../../../../assets/img/night.png')} />
             </View>
-
-            <View style={styles.second}>
-              <Image style={styles.listImage} source={require('../../../../../../assets/img/night.png')}/>
-              <View style={styles.listTextContainer}>
-                <View style={styles.secondLineContainer}>
-                    <Text style={styles.secondCategoryText}>참여 기간</Text>
-                    <Text style={styles.deadline}>10.31 ~ 11.06</Text>
-                </View>
-                <View style={styles.secondLineContainer}>
-                    <Text style={styles.secondCategoryText}>인증</Text>
-                    <Text style={styles.secondInfoText}>마시는 물이 보이게끔 찍어주세요</Text>
-                </View>
-                <View style={styles.secondLineContainer}>
-                    <Text style={styles.secondCategoryText}>인증 요일</Text>
-                    <Text style={styles.secondInfoText}>월, 화, 수, 목, 금, 토</Text>
-                </View>
-                <View style={styles.secondLineContainer}>
-                    <Text style={styles.secondCategoryText}>인증 시간</Text>
-                    <Text style={styles.secondInfoText}>00:00 ~ 23.59</Text>
-                </View>
-              </View>
-            </View>
-
-          
-          <View style={styles.third}>
-              <Image style={styles.listImage} source={require('../../../../../../assets/img/night.png')}/>
-              <View style={styles.listTextContainer}>
-                <View style={styles.thirdLineContainer}>
-                        <Text style={styles.thirdLineText1}>70%이상 달성 시</Text>
-                        <Text style={styles.thirdLineText1}>100%이상 달성 시</Text>
-                    </View>
-                    <View style={styles.third23LineContianer}>
-                        <View style={styles.thirdLineContainer}>
-                            <Text style={styles.thirdLineText2}>2경험치 (1경험치)</Text>
-                            <Text style={styles.thirdLineText2}>5경험치 (3경험치)</Text>
+            <View style={styles.infoContainer}>
+                <View style={styles.first}>
+                    <View style={styles.fistFirstLine}>
+                        <Text style={styles.title}>물 마시기</Text>
+                        <View style={styles.tagContainer}>
+                            <TouchableOpacity
+                                style={styles.tagTouch}
+                            >
+                                <Text style={styles.tag}>#물</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.tagTouch}
+                            >
+                                <Text style={styles.tag}>#물</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.tagTouch}
+                            >
+                                <Text style={styles.tag}>#물</Text>
+                            </TouchableOpacity>
                         </View>
-                        <View style={styles.thirdLineContainer}>
-                            <Text style={styles.thirdLineText2}>2코인 (2코인)</Text>
-                            <Text style={styles.thirdLineText2}>5코인 (3코인)</Text>
+                    </View>
+                    <View style={styles.firstSecondLine}>
+                        <TouchableOpacity style={styles.profileContainer}>
+                            <Image style={styles.profileImg} source={require('../../../../../../assets/img/night.png')} />
+                            <Text style={styles.profileName}>엄예진</Text>
+                        </TouchableOpacity>
+                        <Text style={styles.participants}>1000명 참여중</Text>
+                    </View>
+                </View>
+                <View style={styles.second}>
+                    <View style={styles.secondIconContainer}>
+                        <Image style={styles.secondIcon} source={require('../../../../../../assets/img/night.png')}/>
+                    </View>
+                    <Text style={styles.date}>20.11.15 ~ 11.21</Text>
+                </View>
+                <View style={styles.third}>
+                    <View style={styles.certificateImgContainer}>
+                        <Image style={styles.certificateImg} source={require('../../../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.thirdTextContainer}>
+                        <View style={styles.thirdTextLine}>
+                            <Text style={styles.yellowText}>인증 설명</Text>
+                            <Text style={styles.blackText}>마시는 물이 보이게끔 찍어주세요</Text>
+                        </View>
+                        <View style={styles.thirdTextLine}>
+                            <Text style={styles.yellowText}>인증 요일</Text>
+                            <Text style={styles.blackText}>월, 화, 수, 목, 금</Text>
+                        </View>
+                        <View style={styles.thirdTextLine}>
+                            <Text style={styles.yellowText}>인증 시간</Text>
+                            <Text style={styles.blackText}>00:00~23:59</Text>
                         </View>
                     </View>
                 </View>
-            </View>
-
-            <View style={styles.fourth}>
-              <Image style={styles.listImage} source={require('../../../../../../assets/img/night.png')}/>
-              <View style={styles.listTextContainer}>
-                <View style={styles.fourthLineContainer}>
-                        <Text style={styles.fourthTitleText}>유의 사항</Text>
+                <View style={styles.fourth}>
+                    <View style={styles.fourthIconContainer}>
+                        <Image style={styles.fourthIcon} source={require('../../../../../../assets/img/night.png')}/>
                     </View>
-                    <View style={styles.fourthLineContainer}>
-                        <Text style={styles.fourthText}>인증 가이드 사진에 맞춰서 찍어야합니다.</Text>
-                    </View>
-                    <View style={styles.fourthLineContainer}>
-                        <Text style={styles.fourthText}>중복된 사진은 경고를 받게 될 수 있습니다.</Text>
-                    </View>
-                    <View style={styles.fourthLineContainer}>
-                        <Text style={styles.fourthText}>리뷰를 남겨주셔야 리워드를 받을 수 있습니다.</Text>
+                    <View style={styles.fourthTextContainer}>
+                        <View style={styles.fourthTextBlock}>
+                            <Text style={styles.yellowText}>70% 달성</Text>
+                            <Text style={styles.blackText}>경험치</Text>
+                            <Text style={styles.blackText}>코인</Text>
+                        </View>
+                        <View style={styles.fourthTextBlock}>
+                            <Text style={styles.yellowText}>70% 달성</Text>
+                            <Text style={styles.blackText}>경험치</Text>
+                            <Text style={styles.blackText}>코인</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
-            </View>
-            <View style={styles.buttonContainer}>
-
-              <Button 
-                style={styles.button} 
-                textStyle={styles.buttonText}
-                //activeOpacity={1}
-                disabledStyle={{backgroundColor:'white'}}
-                isDisabled={false}
-                isLoading={false}
-                onPress={()=>navigation.navigate('ContentsWrite')}
-                >
-                  인증 하기
-              </Button>
+                <View style={styles.fifth}>
+                    <View style={styles.fifthIconContainer}>
+                        <Image style={styles.fifthIcon} source={require('../../../../../../assets/img/night.png')} />
+                    </View>
+                    <View style={styles.fifthTextContainer}> 
+                        <Text style={styles.redText}>유의 사항</Text>
+                        <Text style={styles.blackText}>유의사항1</Text>
+                        <Text style={styles.blackText}>유의사항2</Text>
+                        <Text style={styles.blackText}>유의사항3</Text>
+                    </View>
+                </View>
             </View>
         </ScrollView>
+        <View style={styles.buttonContainer}>
+            <Button
+                style={styles.button}
+                textStyle={styles.buttonText}
+                // //activeOpacity={1}
+                //disabledStyle={{backgroundColor: 'white'}}
+                //isDisabled={time>=time2}
+                // isLoading={false}
+                //onPress={() => navigation.navigate('Home') }
+            >
+                인증하기
+            </Button>
+        </View>
+        </>
     )
 }
 
+export default Contents;
 
 const styles = StyleSheet.create({
     container:{
-        marginHorizontal:'5%'
+
     },
-    topMargin:{
-      height:'6%'
+    thumbnailContainer:{
+        width:'100%',
+        aspectRatio:16/9
+    },
+    thumbnail:{
+        width:'100%',
+        height:'100%'
+    },
+    infoContainer:{
+        width:'90%',
+        alignSelf:'center'
     },
     first:{
-      // backgroundColor:'lightgreen',
-      flex:1,
-      flexDirection:'row',
-      marginBottom:'5%',
-    //   marginHorizontal:'5%'
+        backgroundColor:'lightblue',
+        height:130,
+        borderBottomWidth:1
     },
-    listImage:{
-        width:120,
-        height:120
+    fistFirstLine:{
+        backgroundColor:'lightyellow',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        height:'40%'
     },
-    listTextContainer:{
-      flex:1,
-      paddingLeft:'5%'
+    title:{
+        fontSize:30,
+        alignSelf:'flex-end'
     },
-    listTitleContainer:{
-      flex:115,
+    tagContainer:{
+        flexDirection:'row',
+        backgroundColor:'grey',
+        width:'35%',
+        justifyContent:'space-between'
     },
-    listTitle:{
-      top:'5%',
-      fontFamily:'neodgm',
-      fontSize:25
+    tagTouch:{
+        justifyContent:'flex-end'
     },
-    listTagContainer:{
-      flex:1,
-      flexDirection:'row',
+    tag:{
+
     },
-    listTagTouch:{
-      //backgroundColor:'pink',
-      bottom:'15%',
-      marginRight:'12%'
-    },
-    listTag:{
-      fontFamily:'neodgm',
-      fontSize:16
-    },
-    listBottomTextContainer:{
-      // backgroundColor:'lightblue',
-      flex:1,
-      flexDirection:'column'
+    firstSecondLine:{
+        backgroundColor:'pink',
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
     },
     profileContainer:{
-      flex:1,
-      flexDirection:'row'
+        flexDirection:'row',
+        backgroundColor:'grey'
     },
-    profileIcon:{
-      width:20,
-      height:20,
-      marginRight:'5%'
+    profileImg:{
+        height:30,
+        width:30,
     },
-    author:{
-      fontFamily:'neodgm',
-      fontSize:10,
+    profileName:{
+
     },
     participants:{
-      fontSize:10,
-      fontFamily:'neodgm',
+
     },
     second:{
-      // backgroundColor:'lightgreen',
-      flex:1,
-      flexDirection:'row',
-      marginBottom:'5%',
-    //   marginHorizontal:'5%'
+
     },
-    secondLineContainer:{
-      flex:1,
-      flexDirection:'row',
-      justifyContent:'space-between',
-      alignItems:'center',
-      //backgroundColor:'pink'
+    secondIconContainer:{
+
     },
-    secondCategoryText:{
-      fontFamily:'neodgm',
-      fontSize:10
+    secondIcon:{
+
     },
-    deadline:{
-      fontFamily:'neodgm',
-      fontSize:10
-    },
-    secondInfoText:{
-      fontFamily:'neodgm',
-      fontSize:10
+    date:{
+
     },
     third:{
-      // backgroundColor:'lightgreen',
-      flex:1,
-      flexDirection:'row',
-      marginBottom:'5%',
-    //   marginHorizontal:'5%'
+
     },
-    thirdLineContainer:{
-      flex:1,
-      flexDirection:'row',
-      justifyContent:'space-between',
-      alignItems:'center',
+    certificateImgContainer:{
+
     },
-    third23LineContianer:{
-      //backgroundColor:'pink'
+    certificateImg:{
+
     },
-    thirdLineText1:{
-      fontFamily:'neodgm',
-      fontSize:10
+    thirdTextContainer:{
+
     },
-    thirdLineText2:{
-      fontFamily:'neodgm',
-      fontSize:10,
-      marginTop:'2%'
+    thirdTextLine:{
+
+    },
+    yellowText:{
+
+    },
+    blackText:{
+
     },
     fourth:{
-      // backgroundColor:'lightgreen',
-      flex:1,
-      flexDirection:'row',
-      marginBottom:'5%',
-    //   marginHorizontal:'5%'
+
     },
-    fourthLineContainer:{
-      flex:0.8
+    fourthIconContainer:{
+
     },
-    fourthTitleText:{
-      fontSize:10,
-      fontFamily:'neodgm',
-  
+    fourthIcon:{
+
     },
-    fourthText:{
-      fontSize:10,
-      fontFamily:'neodgm',
+    fourthTextContainer:{
+
+    },
+    fourthTextBlock:{
+
+    },
+    fifth:{
+
+    },
+    fifthIconContainer:{
+
+    },
+    fifthIcon:{
+
+    },
+    fifthTextContainer:{
+
+    },
+    redText:{
+
     },
     buttonContainer:{
-        height:110,
-        //backgroundColor:'pink'
+
     },
-    button: {
-      width: '105%',
-      backgroundColor: '#ffcd2c',
-      borderWidth: 2,
-      //height: '35%',
-      //marginTop: '4%',
-      borderRadius:0,
-      alignSelf:'center'
+    button:{
+        
     },
-    buttonText: {
-      fontFamily: 'neodgm',
-      fontSize: 10,
-    },
-  });
-  
+    buttonText:{
+
+    }
+})
