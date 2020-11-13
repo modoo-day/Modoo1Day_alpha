@@ -10,8 +10,6 @@ import {
     Alert
 } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
-import Button from 'apsl-react-native-button';
-
 
 const Avatar = ({navigation}) => {
 
