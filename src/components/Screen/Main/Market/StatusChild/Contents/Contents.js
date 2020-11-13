@@ -61,7 +61,7 @@ const Contents = () =>{
                     <View style={styles.thirdTextContainer}>
                         <View style={styles.thirdTextLine}>
                             <Text style={styles.yellowText}>인증 설명</Text>
-                            <Text style={styles.blackText}>마시는 물이 보이게끔 찍어주세요</Text>
+                            <Text style={styles.blackText}>맛있게 보이는 물을 마시는 물이 보이게끔 찍어주세요</Text>
                         </View>
                         <View style={styles.thirdTextLine}>
                             <Text style={styles.yellowText}>인증 요일</Text>
@@ -208,25 +208,34 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     third:{
-
+        backgroundColor:'lightblue',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        paddingVertical:20,
+        borderBottomWidth:1,
     },
     certificateImgContainer:{
-
+        height:90,
+        width:90
     },
     certificateImg:{
-
+        height:'100%',
+        width:'100%',
     },
     thirdTextContainer:{
-
+        backgroundColor:'pink',
+        width:'65%'
     },
     thirdTextLine:{
-
+        marginVertical:'3%'
     },
     yellowText:{
-
+        textAlign:'right',
+        color:'blue',
     },
     blackText:{
-
+        textAlign:'right'
     },
     fourth:{
 
