@@ -11,7 +11,7 @@ import {
 import Button from 'apsl-react-native-button';
 
 
-const Contents = () =>{
+const Contents = ({navigation}) =>{
     return(
         <>
         <ScrollView contentContainerStyle = {styles.container}>
@@ -83,7 +83,7 @@ const Contents = () =>{
                             <Text style={styles.blackText}>경험치</Text>
                             <Text style={styles.blackText}>코인</Text>
                         </View>
-                        <View style={styles.fourthTextBlock}>
+                        <View>
                             <Text style={styles.yellowText}>70% 달성</Text>
                             <Text style={styles.blackText}>경험치</Text>
                             <Text style={styles.blackText}>코인</Text>
@@ -111,7 +111,7 @@ const Contents = () =>{
                 //disabledStyle={{backgroundColor: 'white'}}
                 //isDisabled={time>=time2}
                 // isLoading={false}
-                //onPress={() => navigation.navigate('Home') }
+                onPress={() => navigation.navigate('ContentsWrite') }
             >
                 인증하기
             </Button>
@@ -238,42 +238,66 @@ const styles = StyleSheet.create({
         textAlign:'right'
     },
     fourth:{
-
+        flexDirection:'row',
+        backgroundColor:'lightblue',
+        justifyContent:'space-between',
+        paddingVertical:5,
+        alignItems:'center',
+        borderBottomWidth:1,
     },
     fourthIconContainer:{
-
+        height:80,
+        width:80
     },
     fourthIcon:{
-
+        height:'100%',
+        width:'100%',
+        borderRadius:50
     },
     fourthTextContainer:{
-
+        flexDirection:'row',
     },
     fourthTextBlock:{
-
+        marginRight:30
     },
     fifth:{
-
+        flexDirection:'row',
+        backgroundColor:'lightblue',
+        justifyContent:'space-between',
+        paddingVertical:20,
+        alignItems:'center',
+        //borderBottomWidth:1,
     },
     fifthIconContainer:{
-
+        height:80,
+        width:80
     },
     fifthIcon:{
-
+        height:'100%',
+        width:'100%',
+        borderRadius:50
     },
     fifthTextContainer:{
 
     },
     redText:{
-
+        color:'red'
     },
     buttonContainer:{
 
     },
     button:{
-        
+        width: '100%',
+        backgroundColor: '#ffcd2c', 
+        //'#ffcd2c',
+        borderWidth: 2,
+        //height: '100%',
+        borderRadius: 0,
+        alignSelf: 'center',
+        marginBottom:-5
     },
     buttonText:{
-
+        //fontFamily: 'neodgm',
+        fontSize: 10,
     }
 })
