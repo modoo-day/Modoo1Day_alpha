@@ -25,7 +25,6 @@ const OpenD = ({navigation}) => {
     const [timeString2, setTimeString2] = useState('00 : 00');
     const [timeColor2, setTimeColor2] = useState('lightgray');
 
-    const [err, setErr] = useState(false);
     
     const onChangetime = (event, selectedtime) => {
         const currenttime = selectedtime || time;
@@ -41,12 +40,7 @@ const OpenD = ({navigation}) => {
         setTime2(currenttime2);
         setTimetoString2(currenttime2);
         setTimeColor2('black');
-        if(time>=time2) {
-            console.log('오류발생');
-            setErr(true);
-        } else {
-            setErr(false);
-        }
+        
 
     };
 
@@ -154,7 +148,7 @@ const OpenD = ({navigation}) => {
                     textStyle={styles.deepButtonText2}
                     // //activeOpacity={1}
                     disabledStyle={{backgroundColor: 'white'}}
-                    isDisabled={err==true ? true : false}
+                    isDisabled={time>=time2}
                     // isLoading={false}
                     onPress={() => navigation.navigate('Home') }
                 >완료!</Button>
