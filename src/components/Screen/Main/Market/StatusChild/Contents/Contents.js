@@ -174,29 +174,38 @@ const styles = StyleSheet.create({
     },
     profileContainer:{
         flexDirection:'row',
-        backgroundColor:'grey'
+        backgroundColor:'grey',
+        alignItems:'flex-end'
     },
     profileImg:{
         height:30,
         width:30,
     },
     profileName:{
-
+        bottom:'6%'
     },
     participants:{
 
     },
     second:{
-
+        backgroundColor:'lightblue',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        paddingVertical:5,
+        borderBottomWidth:1
     },
     secondIconContainer:{
-
+        height:80,
+        width:80
     },
     secondIcon:{
-
+        height:'100%',
+        width:'100%',
+        borderRadius:50
     },
     date:{
-
+        fontSize:20,
+        alignSelf:'center'
     },
     third:{
 
