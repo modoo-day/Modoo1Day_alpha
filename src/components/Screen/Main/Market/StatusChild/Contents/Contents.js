@@ -45,7 +45,11 @@ const Contents = ({navigation}) =>{
                             <Image style={styles.profileImg} source={require('../../../../../../assets/img/night.png')} />
                             <Text style={styles.profileName}>엄예진</Text>
                         </TouchableOpacity>
-                        <Text style={styles.participants}>1000명 참여중</Text>
+                        <TouchableOpacity
+                            onPress={()=>navigation.navigate('ContentsParticipants')}
+                        >
+                            <Text style={styles.participants}>1000명 참여중</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View style={styles.second}>
