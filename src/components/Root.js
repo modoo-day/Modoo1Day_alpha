@@ -25,6 +25,7 @@ import EmailCheck from './Screen/Modal/Account/LoginChild/SignUp/EmailCheck';
 import PasswordCheck from './Screen/Modal/Account/LoginChild/SignUp/PasswordCheck';
 import LoginTaste from './Screen/Modal/Account/LoginChild/SignUp/LoginTaste';
 import Avatar from './Screen/Main/Grow/Avatar/Avatar';
+import ContentsParticipants from './Screen/Main/Market/StatusChild/Contents/ContentsParticipants';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -54,6 +55,7 @@ function Root() {
           {/* StatusRoute */}
           <Stack.Screen name='StatusRoute' component={StatusRoute}/>
           <Stack.Screen name='ContentsWrite' component={ContentsWrite}/>
+          <Stack.Screen name='ContentsParticipants' component={ContentsParticipants}/>
           <Stack.Screen name='ReviewWrite' component={ReviewWrite}/>
           <Stack.Screen name='ReviewDetail' component={ReviewDetail}/>
           <Stack.Screen name='QuestionWrite' component={QuestionWrite}/>
