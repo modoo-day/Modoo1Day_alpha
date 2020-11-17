@@ -4,6 +4,7 @@ import Review from './Review/Review';
 import Contents from './Contents/Contents';
 import Certificate from './Certificate/Certificate';
 import Question from './Question/Question';
+import Attendance from './Attendance/Attendance';
 
 
 export default StatusRoute = ({navigation}) => {
@@ -26,6 +27,7 @@ export default StatusRoute = ({navigation}) => {
           <NavigationRouter.Screen name='Certificate' component={Certificate} />
           <NavigationRouter.Screen name='Review' component={Review} />
           <NavigationRouter.Screen name='Question' component={Question} />
+          <NavigationRouter.Screen name='Attendance' component={Attendance} />
         </NavigationRouter.Navigator>
       );
 }

@@ -2,10 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, StyleSheet, View, FlatList } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
-const Search = () => {
+const Search = ({navigation, route}) => {
   const [search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
+
+
+  React.useEffect(() => {
+    if (route.params?.tagText) {
+      // Post updated, do something with `route.params.post`
+      // For example, send the post to the server
+      setSearch(route.params.tagText)
+    }
+  }, [route.params?.tagText]);
 
   useEffect(() => {
     //해당 링크에서 json리스트를 불러옴.
