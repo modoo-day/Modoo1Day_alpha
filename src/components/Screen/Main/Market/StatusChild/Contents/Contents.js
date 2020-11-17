@@ -10,6 +10,9 @@ import {
     } from 'react-native'
 import Button from 'apsl-react-native-button';
 
+const tag1 = '#태그1'
+const tag2 = '#태그2'
+const tag3 = '#태그3'
 
 const Contents = ({navigation}) =>{
     return(
@@ -25,18 +28,21 @@ const Contents = ({navigation}) =>{
                         <View style={styles.tagContainer}>
                             <TouchableOpacity
                                 style={styles.tagTouch}
+                                onPress={()=>navigation.navigate('Search', {tagText: tag1})}
                             >
-                                <Text style={styles.tag}>#물</Text>
+                                <Text style={styles.tag}>{tag1}</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={styles.tagTouch}
+                                onPress={()=>navigation.navigate('Search', {tagText: tag2})}
                             >
-                                <Text style={styles.tag}>#물</Text>
+                                <Text style={styles.tag}>{tag2}</Text>
                             </TouchableOpacity>
                             <TouchableOpacity
                                 style={styles.tagTouch}
+                                onPress={()=>navigation.navigate('Search', {tagText: tag3})}
                             >
-                                <Text style={styles.tag}>#물</Text>
+                                <Text style={styles.tag}>{tag3}</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
