@@ -1,10 +1,20 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ToastAndroid,
+} from 'react-native';
 import EmailButton from './LoginChild/EmailButton';
 import GoogleButton from './LoginChild/GoogleButton';
 import KakaoButton from './LoginChild/KakaoButton';
+import auth from '@react-native-firebase/auth';
 
 const Login = ({navigation}) => {
+  ToastAndroid.show(auth().currentUser.email, ToastAndroid.SHORT);
+  console.log(auth().currentUser);
   return (
     <View style={styles.container}>
       <View style={styles.top}>

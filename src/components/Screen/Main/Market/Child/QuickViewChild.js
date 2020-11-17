@@ -1,17 +1,40 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-
+import {useNavigation} from '@react-navigation/native';
+import storage from '@react-native-firebase/storage';
 
 const QuickViewChild = (info) => {
-
   const navigation = useNavigation();
 
+  const [usrImgUrl, setUsrImgUrl] = useState(
+    'https://rdironworks.com/wp-content/uploads/2017/12/dummy-200x200.png',
+  );
+
+  const processUserProfileImg = () => {
+    if (info._data == undefined) {
+      return;
+    }
+    let userImgStorageUrl = info._data.uploaderImg_str;
+    storage()
+      .refFromURL(userImgStorageUrl)
+      .getDownloadURL()
+      .then((url) => {
+        // console.log('봐라', url);
+        setUsrImgUrl(url);
+      });
+  };
+  useEffect(() => {
+    processUserProfileImg();
+  }, [info]);
+
   // 아직 로딩중이면.
-  if (info.title_str == undefined) {
+  if (info._data == undefined) {
     return (
       <View style={styles.listContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('StatusRoute')}>
+        <TouchableOpacity
+          onPress={() => {
+            console.log('아직 로딩중');
+          }}>
           <Image
             style={styles.listImage}
             source={require('../../../../../assets/img/night.png')}
@@ -40,10 +63,16 @@ const QuickViewChild = (info) => {
   }
   // 로딩 완료면
   else {
-    // console.log(info.title_str);
+    // console.log(info._data.title_str);
     return (
       <View style={styles.listContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('StatusRoute')}>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('StatusRoute', {
+              screen: 'Contents',
+              params: {ref: info._data},
+            })
+          }>
           <Image
             style={styles.listImage}
             source={{
@@ -54,11 +83,11 @@ const QuickViewChild = (info) => {
         </TouchableOpacity>
         <View style={styles.listTextContainer}>
           <View style={styles.listTitleContainer}>
-            <Text style={styles.listTitle}>{info.title_str}</Text>
+            <Text style={styles.listTitle}>{info._data.title_str}</Text>
           </View>
           <TouchableOpacity style={styles.listTagContainer}>
             <Text style={styles.listTag}>
-              {info.interestsArr.map((dt) => {
+              {info._data.interestsArr.map((dt) => {
                 return '#'.concat(dt + ' ');
               })}
             </Text>
@@ -67,15 +96,13 @@ const QuickViewChild = (info) => {
             <View style={styles.profileContainer}>
               <Image
                 style={styles.profileIcon}
-                source={require('../../../../../assets/icons/profile.png')}
+                // source={require('../../../../../assets/icons/profile.png')}
+                source={{uri: usrImgUrl}}
               />
-              <Text style={styles.author}>
-                {/* {usrData.name} */}
-                유저 이름
-              </Text>
+              <Text style={styles.author}>{info._data.uploader_str}</Text>
             </View>
             <Text style={styles.participants}>
-              {info.participateCount_num}명 참여
+              {info._data.participateCount_num}명 참여
             </Text>
           </View>
         </View>
@@ -158,7 +185,7 @@ const styles = StyleSheet.create({
     paddingLeft: '5%',
   },
   listTitleContainer: {
-    flex:2,
+    flex: 2,
     justifyContent: 'flex-start',
     //backgroundColor:'grey'
   },
@@ -170,7 +197,7 @@ const styles = StyleSheet.create({
     //backgroundColor:'pink',
     bottom: '10%',
     marginRight: '80%',
-    width:'100%'
+    width: '100%',
   },
   listTag: {
     fontFamily: 'neodgm',
