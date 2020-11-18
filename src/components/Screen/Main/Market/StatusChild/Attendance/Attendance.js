@@ -5,11 +5,12 @@ import {
     StyleSheet,
     ScrollView,
     Image,
+    TouchableOpacity,
     } from 'react-native';
 import Button from 'apsl-react-native-button';
 
     
-const Attendance = () => {
+const Attendance = ({navigation}) => {
     return(
         <>
         <ScrollView contentContainerStyle={styles.container}>
@@ -22,9 +23,11 @@ const Attendance = () => {
             <View style={styles.mid}>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
-                    <View style={styles.circle}>
-
-                    </View>
+                    <TouchableOpacity
+                        style={styles.circle}
+                        onPress={()=>navigation.navigate('AttendanceParticipants')}
+                    >
+                    </TouchableOpacity>
                     <View style={styles.besideCircle}>
                         <Text style={styles.exp}>
                             EXP
@@ -33,35 +36,7 @@ const Attendance = () => {
                             COIN
                         </Text>
                     </View>
-                </View>
-                <View style={styles.oneCheck}>
-                    <View style={styles.besideCircle}></View>
-                    <View style={styles.circle}>
-
-                    </View>
-                    <View style={styles.besideCircle}>
-                        {/* <Text style={styles.exp}>
-                            EXP
-                        </Text>
-                        <Text style={styles.coin}>
-                            COIN
-                        </Text> */}
-                    </View>
-                </View>     
-                <View style={styles.oneCheck}>
-                    <View style={styles.besideCircle}></View>
-                    <View style={styles.circle}>
-
-                    </View>
-                    <View style={styles.besideCircle}>
-                        {/* <Text style={styles.exp}>
-                            EXP
-                        </Text>
-                        <Text style={styles.coin}>
-                            COIN
-                        </Text> */}
-                    </View>
-                </View>            
+                </View>           
             </View>
         </ScrollView>
         <View style={styles.buttonContainer}>
