@@ -13,7 +13,7 @@ import KakaoButton from './LoginChild/KakaoButton';
 import auth from '@react-native-firebase/auth';
 
 const Login = ({navigation}) => {
-  ToastAndroid.show(auth().currentUser.email, ToastAndroid.SHORT);
+  //ToastAndroid.show(auth().currentUser, ToastAndroid.SHORT);
   console.log(auth().currentUser);
   return (
     <View style={styles.container}>

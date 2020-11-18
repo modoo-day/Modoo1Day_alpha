@@ -67,7 +67,7 @@ const GoogleButton = () => {
     // ..
     // ..
     console.log(auth().currentUser);
-    navigation.navigate('Home')
+    navigation.navigate('LoginProfile')
   };
   return (
     <TouchableOpacity onPress={() => googleSignIn()}>
