@@ -30,7 +30,7 @@ const KakaoButton = () => {
               .then(() => {
                 console.log('카카오 로그인 완료:', auth().currentUser);
                 // 여기서부터 로그인 완료했을 때 수행하는 동작.
-                navigation.navigate('Home')
+                navigation.navigate('LoginProfile')
               })
               .catch((err) => {
                 console.log('Firebase Token Auth에서 에러:', err);
