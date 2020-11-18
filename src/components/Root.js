@@ -26,6 +26,7 @@ import PasswordCheck from './Screen/Modal/Account/LoginChild/SignUp/PasswordChec
 import LoginTaste from './Screen/Modal/Account/LoginChild/SignUp/LoginTaste';
 import Avatar from './Screen/Main/Grow/Avatar/Avatar';
 import ContentsParticipants from './Screen/Main/Market/StatusChild/Contents/ContentsParticipants';
+import AttendanceParticipants from './Screen/Main/Market/StatusChild/Attendance/AttendanceParticipants';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -61,6 +62,7 @@ function Root() {
           <Stack.Screen name='QuestionWrite' component={QuestionWrite}/>
           <Stack.Screen name='QuestionDetail' component={QuestionDetail}/>
           <Stack.Screen name='Report' component={Report}/>
+          <Stack.Screen name='AttendanceParticipants' component={AttendanceParticipants}/>
           {/* 성장 모두개설 */}
           <Stack.Screen name='OpenA' component={OpenA}/>
           <Stack.Screen name='OpenB' component={OpenB}/>
