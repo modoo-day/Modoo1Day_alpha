@@ -6,9 +6,12 @@ import {
     ScrollView,
     Image,
     } from 'react-native';
+import Button from 'apsl-react-native-button';
+
     
 const Attendance = () => {
     return(
+        <>
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.top}>
                 <Text style={styles.progressText}>전체 달성률 85%</Text>
@@ -19,9 +22,6 @@ const Attendance = () => {
             <View style={styles.mid}>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
-                    <View>
-
-                    </View>
                     <View style={styles.circle}>
 
                     </View>
@@ -33,9 +33,51 @@ const Attendance = () => {
                             COIN
                         </Text>
                     </View>
-                </View>       
+                </View>
+                <View style={styles.oneCheck}>
+                    <View style={styles.besideCircle}></View>
+                    <View style={styles.circle}>
+
+                    </View>
+                    <View style={styles.besideCircle}>
+                        {/* <Text style={styles.exp}>
+                            EXP
+                        </Text>
+                        <Text style={styles.coin}>
+                            COIN
+                        </Text> */}
+                    </View>
+                </View>     
+                <View style={styles.oneCheck}>
+                    <View style={styles.besideCircle}></View>
+                    <View style={styles.circle}>
+
+                    </View>
+                    <View style={styles.besideCircle}>
+                        {/* <Text style={styles.exp}>
+                            EXP
+                        </Text>
+                        <Text style={styles.coin}>
+                            COIN
+                        </Text> */}
+                    </View>
+                </View>            
             </View>
         </ScrollView>
+        <View style={styles.buttonContainer}>
+            <Button
+                style={styles.button}
+                textStyle={styles.buttonText}
+                // //activeOpacity={1}
+                //disabledStyle={{backgroundColor: 'white'}}
+                //isDisabled={time>=time2}
+                // isLoading={false}
+                //onPress={() => navigation.navigate('ContentsWrite') }
+            >
+                인증하기
+            </Button>
+        </View>
+        </>
     )
 }
 
@@ -87,5 +129,22 @@ const styles = StyleSheet.create({
     },
     coin:{
         marginLeft:'10%'
+    },
+    buttonContainer:{
+
+    },
+    button:{
+        width: '100%',
+        backgroundColor: '#ffcd2c', 
+        //'#ffcd2c',
+        borderWidth: 0,
+        //height: '100%',
+        borderRadius: 0,
+        alignSelf: 'center',
+        marginBottom:-5
+    },
+    buttonText:{
+        //fontFamily: 'neodgm',
+        fontSize: 10,
     }
 })
