@@ -19,7 +19,7 @@ const AttendanceParticipants = () => {
             </View>
             <View style={styles.attendanceContainer}>
                 <View style={styles.attendanceTextContainer}>
-                    <Text style={styles.attendanceText}>출석 8/10</Text>
+                    <Text style={styles.attendanceText}>출석 3/10</Text>
                 </View>
                 <View style={styles.profileListContainer}>
                     <View style={styles.profileContainer}>
@@ -42,8 +42,30 @@ const AttendanceParticipants = () => {
                     </View>
                 </View>
             </View>
-            <View>
-
+            <View style={styles.attendanceContainer}>
+                <View style={styles.attendanceTextContainer}>
+                    <Text style={styles.attendanceText}>결석 3/10</Text>
+                </View>
+                <View style={styles.profileListContainer}>
+                    <View style={styles.profileContainer}>
+                        <Image style={styles.profileImg} source={require('../../../../../../assets/img/night.png')}/>
+                        <View style={styles.idContainer}>
+                            <Text style={styles.id}>아이디</Text>
+                        </View>
+                    </View>
+                    <View style={styles.profileContainer}>
+                        <Image style={styles.profileImg} source={require('../../../../../../assets/img/night.png')}/>
+                        <View style={styles.idContainer}>
+                            <Text style={styles.id}>아이디</Text>
+                        </View>
+                    </View>
+                    <View style={styles.profileContainer}>
+                        <Image style={styles.profileImg} source={require('../../../../../../assets/img/night.png')}/>
+                        <View style={styles.idContainer}>
+                            <Text style={styles.id}>아이디</Text>
+                        </View>
+                    </View>
+                </View>
             </View>
         </ScrollView>
     )
@@ -84,7 +106,8 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         flexWrap:'wrap',
         borderRadius:10,
-        borderWidth:1
+        borderWidth:1,
+        marginBottom:'5%'
     },
     profileContainer:{
         backgroundColor:'lightyellow',
