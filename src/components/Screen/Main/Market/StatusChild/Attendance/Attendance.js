@@ -121,7 +121,7 @@ const Attendance = ({navigation}) => {
                 //disabledStyle={{backgroundColor: 'white'}}
                 //isDisabled={time>=time2}
                 // isLoading={false}
-                onPress={() => setDate(date + 1) }
+                onPress={() => setDate(1) }
             >
                 인증하기
             </Button>
@@ -134,7 +134,7 @@ export default Attendance;
 
 const styles = StyleSheet.create({
     top:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:100,
         width:'100%',
         justifyContent:'center',
@@ -146,16 +146,16 @@ const styles = StyleSheet.create({
     progressContainer:{
         height:30,
         width:'80%',
-        backgroundColor:'grey',
+        //backgroundColor:'grey',
         borderRadius:50,
         marginTop:'5%'
     },
     mid:{
-        backgroundColor:'lightblue',
+        //backgroundColor:'lightblue',
         
     },
     oneCheck:{
-        backgroundColor:'lightgreen',
+       // backgroundColor:'lightgreen',
         flexDirection:'row',
         //justifyContent:'center',
         paddingVertical:20

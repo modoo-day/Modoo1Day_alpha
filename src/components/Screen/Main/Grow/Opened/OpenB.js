@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     top:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         height:50,
         justifyContent:'center'
     },
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
         fontFamily:'neodgm'
     },
     mid:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:50
     },
     activeButton:{
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
          fontFamily:'neodgm'
     },
     bottom:{
-        backgroundColor:'lightblue',
+        //backgroundColor:'lightblue',
         flexDirection:'row',
         justifyContent:'space-between',
         height:50

@@ -166,12 +166,12 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     top:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         height:100,
         justifyContent:'center'
     },
     topTextContainer:{
-        backgroundColor:'grey',
+        //backgroundColor:'grey',
         height:'50%',
         justifyContent:'space-between'
     },
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
         fontFamily:'neodgm'
     },
     mid:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:150
     },
     midText:{
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
 
     },
     bottom:{
-        backgroundColor:'lightblue'
+        //backgroundColor:'lightblue'
     },
     bottomText:{
         fontFamily:'neodgm'

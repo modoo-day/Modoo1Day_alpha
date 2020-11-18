@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 
     },
     top:{  
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         flexDirection:'row',
         paddingVertical:30,
         justifyContent:'space-between'
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
         textAlign:'center'
     },
     attendanceContainer:{
-        backgroundColor:'lightblue'
+        //backgroundColor:'lightblue'
     },
     attendanceTextContainer:{
         height:100,
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
 
     },
     profileListContainer:{
-        backgroundColor:'lightgreen',
+        //backgroundColor:'lightgreen',
         flexDirection:'row',
         flexWrap:'wrap',
         borderRadius:10,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
         marginBottom:'5%'
     },
     profileContainer:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         flexDirection:'row',
         width:'50%',
         justifyContent:'space-between',
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         borderRadius:50,
     },
     idContainer:{
-        backgroundColor:'lightgrey',
+       // backgroundColor:'lightgrey',
         width:'50%',
         alignItems:'center'
     },

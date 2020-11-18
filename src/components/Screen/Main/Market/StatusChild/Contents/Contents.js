@@ -183,12 +183,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   first: {
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     height: 130,
     borderBottomWidth: 1,
   },
   fistFirstLine: {
-    backgroundColor: 'lightyellow',
+    //backgroundColor: 'lightyellow',
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: '40%',
@@ -199,8 +199,8 @@ const styles = StyleSheet.create({
   },
   tagContainer: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
-    width: '35%',
+    //backgroundColor: 'grey',
+    width: '45%',
     justifyContent: 'space-between',
   },
   tagTouch: {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   },
   tag: {},
   firstSecondLine: {
-    backgroundColor: 'pink',
+    //backgroundColor: 'pink',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
   },
   profileContainer: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
+    //backgroundColor: 'grey',
     alignItems: 'flex-end',
   },
   profileImg: {
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
   },
   participants: {},
   second: {
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 5,
@@ -248,7 +248,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   third: {
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   thirdTextContainer: {
-    backgroundColor: 'pink',
+    //backgroundColor: 'pink',
     width: '65%',
   },
   thirdTextLine: {
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
   },
   fourth: {
     flexDirection: 'row',
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     justifyContent: 'space-between',
     paddingVertical: 5,
     alignItems: 'center',
@@ -302,7 +302,7 @@ const styles = StyleSheet.create({
   },
   fifth: {
     flexDirection: 'row',
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     justifyContent: 'space-between',
     paddingVertical: 20,
     alignItems: 'center',

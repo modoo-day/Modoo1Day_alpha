@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     width:'95%'
   },
   top: {
-    backgroundColor: 'pink',
+    //backgroundColor: 'pink',
     height:150
   },
   topTextContainer:{
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
 
   },
   mid: {
-    backgroundColor: 'lightyellow',
+    //backgroundColor: 'lightyellow',
     height:150,
   },
   category: {
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     //paddingBottom:5.5,
   },
   bottom: {
-    backgroundColor: 'lightblue',
+   // backgroundColor: 'lightblue',
     height:250
   },
   tag: {

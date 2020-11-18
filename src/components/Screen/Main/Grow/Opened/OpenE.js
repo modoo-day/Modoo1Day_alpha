@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         width:30,
     },
     textLimit:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         textAlign:'right',
         alignSelf:'flex-end',
         top:35,
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     },
     bottomButtonContainer:{
         marginTop:'15%',
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:100,
         width:'100%'
     },
