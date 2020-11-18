@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     ScrollView,
     View,
@@ -9,12 +9,23 @@ import {
 } from 'react-native'
 
 
-const AttendanceParticipants = () => {
+const AttendanceParticipants = ({route}) => {
+
+    const [day, setDay] = useState('')
+
+    React.useEffect(() => {
+        if (route.params?.day) {
+          // Post updated, do something with `route.params.post`
+          // For example, send the post to the server
+          setDay(route.params.day)
+        }
+      }, [route.params?.day]);
+
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.top}>
                 <View style={{flex:1}}></View>
-                <Text style={styles.day}>DAY 1</Text>
+                <Text style={styles.day}>DAY {day}</Text>
                 <Text style={styles.participants}>참여자 10명</Text>
             </View>
             <View style={styles.attendanceContainer}>
