@@ -21,7 +21,7 @@ const MarketStatus = ({navigation}) => {
   const [newDataB, setNewDataB] = useState({});
   const [recDataA, setRecDataA] = useState({});
   const [recDataB, setRecDataB] = useState({});
-  
+
   const modooDataRef = firestore().collection('MODOOS_DATA');
   const refreshMain = () => {
     // Data들 파베에서 불러오기.
@@ -33,8 +33,8 @@ const MarketStatus = ({navigation}) => {
       .get()
       .then((snst) => {
         console.log('HotData 받아옴');
-        setHotDataA(snst._docs[0]._data);
-        setHotDataB(snst._docs[1]._data);
+        setHotDataA(snst._docs[0]);
+        setHotDataB(snst._docs[1]);
       })
       .catch((err) => {
         console.log(err);
@@ -47,8 +47,8 @@ const MarketStatus = ({navigation}) => {
       .get()
       .then((snst) => {
         console.log('NewData 받아옴');
-        setNewDataA(snst._docs[0]._data);
-        setNewDataB(snst._docs[1]._data);
+        setNewDataA(snst._docs[0]);
+        setNewDataB(snst._docs[1]);
       })
       .catch((err) => {
         console.log(err);

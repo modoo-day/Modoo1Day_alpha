@@ -27,7 +27,6 @@ const Question = ({navigation}) => {
       .limit(5)
       .get()
       .then((snst) => {
-        console.log(snst._docs);
         console.log('Inquiry List 불러옴');
         setInquiryA(snst._docs[0]._data);
         setInquiryB(snst._docs[1]._data);
