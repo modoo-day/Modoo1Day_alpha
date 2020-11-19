@@ -9,6 +9,8 @@ import {
     } from 'react-native';
 import Button from 'apsl-react-native-button';
 import ProgressBar from 'react-native-progress/Bar';
+import Dash from 'react-native-dash';
+
     
 const Attendance = ({navigation}) => {
 
@@ -46,6 +48,7 @@ const Attendance = ({navigation}) => {
                         </Text>
                     </View>
                 </View>
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -57,6 +60,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -68,6 +72,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -79,6 +84,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -95,6 +101,7 @@ const Attendance = ({navigation}) => {
                         </Text>
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -106,6 +113,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -117,6 +125,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>     
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -176,7 +185,7 @@ const styles = StyleSheet.create({
        // backgroundColor:'lightgreen',
         flexDirection:'row',
         //justifyContent:'center',
-        paddingVertical:20
+        //paddingVertical:20
     },
     circle:{
         height:45,
@@ -205,8 +214,13 @@ const styles = StyleSheet.create({
     coin:{
         marginLeft:'10%'
     },
+    dashStyle:{
+        width:1, 
+        height:30, 
+        flexDirection:'column', 
+        alignSelf:'center'  
+    },
     buttonContainer:{
-
     },
     button:{
         width: '100%',
