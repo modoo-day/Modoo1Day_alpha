@@ -6,8 +6,8 @@ import {
   statusCodes,
 } from '@react-native-community/google-signin';
 import auth from '@react-native-firebase/auth';
-import { useNavigation } from '@react-navigation/native';
-
+import {useNavigation} from '@react-navigation/native';
+import checkNewAccountFunc from './checkNewAccountFunc';
 
 GoogleSignin.configure({
   webClientId:
@@ -16,7 +16,7 @@ GoogleSignin.configure({
 });
 
 const GoogleButton = () => {
-  navigation=useNavigation();
+  navigation = useNavigation();
   // 구글 전용 에러 핸들링
   const googleSignInErrorHandling = (error) => {
     if (error.code === statusCodes.SIGN_IN_CANCELLED) {
@@ -66,8 +66,17 @@ const GoogleButton = () => {
     // 여기서부터 구글 로그인 완료 후 동작 정의하면 됨.
     // ..
     // ..
-    console.log(auth().currentUser);
-    navigation.navigate('LoginProfile')
+    checkNewAccountFunc(auth().currentUser.uid, (isNew) => {
+      console.log(isNew);
+      if (isNew == true) {
+        console.log('신규 사용자다!');
+        navigation.navigate('LoginProfile');
+      } else {
+        console.log('기존 사용자다!!!!');
+      }
+    });
+    // console.log(auth().currentUser);
+    // navigation.navigate('LoginProfile');
   };
   return (
     <TouchableOpacity onPress={() => googleSignIn()}>
