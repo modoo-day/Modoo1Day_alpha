@@ -71,7 +71,7 @@ const Contents = ({navigation, route}) => {
               <TouchableOpacity style={styles.profileContainer}>
                 <Image
                   style={styles.profileImg}
-                  source={require('../../../../../../assets/img/night.png')}
+                  source={require('../../../../../../assets/icons/ghost.png')}
                 />
                 <Text style={styles.profileName}>{modoRef.uploader_str}</Text>
               </TouchableOpacity>
@@ -225,6 +225,7 @@ const styles = StyleSheet.create({
   profileImg: {
     height: 30,
     width: 30,
+    resizeMode:'contain'
   },
   profileName: {
     //bottom: '6%',

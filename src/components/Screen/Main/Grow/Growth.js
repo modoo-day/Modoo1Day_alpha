@@ -48,7 +48,7 @@ export default Growth = ({navigation}) => {
                     style={styles.topLeft}
                     onPress={()=>navigation.navigate('Avatar')}
                 >
-                    <Image style={styles.topImg} source={require('../../../../assets/img/night.png')}/>
+                    <Image style={styles.topImg} source={require('../../../../assets/icons/ghost.png')}/>
                 </TouchableOpacity>
                 <View style={styles.topRight}>
                     <View style={styles.experiencePointContainer}>
@@ -115,13 +115,17 @@ const styles = StyleSheet.create({
         marginVertical:'3%'
     },
     topLeft:{
-        //backgroundColor:'pink',
-    },
-    topImg:{
+        backgroundColor:'purple',
         height:100,
         width:100,
+        borderWidth:3,
         borderRadius:10,
-        borderWidth:3
+        padding:10
+    },
+    topImg:{
+        height:'100%',
+        width:'100%',
+        resizeMode:'contain'
     },
     topRight:{
         //backgroundColor:'lightyellow',

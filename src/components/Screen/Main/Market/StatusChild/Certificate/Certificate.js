@@ -42,10 +42,12 @@ const Certificate = ({navigation}) => {
       <View style={styles.feedContainer}>
         <View style={styles.top}>
           <View style={styles.profileContainer}>
-            <Image
-              style={styles.profileIcon}
-              source={require('../../../../../../assets/icons/profile.png')}
-            />
+            <View style={styles.profileIconContainer}>
+              <Image
+                style={styles.profileIcon}
+                source={require('../../../../../../assets/icons/ghost.png')}
+              />
+            </View>
             <Text style={styles.profileText}>엄예진</Text>
           </View>
           <Text style={styles.postTime}>3분전</Text>
@@ -58,20 +60,26 @@ const Certificate = ({navigation}) => {
         </View>
         <View style={styles.bottom}>
           <View style={styles.bottomIconsContainer}>
-            <TouchableOpacity onPress={likeActive}>
+            <TouchableOpacity 
+              onPress={likeActive}
+              style={styles.bottomIconTouch1}  
+            >
               <Image
                 style={styles.bottomIcon}
                 source={
                   like == true
-                    ? require('../../../../../../assets/icons/o.png')
-                    : require('../../../../../../assets/icons/x.png')
+                    ? require('../../../../../../assets/icons/like.png')
+                    : require('../../../../../../assets/icons/unlike.png')
                 }
               />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigation.navigate('Report')}>
+            <TouchableOpacity 
+              onPress={() => navigation.navigate('Report')}
+              style={styles.bottomIconTouch2}
+            >
               <Image
                 style={styles.bottomIcon}
-                source={require('../../../../../../assets/icons/x.png')}
+                source={require('../../../../../../assets/icons/report.png')}
               />
             </TouchableOpacity>
           </View>
@@ -133,31 +141,50 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     //backgroundColor:'pink',
   },
-  profileIcon: {
+  profileIconContainer:{
     width: 30,
     height: 30,
+    marginRight:'10%'
+  },
+  profileIcon: {
+    width:'100%',
+    height:'100%',
+    resizeMode:'contain'
   },
   profileText: {},
   postTime: {},
   mid: {
     width: '100%',
     height: 250,
+    marginTop:'2%'
   },
   feedImage: {
     width: '100%',
     height: '100%',
   },
-  bottom: {},
+  bottom: {
+
+  },
   bottomIconsContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginHorizontal: '3%',
     marginVertical: '5%',
+    //backgroundColor:'grey',
+    alignItems:'center'
+  },
+  bottomIconTouch1:{
+    width:31,
+    height:30
+  },
+  bottomIconTouch2:{
+    width:27,
+    height:30
   },
   bottomIcon: {
-    width: 30,
-    height: 30,
+    width: '100%',
+    height: '100%',
   },
   feedTextContianer: {
     //backgroundColor:'lightblue',

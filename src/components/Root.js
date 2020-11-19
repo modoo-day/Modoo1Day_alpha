@@ -27,6 +27,7 @@ import LoginTaste from './Screen/Modal/Account/LoginChild/SignUp/LoginTaste';
 import Avatar from './Screen/Main/Grow/Avatar/Avatar';
 import ContentsParticipants from './Screen/Main/Market/StatusChild/Contents/ContentsParticipants';
 import AttendanceParticipants from './Screen/Main/Market/StatusChild/Attendance/AttendanceParticipants';
+import NotificationSet from './Screen/Modal/Account/AccountChild/NotificationSet';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -77,8 +78,8 @@ function Root() {
           <Stack.Screen name='PasswordCheck' component={PasswordCheck}/>
           <Stack.Screen name='LoginProfile' component={LoginProfile}/>
           <Stack.Screen name='LoginTaste' component={LoginTaste}/>
-
-
+          {/* 프로필 */}
+          <Stack.Screen name='NotificationSet' component={NotificationSet}/>
 
 
         </Stack.Navigator>

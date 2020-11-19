@@ -49,7 +49,6 @@ const EmailLogin = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Button onPress={logout}> 로그아웃 </Button>
       <View style={styles.top}>
         <View style={styles.inputContainer}>
           <TextInput
