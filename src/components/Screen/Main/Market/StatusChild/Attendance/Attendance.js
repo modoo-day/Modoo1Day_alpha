@@ -28,6 +28,7 @@ const Attendance = ({navigation}) => {
                         />
                 </View>
             </View>
+            
             <View style={styles.mid}>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
