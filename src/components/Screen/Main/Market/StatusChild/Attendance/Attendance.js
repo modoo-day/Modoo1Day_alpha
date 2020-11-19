@@ -86,7 +86,12 @@ const Attendance = ({navigation}) => {
                     >
                     </TouchableOpacity>
                     <View style={styles.besideCircle}>
-            
+                        <Text style={styles.exp}>
+                            EXP
+                        </Text>
+                        <Text style={styles.coin}>
+                            COIN
+                        </Text>
                     </View>
                 </View>  
                 <View style={styles.oneCheck}>
@@ -110,7 +115,18 @@ const Attendance = ({navigation}) => {
                     <View style={styles.besideCircle}>
             
                     </View>
-                </View>                  
+                </View>     
+                <View style={styles.oneCheck}>
+                    <View style={styles.besideCircle}></View>
+                    <TouchableOpacity
+                        style={date >= 7? styles.activeCircle : styles.circle}
+                        onPress={()=> navigation.navigate('AttendanceParticipants', {day:8})}
+                    >
+                    </TouchableOpacity>
+                    <View style={styles.besideCircle}>
+            
+                    </View>
+                </View>             
             </View>
         </ScrollView>
         <View style={styles.buttonContainer}>
@@ -141,7 +157,8 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     progressText:{
-
+        fontSize:15,
+        fontWeight:'bold'
     },
     progressContainer:{
         height:30,

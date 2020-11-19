@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import storage from '@react-native-firebase/storage';
 
 const QuickViewChild = (info) => {
+  
   const navigation = useNavigation();
 
   const [usrImgUrl, setUsrImgUrl] = useState(

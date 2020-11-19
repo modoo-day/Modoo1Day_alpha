@@ -196,17 +196,20 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     alignSelf: 'flex-end',
+    fontWeight:'bold'
   },
   tagContainer: {
     flexDirection: 'row',
     //backgroundColor: 'grey',
-    width: '45%',
+    width: '40%',
     justifyContent: 'space-between',
   },
   tagTouch: {
     justifyContent: 'flex-end',
   },
-  tag: {},
+  tag: {
+    fontSize:12
+  },
   firstSecondLine: {
     //backgroundColor: 'pink',
     flex: 1,
@@ -224,9 +227,14 @@ const styles = StyleSheet.create({
     width: 30,
   },
   profileName: {
-    bottom: '6%',
+    //bottom: '6%',
+    marginLeft:'10%',
+    fontSize:15,
+    alignSelf:'center'
   },
-  participants: {},
+  participants: {
+    fontSize:15
+  },
   second: {
     //backgroundColor: 'lightblue',
     flexDirection: 'row',
@@ -244,8 +252,9 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   date: {
-    fontSize: 20,
+    fontSize: 21,
     alignSelf: 'center',
+    fontWeight:'bold'
   },
   third: {
     //backgroundColor: 'lightblue',
@@ -273,6 +282,7 @@ const styles = StyleSheet.create({
   yellowText: {
     textAlign: 'right',
     color: 'blue',
+    fontWeight:'bold'
   },
   blackText: {
     textAlign: 'right',
@@ -320,13 +330,14 @@ const styles = StyleSheet.create({
   fifthTextContainer: {},
   redText: {
     color: 'red',
+    fontWeight:'bold',
   },
   buttonContainer: {},
   button: {
     width: '100%',
     backgroundColor: '#ffcd2c',
     //'#ffcd2c',
-    borderWidth: 2,
+    borderWidth: 0,
     //height: '100%',
     borderRadius: 0,
     alignSelf: 'center',
