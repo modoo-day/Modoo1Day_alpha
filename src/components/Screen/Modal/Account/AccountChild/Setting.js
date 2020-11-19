@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     },
     touchable:{
         //backgroundColor:'grey',
-        width:'45%'
+        width:'100%'
     },
     text:{
         fontSize:20
