@@ -99,7 +99,8 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     topText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     mid:{
         //backgroundColor:'pink',
@@ -117,7 +118,8 @@ const styles = StyleSheet.create({
         
     },
     buttonText:{
-         fontFamily:'neodgm'
+         fontFamily:'neodgm',
+         //fontSize:20
     },
     bottom:{
         //backgroundColor:'lightblue',

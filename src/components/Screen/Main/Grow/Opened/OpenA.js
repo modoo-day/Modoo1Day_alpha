@@ -109,7 +109,8 @@ export default OpenA;
 const styles = StyleSheet.create({
   container: {
     alignSelf:'center',
-    width:'95%'
+    width:'95%',
+    marginTop:'2%'
   },
   top: {
     //backgroundColor: 'pink',
@@ -121,7 +122,8 @@ const styles = StyleSheet.create({
     //backgroundColor:'grey'
   },
   title: {
-    fontFamily:'neodgm'
+    fontFamily:'neodgm',
+    fontSize:20
   },
   titleInput:{
     borderWidth:1,
@@ -130,6 +132,7 @@ const styles = StyleSheet.create({
     fontSize:13,
     paddingLeft:10,
     paddingBottom:5.5,
+    marginTop:'2%'
   },
   textLimit: {
 
@@ -139,7 +142,9 @@ const styles = StyleSheet.create({
     height:150,
   },
   category: {
-    fontFamily:'neodgm'
+    fontFamily:'neodgm',
+    fontSize:20
+
   },
   picker:{
     borderWidth:1,
@@ -154,7 +159,9 @@ const styles = StyleSheet.create({
     height:250
   },
   tag: {
-    fontFamily:'neodgm'
+    fontFamily:'neodgm',
+    fontSize:20
+
   },
   tagInput:{
     borderWidth:1,

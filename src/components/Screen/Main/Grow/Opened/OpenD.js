@@ -176,17 +176,20 @@ const styles = StyleSheet.create({
         justifyContent:'space-between'
     },
     topText1:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
+
     },
     topText2:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
     },
     mid:{
         //backgroundColor:'pink',
         height:150
     },
     midText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     timeContainer:{
         flexDirection:'row',
@@ -206,7 +209,8 @@ const styles = StyleSheet.create({
         //backgroundColor:'lightblue'
     },
     bottomText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     bottomImageContainer:{
         marginTop:'6%',

@@ -151,7 +151,8 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     topText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     topFirst:{
         //backgroundColor:'pink',
@@ -193,7 +194,9 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     midText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
+
     },
     infoTextContainer:{
         //backgroundColor:'grey',

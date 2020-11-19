@@ -49,7 +49,7 @@ const OpenE = ({navigation}) =>{
                         disabledStyle={{backgroundColor:'white'}}
                         isDisabled={text==''?true:false}
                         isLoading={false}
-                        onPress={()=>navigation.navigate('Certificate')}
+                        onPress={()=>navigation.goBack()}
                         >
                         확인
                     </Button>
