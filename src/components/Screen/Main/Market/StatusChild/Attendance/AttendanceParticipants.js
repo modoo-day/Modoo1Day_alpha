@@ -86,21 +86,24 @@ export default AttendanceParticipants;
 
 const styles = StyleSheet.create({
     container:{
-
+        width:'95%',
+        alignSelf:'center'
     },
     top:{  
         //backgroundColor:'pink',
         flexDirection:'row',
         paddingVertical:30,
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        alignItems:'center'
     },
     day:{
         flex:1,
-        textAlign:'center'
+        textAlign:'center',
+        fontSize:30,
     },
     participants:{
         flex:1,
-        textAlign:'center'
+        textAlign:'right'
     },
     attendanceContainer:{
         //backgroundColor:'lightblue'
@@ -110,7 +113,8 @@ const styles = StyleSheet.create({
         justifyContent:'center'
     },
     attendanceText:{
-
+        fontSize:25,
+        //fontWeight:'bold'
     },
     profileListContainer:{
         //backgroundColor:'lightgreen',
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         width:'50%',
         justifyContent:'space-between',
-        paddingHorizontal:'3%',
+        padding:'3%',
         alignItems:'center',
         borderRadius:30
     },
@@ -140,6 +144,6 @@ const styles = StyleSheet.create({
         alignItems:'center'
     },
     id:{
-
+        fontSize:15
     },
 })
