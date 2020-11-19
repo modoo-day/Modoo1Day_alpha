@@ -37,7 +37,7 @@ const Avatar = ({navigation}) => {
                         >
                             <Image
                                 style={styles.backIcon}
-                                source={require('../../../../../assets/icons/refresh.png')}
+                                source={require('../../../../../assets/icons/x.png')}
                             />
                         </TouchableOpacity>
                     </View>
@@ -46,7 +46,7 @@ const Avatar = ({navigation}) => {
                             
                         <TouchableOpacity style={styles.bottomSecondTouch}>
                             <View style={styles.bottomSecondImgContainer}>
-                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/icons/ghost.png')} />
                             </View>
                             <View style={styles.bottomSecondTextContainer}>
                                 <Text style={styles.bottonSecondText}>설명</Text>
@@ -54,7 +54,7 @@ const Avatar = ({navigation}) => {
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.bottomSecondTouch}>
                             <View style={styles.bottomSecondImgContainer}>
-                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/img/night.png')} />
+                                <Image style={styles.bottomSecondImg} source={require('../../../../../assets/icons/baby.png')} />
                             </View>
                             <View style={styles.bottomSecondTextContainer}>
                                 <Text style={styles.bottonSecondText}>설명</Text>
@@ -363,12 +363,15 @@ const styles = StyleSheet.create({
         padding:'2%'
     },
     bottomSecondImgContainer:{
-        aspectRatio:1    
+        aspectRatio:1,
+        //backgroundColor:'lightyellow',
+        borderRadius:10,    
     },
     bottomSecondImg:{
         width:'100%',
         height:'100%',
         borderRadius:10,
+        resizeMode:'contain'
     },
     bottomSecondTextContainer:{
         alignItems:'center',
@@ -394,13 +397,17 @@ const styles = StyleSheet.create({
         //backgroundColor:'grey',
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        marginVertical:'5%',
+        width:'95%',
+        alignSelf:'center'
     },
     modalLeftindent:{
         width:35,
     },
     modalTopText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20,
     },
     backIconTouch:{
         height:35,
