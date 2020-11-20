@@ -146,15 +146,16 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     top:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         height:50,
         justifyContent:'center'
     },
     topText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     topFirst:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:50
     },
     
@@ -174,13 +175,13 @@ const styles = StyleSheet.create({
          fontFamily:'neodgm'
     },
     topSecond:{
-        backgroundColor:'lightblue',
+        //backgroundColor:'lightblue',
         flexDirection:'row',
         justifyContent:'space-between',
         height:50
     },
     topThird:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         flexDirection:'row',
         justifyContent:'space-between',
         height:50
@@ -188,15 +189,17 @@ const styles = StyleSheet.create({
   
 
     mid:{
-        backgroundColor:'grey',
+        //backgroundColor:'grey',
         height:50,
         justifyContent:'center'
     },
     midText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
+
     },
     infoTextContainer:{
-        backgroundColor:'grey',
+        //backgroundColor:'grey',
         height:50,
         justifyContent:'center'
     },
@@ -205,7 +208,7 @@ const styles = StyleSheet.create({
 
     },
     midFirst:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:50
     },
     
@@ -219,13 +222,13 @@ const styles = StyleSheet.create({
          fontFamily:'neodgm'
     },
     midSecond:{
-        backgroundColor:'lightblue',
+        //backgroundColor:'lightblue',
         flexDirection:'row',
         justifyContent:'space-between',
         height:50
     },
     midThird:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         flexDirection:'row',
         justifyContent:'space-between',
         height:50
@@ -234,7 +237,7 @@ const styles = StyleSheet.create({
 
     },
     deep:{
-        backgroundColor:'grey',
+        //backgroundColor:'grey',
         //height:200,
         justifyContent:'flex-end',
     },

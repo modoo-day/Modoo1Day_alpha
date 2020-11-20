@@ -14,7 +14,7 @@ const QuestionDetail = ({navigation}) =>{
                 <View style={styles.firstTop}>
                     <Text style={styles.title}>문의 제목</Text>
                     <TouchableOpacity>
-                        <Image style={styles.locker} source={require('../../../../../../assets/icons/EmailInput.png')}/>
+                        <Image style={styles.locker} source={require('../../../../../../assets/icons/ghost.png')}/>
                     </TouchableOpacity>
                 </View>
                 <View style={styles.fisrtMid}>
@@ -24,7 +24,7 @@ const QuestionDetail = ({navigation}) =>{
                     <TouchableOpacity
                         onPress={()=>navigation.navigate('Report')}
                     >
-                        <Image style={styles.report} source={require('../../../../../../assets/icons/EmailInput.png')} />
+                        <Image style={styles.report} source={require('../../../../../../assets/icons/report.png')} />
                     </TouchableOpacity>
                     <View style={styles.profile}>
                         <Text style={styles.name}>엄예진</Text>
@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     },
     locker:{
         width:30,
-        height:30
+        height:30,
+        resizeMode:'contain'
     },
     firstMid:{
 
@@ -85,7 +86,8 @@ const styles = StyleSheet.create({
     },
     report:{
         width:30,
-        height:30
+        height:30,
+        resizeMode:'contain'
     },
     profile:{
         //backgroundColor:'blue',

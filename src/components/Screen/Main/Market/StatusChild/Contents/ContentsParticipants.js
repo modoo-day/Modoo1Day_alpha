@@ -98,18 +98,20 @@ const styles = StyleSheet.create({
         //backgroundColor:'blue'
     },
     participantsNumContainer:{
-        alignSelf:'flex-end',
-        marginTop:'5%'
+        alignSelf:'center',
+        marginTop:'5%',
+        width:'95%',
+        alignItems:'flex-end'
     },
     participantsNum:{
-
+        fontSize:10
     },
     list:{
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
         width:'95%',
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         alignSelf:'center',
         marginVertical:'2.5%'
     },
@@ -123,16 +125,16 @@ const styles = StyleSheet.create({
         borderRadius:50
     },
     profileTextContainer:{
-        backgroundColor:'lightblue',
+        //backgroundColor:'lightblue',
         width:'20%'
     },
     profileText:{
-
+        fontSize:17,
     },
     profileThird:{
         height:50,
-        width:'50%',
-        backgroundColor:'grey',
+        width:'45%',
+        //backgroundColor:'grey',
         borderRadius:10,
         justifyContent:'center'
     },

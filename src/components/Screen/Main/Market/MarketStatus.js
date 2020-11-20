@@ -88,7 +88,7 @@ const MarketStatus = ({navigation}) => {
               style={styles.bigBannerImage}
               source={require('../../../../assets/img/night.png')}
             />
-            <Text style={styles.bannerText}>내가 광고주다 ㅋㅋㄹㅃㅃ</Text>
+            <Text style={styles.bannerText}>ad</Text>
           </View>
         </View>
       </Modal>

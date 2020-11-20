@@ -9,6 +9,8 @@ import {
     } from 'react-native';
 import Button from 'apsl-react-native-button';
 import ProgressBar from 'react-native-progress/Bar';
+import Dash from 'react-native-dash';
+
     
 const Attendance = ({navigation}) => {
 
@@ -28,6 +30,7 @@ const Attendance = ({navigation}) => {
                         />
                 </View>
             </View>
+            
             <View style={styles.mid}>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
@@ -45,6 +48,7 @@ const Attendance = ({navigation}) => {
                         </Text>
                     </View>
                 </View>
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -56,6 +60,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -67,6 +72,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -78,6 +84,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -86,9 +93,15 @@ const Attendance = ({navigation}) => {
                     >
                     </TouchableOpacity>
                     <View style={styles.besideCircle}>
-            
+                        <Text style={styles.exp}>
+                            EXP
+                        </Text>
+                        <Text style={styles.coin}>
+                            COIN
+                        </Text>
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -100,6 +113,7 @@ const Attendance = ({navigation}) => {
             
                     </View>
                 </View>  
+                <Dash style={styles.dashStyle}/>
                 <View style={styles.oneCheck}>
                     <View style={styles.besideCircle}></View>
                     <TouchableOpacity
@@ -110,7 +124,19 @@ const Attendance = ({navigation}) => {
                     <View style={styles.besideCircle}>
             
                     </View>
-                </View>                  
+                </View>     
+                <Dash style={styles.dashStyle}/>
+                <View style={styles.oneCheck}>
+                    <View style={styles.besideCircle}></View>
+                    <TouchableOpacity
+                        style={date >= 7? styles.activeCircle : styles.circle}
+                        onPress={()=> navigation.navigate('AttendanceParticipants', {day:8})}
+                    >
+                    </TouchableOpacity>
+                    <View style={styles.besideCircle}>
+            
+                    </View>
+                </View>             
             </View>
         </ScrollView>
         <View style={styles.buttonContainer}>
@@ -121,7 +147,7 @@ const Attendance = ({navigation}) => {
                 //disabledStyle={{backgroundColor: 'white'}}
                 //isDisabled={time>=time2}
                 // isLoading={false}
-                onPress={() => setDate(date + 1) }
+                onPress={() => setDate(1) }
             >
                 인증하기
             </Button>
@@ -134,31 +160,32 @@ export default Attendance;
 
 const styles = StyleSheet.create({
     top:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:100,
         width:'100%',
         justifyContent:'center',
         alignItems:'center'
     },
     progressText:{
-
+        fontSize:15,
+        fontWeight:'bold'
     },
     progressContainer:{
         height:30,
         width:'80%',
-        backgroundColor:'grey',
+        //backgroundColor:'grey',
         borderRadius:50,
         marginTop:'5%'
     },
     mid:{
-        backgroundColor:'lightblue',
+        //backgroundColor:'lightblue',
         
     },
     oneCheck:{
-        backgroundColor:'lightgreen',
+       // backgroundColor:'lightgreen',
         flexDirection:'row',
         //justifyContent:'center',
-        paddingVertical:20
+        //paddingVertical:20
     },
     circle:{
         height:45,
@@ -187,8 +214,13 @@ const styles = StyleSheet.create({
     coin:{
         marginLeft:'10%'
     },
+    dashStyle:{
+        width:1, 
+        height:30, 
+        flexDirection:'column', 
+        alignSelf:'center'  
+    },
     buttonContainer:{
-
     },
     button:{
         width: '100%',

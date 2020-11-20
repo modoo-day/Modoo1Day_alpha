@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     View, 
     Text, 
@@ -9,9 +9,38 @@ import {
 } from 'react-native';
 import ProgressBar from 'react-native-progress/Bar';
 import Button from 'apsl-react-native-button';
-
+import GrowthChild from './Child/GrowthChild';
+import firestore from '@react-native-firebase/firestore';
 
 export default Growth = ({navigation}) => {
+
+
+    // const [DataA, setDataA] = useState({});
+
+
+    // const modooDataRef = firestore().collection('MODOOS_DATA');
+    // const refreshMain = () => {
+    //     // Data들 파베에서 불러오기.
+    //     // 인기 모두 불러오기 (참여자 수 내림차순)
+    //     console.log('REFRESHMAIN 시작');
+    //     modooDataRef
+    //     .orderBy('participateCount_num', 'desc')  //어떤 순서로 목록을 불러올 지 정하는 거 같아보임.
+    //     .limit(2)
+    //     .get()
+    //     .then((snst) => {
+    //         console.log('GrowthData 받아옴');
+    //         setDataA(snst._docs[0])
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     });
+    // }
+
+    // // Refresh 한번만 실행.
+    // useEffect(() => {
+    //     refreshMain();
+    // }, []);
+
     return(
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.top}>
@@ -19,15 +48,17 @@ export default Growth = ({navigation}) => {
                     style={styles.topLeft}
                     onPress={()=>navigation.navigate('Avatar')}
                 >
-                    <Image style={styles.topImg} source={require('../../../../assets/img/night.png')}/>
+                    <Image style={styles.topImg} source={require('../../../../assets/icons/ghost.png')}/>
                 </TouchableOpacity>
                 <View style={styles.topRight}>
                     <View style={styles.experiencePointContainer}>
-                        <Text>레벨</Text>
-                        <ProgressBar 
-                            progress={0.3}
-                            width={140}
-                        />
+                        <Text style={styles.level}>10</Text>
+                        <View style={styles.progressbarContainer}>
+                            <ProgressBar 
+                                progress={0.3}
+                                width={null}
+                            />
+                        </View>
                     </View>
                     <View style={styles.buttonContainer}>
                         {/* <Button
@@ -42,7 +73,7 @@ export default Growth = ({navigation}) => {
                             isLoading={false}
                             onPress={()=>navigation.navigate('OpenA')}
                         >
-                        모do 개설
+                        모두 개설
                         </Button>
                     </View>
                 </View>
@@ -51,20 +82,20 @@ export default Growth = ({navigation}) => {
 
                 <TouchableOpacity 
                     style={styles.listContainer}
-                    onPress={()=>navigation.navigate('StatusRoute')}    
+                    // onPress={()=>
+                    //     //navigation.navigate('StatusRoute')
+                    // }    
                 >
                     <Image style={styles.listImg} source={require('../../../../assets/img/night.png')}/>
                     <View style={styles.listTextContainer}>
                         <Text style={styles.listTitle}>매일 물 마시기</Text>
-                        {/* <TouchableOpacity
-                            // onPress={navigation.navigate('ContentsWrite')}
-                            //  내비게이션이 사용된 태그 안에 또 내비게이션을 사용할 수 없음.
-                        > */}
-                            <Text style={styles.listButton}>인증하기</Text>
-                        {/* </TouchableOpacity> */}
+                       
+                        <Text style={styles.date}>20.11.14~20.11.15</Text>
+                        <Text style={styles.listButton}>인증하기</Text>
+                        
                     </View>
                 </TouchableOpacity>
-                
+                {/* <GrowthChild {...DataA}/> */}
             </View>
         </ScrollView>
     )
@@ -84,17 +115,21 @@ const styles = StyleSheet.create({
         marginVertical:'3%'
     },
     topLeft:{
-        //backgroundColor:'pink',
-    },
-    topImg:{
+        backgroundColor:'purple',
         height:100,
         width:100,
+        borderWidth:3,
         borderRadius:10,
-        borderWidth:3
+        padding:10
+    },
+    topImg:{
+        height:'100%',
+        width:'100%',
+        resizeMode:'contain'
     },
     topRight:{
         //backgroundColor:'lightyellow',
-        width:'60%',
+        width:'62%',
         justifyContent:'space-between',
         paddingVertical:'5%',
     },
@@ -103,22 +138,31 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-between'
     },
+    level:{
+        fontSize:25,
+        fontWeight:'bold'
+    },
+    progressbarContainer:{
+        //backgroundColor:'grey',
+        width:'80%'
+    },
     buttonContainer:{
         //backgroundColor:'grey',
         width:'100%',
         justifyContent:'flex-end'
     },
     button: {
-        width: '90%',
+        //width: '90%',
         backgroundColor: '#ffcd2c',
-        borderWidth: 2,
-        height: '55%',
+        borderWidth: 5,
+        height: '60%',
         borderRadius:50,
         alignSelf:'center'
       },
     buttonText: {
         fontFamily: 'neodgm',
-        fontSize: 10,
+        fontSize: 15,
+        fontWeight:'bold'
     },
     bottom:{
         //backgroundColor:'lightblue',
@@ -127,27 +171,35 @@ const styles = StyleSheet.create({
     },
     listContainer:{
         flex:1,
-        backgroundColor:'lightgrey',
+        backgroundColor:'#ffcd2c',
         flexDirection:'row',
         alignItems:'center',
         borderRadius:10,
         marginVertical:'2.5%'
     },
     listImg:{
-        height:60,
-        width:60,
+        height:130,
+        width:130,
         borderRadius:10
     },
     listTextContainer:{
         top:6,
-        width:'70%',
+        flex:1,
         //backgroundColor:'lightblue',
-        marginLeft:'5%'
+        //marginLeft:'5%'
+        paddingHorizontal:'2%'
     },
     listTitle:{
-
+        fontSize:15,
+        fontWeight:'bold'
+    },
+    date:{
+        fontWeight:'bold',
+        fontSize:10
     },
     listButton:{
-        alignSelf:'flex-end'
+        alignSelf:'flex-end',
+        fontWeight:'bold',
+        fontSize:20,
     },
 })

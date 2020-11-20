@@ -166,27 +166,30 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     top:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         height:100,
         justifyContent:'center'
     },
     topTextContainer:{
-        backgroundColor:'grey',
+        //backgroundColor:'grey',
         height:'50%',
         justifyContent:'space-between'
     },
     topText1:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
+
     },
     topText2:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
     },
     mid:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:150
     },
     midText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     timeContainer:{
         flexDirection:'row',
@@ -203,10 +206,11 @@ const styles = StyleSheet.create({
 
     },
     bottom:{
-        backgroundColor:'lightblue'
+        //backgroundColor:'lightblue'
     },
     bottomText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     bottomImageContainer:{
         marginTop:'6%',

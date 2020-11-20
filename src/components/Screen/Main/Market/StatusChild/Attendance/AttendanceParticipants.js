@@ -86,34 +86,38 @@ export default AttendanceParticipants;
 
 const styles = StyleSheet.create({
     container:{
-
+        width:'95%',
+        alignSelf:'center'
     },
     top:{  
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         flexDirection:'row',
         paddingVertical:30,
-        justifyContent:'space-between'
+        justifyContent:'space-between',
+        alignItems:'center'
     },
     day:{
         flex:1,
-        textAlign:'center'
+        textAlign:'center',
+        fontSize:30,
     },
     participants:{
         flex:1,
-        textAlign:'center'
+        textAlign:'right'
     },
     attendanceContainer:{
-        backgroundColor:'lightblue'
+        //backgroundColor:'lightblue'
     },
     attendanceTextContainer:{
         height:100,
         justifyContent:'center'
     },
     attendanceText:{
-
+        fontSize:25,
+        //fontWeight:'bold'
     },
     profileListContainer:{
-        backgroundColor:'lightgreen',
+        //backgroundColor:'lightgreen',
         flexDirection:'row',
         flexWrap:'wrap',
         borderRadius:10,
@@ -121,11 +125,11 @@ const styles = StyleSheet.create({
         marginBottom:'5%'
     },
     profileContainer:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         flexDirection:'row',
         width:'50%',
         justifyContent:'space-between',
-        paddingHorizontal:'3%',
+        padding:'3%',
         alignItems:'center',
         borderRadius:30
     },
@@ -135,11 +139,11 @@ const styles = StyleSheet.create({
         borderRadius:50,
     },
     idContainer:{
-        backgroundColor:'lightgrey',
+       // backgroundColor:'lightgrey',
         width:'50%',
         alignItems:'center'
     },
     id:{
-
+        fontSize:15
     },
 })

@@ -71,7 +71,7 @@ const Contents = ({navigation, route}) => {
               <TouchableOpacity style={styles.profileContainer}>
                 <Image
                   style={styles.profileImg}
-                  source={require('../../../../../../assets/img/night.png')}
+                  source={require('../../../../../../assets/icons/ghost.png')}
                 />
                 <Text style={styles.profileName}>{modoRef.uploader_str}</Text>
               </TouchableOpacity>
@@ -183,12 +183,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   first: {
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     height: 130,
     borderBottomWidth: 1,
   },
   fistFirstLine: {
-    backgroundColor: 'lightyellow',
+    //backgroundColor: 'lightyellow',
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: '40%',
@@ -196,19 +196,22 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     alignSelf: 'flex-end',
+    fontWeight:'bold'
   },
   tagContainer: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
-    width: '35%',
+    //backgroundColor: 'grey',
+    width: '40%',
     justifyContent: 'space-between',
   },
   tagTouch: {
     justifyContent: 'flex-end',
   },
-  tag: {},
+  tag: {
+    fontSize:12
+  },
   firstSecondLine: {
-    backgroundColor: 'pink',
+    //backgroundColor: 'pink',
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -216,19 +219,25 @@ const styles = StyleSheet.create({
   },
   profileContainer: {
     flexDirection: 'row',
-    backgroundColor: 'grey',
+    //backgroundColor: 'grey',
     alignItems: 'flex-end',
   },
   profileImg: {
     height: 30,
     width: 30,
+    resizeMode:'contain'
   },
   profileName: {
-    bottom: '6%',
+    //bottom: '6%',
+    marginLeft:'10%',
+    fontSize:15,
+    alignSelf:'center'
   },
-  participants: {},
+  participants: {
+    fontSize:15
+  },
   second: {
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 5,
@@ -244,11 +253,12 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   date: {
-    fontSize: 20,
+    fontSize: 21,
     alignSelf: 'center',
+    fontWeight:'bold'
   },
   third: {
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -264,7 +274,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   thirdTextContainer: {
-    backgroundColor: 'pink',
+    //backgroundColor: 'pink',
     width: '65%',
   },
   thirdTextLine: {
@@ -273,13 +283,14 @@ const styles = StyleSheet.create({
   yellowText: {
     textAlign: 'right',
     color: 'blue',
+    fontWeight:'bold'
   },
   blackText: {
     textAlign: 'right',
   },
   fourth: {
     flexDirection: 'row',
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     justifyContent: 'space-between',
     paddingVertical: 5,
     alignItems: 'center',
@@ -302,7 +313,7 @@ const styles = StyleSheet.create({
   },
   fifth: {
     flexDirection: 'row',
-    backgroundColor: 'lightblue',
+    //backgroundColor: 'lightblue',
     justifyContent: 'space-between',
     paddingVertical: 20,
     alignItems: 'center',
@@ -320,13 +331,14 @@ const styles = StyleSheet.create({
   fifthTextContainer: {},
   redText: {
     color: 'red',
+    fontWeight:'bold',
   },
   buttonContainer: {},
   button: {
     width: '100%',
     backgroundColor: '#ffcd2c',
     //'#ffcd2c',
-    borderWidth: 2,
+    borderWidth: 0,
     //height: '100%',
     borderRadius: 0,
     alignSelf: 'center',

@@ -94,15 +94,16 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     top:{
-        backgroundColor:'lightyellow',
+        //backgroundColor:'lightyellow',
         height:50,
         justifyContent:'center'
     },
     topText:{
-        fontFamily:'neodgm'
+        fontFamily:'neodgm',
+        fontSize:20
     },
     mid:{
-        backgroundColor:'pink',
+        //backgroundColor:'pink',
         height:50
     },
     activeButton:{
@@ -117,10 +118,11 @@ const styles = StyleSheet.create({
         
     },
     buttonText:{
-         fontFamily:'neodgm'
+         fontFamily:'neodgm',
+         //fontSize:20
     },
     bottom:{
-        backgroundColor:'lightblue',
+        //backgroundColor:'lightblue',
         flexDirection:'row',
         justifyContent:'space-between',
         height:50
