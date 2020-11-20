@@ -15,31 +15,31 @@ import firestore from '@react-native-firebase/firestore';
 export default Growth = ({navigation}) => {
 
 
-    const [DataA, setDataA] = useState({});
+    // const [DataA, setDataA] = useState({});
 
 
-    const modooDataRef = firestore().collection('MODOOS_DATA');
-    const refreshMain = () => {
-        // Data들 파베에서 불러오기.
-        // 인기 모두 불러오기 (참여자 수 내림차순)
-        console.log('REFRESHMAIN 시작');
-        modooDataRef
-        .orderBy('participateCount_num', 'desc')  //어떤 순서로 목록을 불러올 지 정하는 거 같아보임.
-        .limit(2)
-        .get()
-        .then((snst) => {
-            console.log('GrowthData 받아옴');
-            setDataA(snst._docs[0])
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }
+    // const modooDataRef = firestore().collection('MODOOS_DATA');
+    // const refreshMain = () => {
+    //     // Data들 파베에서 불러오기.
+    //     // 인기 모두 불러오기 (참여자 수 내림차순)
+    //     console.log('REFRESHMAIN 시작');
+    //     modooDataRef
+    //     .orderBy('participateCount_num', 'desc')  //어떤 순서로 목록을 불러올 지 정하는 거 같아보임.
+    //     .limit(2)
+    //     .get()
+    //     .then((snst) => {
+    //         console.log('GrowthData 받아옴');
+    //         setDataA(snst._docs[0])
+    //     })
+    //     .catch((err) => {
+    //         console.log(err);
+    //     });
+    // }
 
-    // Refresh 한번만 실행.
-    useEffect(() => {
-        refreshMain();
-    }, []);
+    // // Refresh 한번만 실행.
+    // useEffect(() => {
+    //     refreshMain();
+    // }, []);
 
     return(
         <ScrollView contentContainerStyle={styles.container}>
@@ -80,7 +80,7 @@ export default Growth = ({navigation}) => {
             </View>
             <View style={styles.bottom}>
 
-                {/* <TouchableOpacity 
+                <TouchableOpacity 
                     style={styles.listContainer}
                     // onPress={()=>
                     //     //navigation.navigate('StatusRoute')
@@ -94,8 +94,8 @@ export default Growth = ({navigation}) => {
                         <Text style={styles.listButton}>인증하기</Text>
                         
                     </View>
-                </TouchableOpacity> */}
-                <GrowthChild {...DataA}/>
+                </TouchableOpacity>
+                {/* <GrowthChild {...DataA}/> */}
             </View>
         </ScrollView>
     )

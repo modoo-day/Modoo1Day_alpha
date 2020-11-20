@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
     },
     locker:{
         width:30,
-        height:30
+        height:30,
+        resizeMode:'contain'
     },
     firstMid:{
 
@@ -85,7 +86,8 @@ const styles = StyleSheet.create({
     },
     report:{
         width:30,
-        height:30
+        height:30,
+        resizeMode:'contain'
     },
     profile:{
         //backgroundColor:'blue',
