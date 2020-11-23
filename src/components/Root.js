@@ -28,6 +28,8 @@ import Avatar from './Screen/Main/Grow/Avatar/Avatar';
 import ContentsParticipants from './Screen/Main/Market/StatusChild/Contents/ContentsParticipants';
 import AttendanceParticipants from './Screen/Main/Market/StatusChild/Attendance/AttendanceParticipants';
 import NotificationSet from './Screen/Modal/Account/AccountChild/NotificationSet';
+import PersonalInfoCheck from './Screen/Modal/Account/AccountChild/PersonalnfoCheck';
+import PersonalInfoSet from './Screen/Modal/Account/AccountChild/PersonalInfoSet';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -78,9 +80,10 @@ function Root() {
           <Stack.Screen name='PasswordCheck' component={PasswordCheck}/>
           <Stack.Screen name='LoginProfile' component={LoginProfile}/>
           <Stack.Screen name='LoginTaste' component={LoginTaste}/>
-          {/* 프로필 */}
+          {/* 계정 */}
           <Stack.Screen name='NotificationSet' component={NotificationSet}/>
-
+          <Stack.Screen name='PersonalInfoCheck' component={PersonalInfoCheck}/>
+          <Stack.Screen name='PersonalInfoSet' component={PersonalInfoSet}/>
 
         </Stack.Navigator>
       </NavigationContainer>

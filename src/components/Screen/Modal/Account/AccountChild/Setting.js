@@ -28,7 +28,7 @@ const Setting = ({navigation}) => {
             <View style={styles.list}>
                 <TouchableOpacity 
                     style={styles.touchable}
-                    //onPress={()=>navigation.navigate('')}
+                    onPress={()=>navigation.navigate('PersonalInfoCheck')}
                 >
                     <Text style = {styles.text}>개인정보</Text>
                 </TouchableOpacity>
