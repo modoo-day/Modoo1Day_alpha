@@ -30,6 +30,7 @@ import AttendanceParticipants from './Screen/Main/Market/StatusChild/Attendance/
 import NotificationSet from './Screen/Modal/Account/AccountChild/NotificationSet';
 import PersonalInfoCheck from './Screen/Modal/Account/AccountChild/PersonalnfoCheck';
 import PersonalInfoSet from './Screen/Modal/Account/AccountChild/PersonalInfoSet';
+import UserGuide from './Screen/Modal/Account/AccountChild/UserGuide';
 
 const Stack = createStackNavigator();
 const modal = createStackNavigator();
@@ -84,6 +85,7 @@ function Root() {
           <Stack.Screen name='NotificationSet' component={NotificationSet}/>
           <Stack.Screen name='PersonalInfoCheck' component={PersonalInfoCheck}/>
           <Stack.Screen name='PersonalInfoSet' component={PersonalInfoSet}/>
+          <Stack.Screen name='UserGuide' component={UserGuide}/>
 
         </Stack.Navigator>
       </NavigationContainer>

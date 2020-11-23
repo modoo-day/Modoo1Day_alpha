@@ -36,9 +36,9 @@ const Setting = ({navigation}) => {
             <View style={styles.list}>
                 <TouchableOpacity 
                     style={styles.touchable}
-                    //onPress={()=>navigation.navigate('')}
+                    onPress={()=>navigation.navigate('UserGuide')}
                 >
-                    <Text style = {styles.text}>사용가이드</Text>
+                    <Text style = {styles.text}>이용안내</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.list}>
